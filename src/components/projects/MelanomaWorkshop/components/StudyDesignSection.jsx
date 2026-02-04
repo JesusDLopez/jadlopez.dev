@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMelanomaWorkshopData } from '../data/DataContext';
-import '../styles/StudyDesignSection.css';
+import '../Styles/StudyDesignSection.css';
 
 /**
  * StudyDesignSection - Study Design & Methodology

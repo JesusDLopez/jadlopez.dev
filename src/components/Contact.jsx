@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { FaEnvelope, FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
-import '../styles/Contact.css';
+import '../Styles/Contact.css';
 
 export default function Contact({ mode }) {
   const { isDark } = useTheme();

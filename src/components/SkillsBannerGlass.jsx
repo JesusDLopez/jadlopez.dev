@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import "../styles/SkillsBannerGlass.css";
+import "../Styles/SkillsBannerGlass.css";
 import { getWeightedConnector } from "../data/geneConnectors";
 
 const SkillsBannerGlass = ({

@@ -1,7 +1,7 @@
 // DonutChart - Reusable D3.js donut chart component
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import '../styles/DonutChart.css';
+import '../Styles/DonutChart.css';
 
 const DonutChart = ({
   data,

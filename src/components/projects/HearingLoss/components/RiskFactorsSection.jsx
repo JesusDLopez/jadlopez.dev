@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import * as d3 from 'd3';
 import { useHearingLossData } from '../data/DataContext';
 import { ContentCard, KeyFinding, StatCard, AnalysisCard, TransitionCard } from '../../common';
-import '../styles/risk-factors.css';
+import '../Styles/risk-factors.css';
 
 const RiskFactorsSection = () => {
   const { riskFactors, allDiabetesTypes, isReady } = useHearingLossData();

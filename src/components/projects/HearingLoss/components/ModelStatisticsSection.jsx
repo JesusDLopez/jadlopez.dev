@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHearingLossData } from '../data/DataContext';
 import { KeyFinding, ContentCard, AnalysisCard, TransitionCard, PipelineStepCard } from '../../common';
-import '../styles/model-statistics.css';
+import '../Styles/model-statistics.css';
 
 const ModelStatisticsSection = () => {
   const { modelStats, isReady } = useHearingLossData();

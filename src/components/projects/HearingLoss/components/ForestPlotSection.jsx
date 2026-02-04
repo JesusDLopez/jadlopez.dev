@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHearingLossData } from '../data/DataContext';
 import { ForestPlot, TransitionCard, ContentCard, KeyFinding, AnalysisCard, StatCard } from '../../common';
-import '../styles/forest-plot.css';
+import '../Styles/forest-plot.css';
 
 const ForestPlotSection = () => {
   const { forestPlot, isReady } = useHearingLossData();

@@ -1,6 +1,6 @@
 // KeyFinding - Reusable key finding highlight component
 import React from 'react';
-import '../styles/KeyFinding.css';
+import '../Styles/KeyFinding.css';
 
 const KeyFinding = ({ children, type = 'default', className = '' }) => {
   return (

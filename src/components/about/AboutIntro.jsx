@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import "../../styles/AboutIntro.css";
+import "../../Styles/AboutIntro.css";
 
 const AboutIntro = ({ animateOnLoad = false }) => {
   const [isMobile, setIsMobile] = useState(false);

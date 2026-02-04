@@ -1,4 +1,4 @@
-import "../styles/SkillsBanner.css";
+import "../Styles/SkillsBanner.css";
 import ParticleCanvas from "./ParticleCanvas";
 
 const SkillsBanner = () => {

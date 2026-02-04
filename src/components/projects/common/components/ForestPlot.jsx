@@ -1,7 +1,7 @@
 // ForestPlot - D3.js forest plot for multivariable analysis results
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import '../styles/ForestPlot.css';
+import '../Styles/ForestPlot.css';
 
 const ForestPlot = ({
   data,

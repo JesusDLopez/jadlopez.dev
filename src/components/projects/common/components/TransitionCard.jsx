@@ -1,6 +1,6 @@
 // TransitionCard - Reusable transition card for section navigation
 import React from 'react';
-import '../styles/TransitionCard.css';
+import '../Styles/TransitionCard.css';
 
 const TransitionCard = ({
   icon,

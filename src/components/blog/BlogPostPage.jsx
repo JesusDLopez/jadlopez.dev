@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { loadPost } from '../../posts/load.js';
 import Footer from '../Footer';
-import "../../styles/BlogPost.css";
+import "../../Styles/BlogPost.css";
 
 export default function BlogPostPage() {
   const { slug } = useParams();

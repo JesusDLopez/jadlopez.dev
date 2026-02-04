@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHearingLossData } from '../data/DataContext';
 import { SectionHeader, InsightHighlight } from '../../../common';
 import { DonutChart, BarChart, TransitionCard, KeyFinding } from '../../common';
-import '../styles/demographics.css';
+import '../Styles/demographics.css';
 
 const DemographicsSection = () => {
   const { demographics, isReady } = useHearingLossData();
