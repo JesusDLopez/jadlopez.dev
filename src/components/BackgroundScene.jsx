@@ -12,18 +12,30 @@ export default function BackgroundScene() {
   const { isDark } = useTheme();
   const fogRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(
+    typeof window !== "undefined" ? window.innerHeight : 0
+  );
 
   // Determine if we're on a report page or portfolio page
   const isReportPage = location.pathname.includes('/projects/');
 
-  // Detect mobile for camera adjustment
+  // Detect mobile and track viewport height for Safari compatibility
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const handleResize = () => {
+      checkMobile();
+      setViewportHeight(window.innerHeight);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    // Also listen to visualViewport for Safari address bar changes
+    window.visualViewport?.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.visualViewport?.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const sections = useMemo(
@@ -87,7 +99,7 @@ export default function BackgroundScene() {
         top: 0,
         left: 0,
         width: "100vw",
-        height: "100dvh", // Use dynamic viewport height for mobile
+        height: `${viewportHeight}px`, // Use JS-tracked height for Safari compatibility
         zIndex: 0,
         pointerEvents: "none",
         overflow: "hidden",
@@ -108,7 +120,7 @@ export default function BackgroundScene() {
       >
         <Suspense fallback={null}>
           <TopographicCytoplasmPlane ref={fogRef} />
-          {isDark && <FloatingParticles count={3000} />}
+          {isDark && !isMobile && <FloatingParticles count={3000} />}
         </Suspense>
       </Canvas>
     </div>
