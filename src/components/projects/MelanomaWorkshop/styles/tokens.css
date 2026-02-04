@@ -1,0 +1,36 @@
+/* Melanoma Workshop Report - Specific Tokens */
+.mw-root {
+  /* === PROJECT-SPECIFIC COLORS === */
+  --mw-primary: #06b6d4;  /* Cyan */
+  --mw-secondary: #10b981; /* Green */
+  --mw-accent: #f59e0b;    /* Amber */
+  --mw-warning: #f59e0b;
+  --mw-success: #10b981;
+  --mw-danger: #ef4444;
+
+  /* === CARD SYSTEM === */
+  --mw-card-bg: var(--rp-card-bg);
+  --mw-card-border: var(--rp-card-border);
+  --mw-card-shadow: var(--rp-card-shadow);
+  --mw-card-radius: var(--rp-border-radius-lg);
+  --mw-card-hover-shadow: 0 8px 25px color-mix(in srgb, var(--rp-bg) 50%, black 50%);
+
+  /* === SECTION SPACING === */
+  --mw-section-padding: var(--rp-space-16);
+  --mw-section-gap: var(--rp-space-6);
+  --mw-content-max-width: 1200px;
+  --mw-subtitle-max-width: 900px;
+  --mw-context-max-width: 800px;
+
+  /* === TYPOGRAPHY OVERRIDES === */
+  --mw-title-color: var(--rp-text-primary);
+  --mw-subtitle-color: var(--rp-text-secondary);
+  --mw-body-color: var(--rp-text-secondary);
+  --mw-muted-color: var(--rp-text-muted);
+
+  /* === ANIMATION SETTINGS === */
+  --mw-animation-fast: var(--rp-transition-fast);
+  --mw-animation-normal: var(--rp-transition-normal);
+  --mw-animation-slow: var(--rp-transition-slow);
+  --mw-flip-duration: 600ms;
+}

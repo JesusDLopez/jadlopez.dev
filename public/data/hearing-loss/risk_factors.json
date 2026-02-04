@@ -1,0 +1,168 @@
+{
+  "title": "Risk Factors for Congenital Hearing Loss",
+  "subtitle": "Univariate Analysis",
+  "description": "Association between various risk factors and permanent congenital hearing loss",
+  "sample_size": 328751,
+  "risk_factors": [
+    {
+      "name": "Craniofacial Abnormalities",
+      "variable_code": "CFA_bin",
+      "category": "clinical",
+      "prevalence": 0.14,
+      "hearing_loss_rate": 19.49,
+      "total_cases": 472,
+      "hearing_loss_cases": 92,
+      "odds_ratio": 82.807,
+      "confidence_interval": {
+        "lower": 65.373,
+        "upper": 104.891
+      },
+      "p_value": 0.0,
+      "significance": "high"
+    },
+    {
+      "name": "Family History",
+      "variable_code": "FH_bin",
+      "category": "clinical",
+      "prevalence": 0.91,
+      "hearing_loss_rate": 3.96,
+      "total_cases": 2982,
+      "hearing_loss_cases": 118,
+      "odds_ratio": 14.376,
+      "confidence_interval": {
+        "lower": 11.828,
+        "upper": 17.471
+      },
+      "p_value": 8.862918382847244e-272,
+      "significance": "high"
+    },
+    {
+      "name": "Syndromes Associated with HL",
+      "variable_code": "SyndAs_bin",
+      "category": "clinical",
+      "prevalence": 0.09,
+      "hearing_loss_rate": 14.1,
+      "total_cases": 312,
+      "hearing_loss_cases": 44,
+      "odds_ratio": 53.49,
+      "confidence_interval": {
+        "lower": 38.657,
+        "upper": 74.015
+      },
+      "p_value": 0.0,
+      "significance": "high"
+    },
+    {
+      "name": "Perinatal Infection",
+      "variable_code": "PI_bin",
+      "category": "clinical",
+      "prevalence": 0.08,
+      "hearing_loss_rate": 6.69,
+      "total_cases": 269,
+      "hearing_loss_cases": 18,
+      "odds_ratio": 22.776,
+      "confidence_interval": {
+        "lower": 14.064,
+        "upper": 36.887
+      },
+      "p_value": 1.9991725664386043e-72,
+      "significance": "high"
+    },
+    {
+      "name": "Severe Asphyxia",
+      "variable_code": "SevAsph_bin",
+      "category": "clinical",
+      "prevalence": 0.15,
+      "hearing_loss_rate": 5.24,
+      "total_cases": 496,
+      "hearing_loss_cases": 26,
+      "odds_ratio": 17.695,
+      "confidence_interval": {
+        "lower": 11.866,
+        "upper": 26.388
+      },
+      "p_value": 5.820484833648305e-81,
+      "significance": "high"
+    },
+    {
+      "name": "Nursing Admission >5 days",
+      "variable_code": "NursAdm_bin",
+      "category": "clinical",
+      "prevalence": 1.33,
+      "hearing_loss_rate": 1.84,
+      "total_cases": 4359,
+      "hearing_loss_cases": 80,
+      "odds_ratio": 6.24,
+      "confidence_interval": {
+        "lower": 4.958,
+        "upper": 7.854
+      },
+      "p_value": 2.320658093045917e-70,
+      "significance": "high"
+    },
+    {
+      "name": "Hyperbilirubinemia",
+      "variable_code": "HB_bin",
+      "category": "clinical",
+      "prevalence": 0.03,
+      "hearing_loss_rate": 2.22,
+      "total_cases": 90,
+      "hearing_loss_cases": 2,
+      "odds_ratio": 7.112,
+      "confidence_interval": {
+        "lower": 1.749,
+        "upper": 28.922
+      },
+      "p_value": 0.023382701500744316,
+      "significance": "moderate"
+    },
+    {
+      "name": "Hypertension",
+      "variable_code": "HT_bin",
+      "category": "clinical",
+      "prevalence": 0.06,
+      "hearing_loss_rate": 1.03,
+      "total_cases": 194,
+      "hearing_loss_cases": 2,
+      "odds_ratio": 3.258,
+      "confidence_interval": {
+        "lower": 0.808,
+        "upper": 13.14
+      },
+      "p_value": 0.26193223086726164,
+      "significance": "none"
+    },
+    {
+      "name": "Advanced Maternal Age",
+      "variable_code": "MatAge_bin",
+      "category": "clinical",
+      "prevalence": 22.73,
+      "hearing_loss_rate": 0.31,
+      "total_cases": 74729,
+      "hearing_loss_cases": 232,
+      "odds_ratio": 0.965,
+      "confidence_interval": {
+        "lower": 0.834,
+        "upper": 1.117
+      },
+      "p_value": 0.6606208615743674,
+      "significance": "none"
+    },
+    {
+      "name": "Obesity",
+      "variable_code": "Ob_bin",
+      "category": "clinical",
+      "prevalence": 4.45,
+      "hearing_loss_rate": 0.35,
+      "total_cases": 14632,
+      "hearing_loss_cases": 51,
+      "odds_ratio": 1.097,
+      "confidence_interval": {
+        "lower": 0.828,
+        "upper": 1.455
+      },
+      "p_value": 0.5676363190913944,
+      "significance": "none"
+    }
+  ]
+}

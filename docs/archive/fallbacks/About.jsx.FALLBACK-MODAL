@@ -1,0 +1,1009 @@
+import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
+import "../../Styles/About.css";
+import { motion, useScroll, useTransform } from "framer-motion";
+import ProteinViewer from "./ProteinViewer";
+import AboutIntro from "./AboutIntro";
+import SkillsBannerGlass from "../SkillsBannerGlass";
+import { useTheme } from "../../contexts/ThemeContext";
+import histoneH1 from "../../assets/HistoneH1_P1.glb";
+import GFP from "../../assets/1GFL_GFP_protein_v1.glb";
+import brca1 from "../../assets/BRCA1.glb";
+import Cas9 from "../../assets/Cas9prot.glb";
+import RNApol2 from "../../assets/RNApol2.glb";
+
+const experiences = [
+  {
+    id: 1,
+    title: "Universidad Europea de Madrid",
+    years: "2016–2019",
+    description:
+      "Foundation in molecular biology and quantitative sciences.",
+    expandedContent: {
+      whatIDid: "I immersed myself in foundational courses across molecular biology, genetics, immunology, pharmacology, thermodynamics, mathematics, and chemistry. This was my first exposure to the scientific world — learning not just to memorize facts, but to understand biological and physical mechanisms as systems I could model and predict.",
+      whyItMattered: "This is where I learned to think quantitatively about biology. Every course opened new ways of seeing how life works at the molecular level. The foundation built here — mathematical thinking applied to biological problems — became essential for everything that followed.",
+      proteinChoice: "Histone H1 packages DNA into structured nucleosomes."
+    },
+    component: (
+      <ProteinViewer
+        path={histoneH1}
+        position={[0, 0, -15]}
+        scale={[0.9, 0.9, 0.9]}
+        cameraZ={15}
+        tooltip="Histone H1 (PDB: 1HST)"
+      />
+    ),
+  },
+  {
+    id: 2,
+    title: "University of Queens_land",
+    years: "2019–2022",
+    description:
+      "Advanced training in genomics and programming.",
+    expandedContent: {
+      whatIDid: "U_Q raised the bar significantly. I repeated some courses from Madrid and realized how much deeper I could go. I was surrounded by researchers who showed me what it meant to apply knowledge, not just collect it.\n\nI went deeper into thermodynamics, biochemistry, genomics, and statistics. Most importantly, this is where I first started programming: R for biostatistics, introductory software engineering, and early bioinformatics. It was challenging — I struggled through many assignments — but this is where the technical skills that define my work today first took root.",
+      whyItMattered: "I learned to push through difficulty and make knowledge useful. Programming was hard at first, but it became the tool that would eventually allow me to contribute most effectively. This period prepared me for the blend of technical and clinical work that came next.",
+      proteinChoice: "GFP makes the invisible visible through fluorescence."
+    },
+    component: (
+      <ProteinViewer
+        path={GFP}
+        position={[0, 0, -35]}
+        scale={[0.9, 0.9, 0.9]}
+        cameraZ={15}
+        tooltip="GFP (PDB: 1GFL)"
+      />
+    ),
+  },
+  {
+    id: 3,
+    title: "University of Tech_nology Syd_ney",
+    years: "2022–2024",
+    description:
+      "Explored the human side of genomics.",
+    expandedContent: {
+      whatIDid: "I completed a Master's in Genetic Counseling at U_TS, a program that combined scientific rigor with human connection. I learned how to explain complex genetic concepts in accessible ways, adapt communication to different families, and support patients through difficult decisions about testing, treatment, and family planning.\n\nThe curriculum covered counseling frameworks like narrative therapy, family systems theory, and logotherapy — tools for helping people find meaning in challenging diagnoses. Clinical placements in oncology, cancer genetics, prenatal, and general clinics gave me hands-on experience. I learned genetics is never only about DNA — it's about people, their identities, their values, and the decisions they need to make.",
+      whyItMattered: "This training taught me to bridge scientific data and human experience. I gained confidence not only in handling genetic information, but in guiding people through complex decisions with clarity and empathy. It shaped how I think about the purpose of genetic knowledge: not as an endpoint, but as something that must be translated into meaningful action for patients and families.",
+      proteinChoice: "BRCA1 mutations impact cancer risk and influence decisions about prevention, family planning, and genetic testing."
+    },
+    component: (
+      <ProteinViewer
+        path={brca1}
+        position={[0.6, -0.2, -45]}
+        scale={[0.9, 0.9, 0.9]}
+        cameraZ={15}
+        tooltip="BRCA1 (PDB: 1T15)"
+      />
+    ),
+  },
+  {
+    id: 4,
+    title: "I_GM Team",
+    years: "2022–2025",
+    description:
+      "Applied bioinformatics in melanoma genetics research.",
+    expandedContent: {
+      whatIDid: "During my last semester at U_Q, a guest lecture by Aid_een McIn_erney introduced me to genetic counseling. After class, we met for coffee — a conversation that changed the trajectory of my career. She became my mentor, encouraged me to pursue the Master's program, and invited me to join her team at Integr_ating Gen_omics into Medi_cine (I_GM).\n\nAt I_GM, I stepped into my first professional role working with real patient data in melanoma genetics research. I collaborated with genetic counselors and dermatologists, applying statistics and bioinformatics to analyze genomic data. I built tools and workflows that made complex datasets usable for clinicians. I presented findings at conferences, supported workshops teaching dermatologists about melanoma genetic testing, and completed further training in statistical genomics.",
+      whyItMattered: "This was the turning point where I stopped only studying science and began practicing it. I discovered where I could contribute most: building tools and methods that bring genomics into clinical practice. This clarified my career direction and showed me the work I want to do — bridging the gap between research data and patient care.",
+      proteinChoice: "Cas9 is a programmable enzyme that cuts DNA at specific sequences, enabling precise genome editing."
+    },
+    component: (
+      <ProteinViewer
+        path={Cas9}
+        position={[0, -0.1, -120]}
+        scale={[1.1, 1.1, 1.1]}
+        cameraZ={15}
+        tooltip="Cas9 (PDB: 4CMP)"
+      />
+    ),
+  },
+  {
+    id: 5,
+    title: "Lanzarote & Beyond",
+    years: "2025–Present",
+    description:
+      "Building skills and portfolio in bioinformatics.",
+    expandedContent: {
+      whatIDid: "After five years in Australia, I returned home to the Canary Islands. It was both a homecoming and a turning point. I initially set out to build a startup — an application to communicate complex genetic variants to patients in accessible ways. But within a few months, I realized the project wasn't ready to succeed. I needed more experience in programming and bioinformatics before I could make it real.\n\nSo I shifted focus. Instead of pushing a startup prematurely, I began building this portfolio — documenting my work in melanoma genetics, hearing loss research, and interactive data visualization. I'm deepening my technical skills in R, JavaScript, and bioinformatics workflows while actively seeking roles where I can apply these skills professionally.",
+      whyItMattered: "This period is about consolidation and preparation. Rather than seeing the startup pivot as a setback, I'm investing in the technical foundation I need to contribute meaningfully. By documenting what I've built and continuing to develop my skills, I'm preparing for opportunities where I can both grow and be useful — whether in bioinformatics roles, freelance scientific visualization, or eventually revisiting the patient communication tools I believe are needed.",
+      proteinChoice: "RNA Polymerase II is a large multimeric complex that transcribes DNA into RNA, coordinating multiple subunits to synthesize genetic messages."
+    },
+    component: (
+      <ProteinViewer
+        path={RNApol2}
+        position={[0, 5, -75]}
+        scale={[0.6, 0.6, 0.6]}
+        cameraZ={20}
+        tooltip="RNA Polymerase II (PDB: 1I3Q)"
+      />
+    ),
+  },
+];
+
+function About({ mode = "home" }) {
+  const { isDark } = useTheme();
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Refs for timeline elements
+  const timelineRef = useRef(null);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
+
+  // Removed: Custom scroll-trap logic (handleWheel useEffect)
+  // Now using native CSS position: sticky instead
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Removed state-based animations - now using whileInView
+
+  // Debug: Verify spine center alignment
+  useEffect(() => {
+    if (timelineRef.current) {
+      const timeline = timelineRef.current;
+      const spine = timeline.querySelector('.timeline-center');
+      if (spine) {
+        const spineRect = spine.getBoundingClientRect();
+        const spineCenterX = spineRect.left + spineRect.width / 2;
+        const windowCenterX = window.innerWidth / 2;
+        console.log('🎯 Spine Center Verification:');
+        console.log(`Spine centerX: ${spineCenterX}px`);
+        console.log(`Window centerX: ${windowCenterX}px`);
+        console.log(`Difference: ${Math.abs(spineCenterX - windowCenterX)}px`);
+        console.log(Math.abs(spineCenterX - windowCenterX) <= 4 ? '✅ ALIGNED' : '❌ MISALIGNED');
+      }
+    }
+  }, []);
+
+  // Simple timeline structure
+
+  const handleCardClick = (experience) => {
+    // Lock scroll IMMEDIATELY before any state changes to prevent visual jump
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.classList.add('prevent-scroll');
+    document.body.classList.add('modal-active');
+
+    // Now update state to show modal
+    setSelectedExperience(experience);
+  };
+
+  const closeModal = () => {
+    setSelectedExperience(null);
+  };
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape' && selectedExperience !== null) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [selectedExperience]);
+
+  // Handle scroll unlock when modal closes
+  useEffect(() => {
+    if (!selectedExperience) {
+      // Restore scroll position when modal is closed
+      const scrollY = document.body.style.top;
+      document.body.classList.remove('prevent-scroll');
+      document.body.classList.remove('modal-active');
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+    // Note: scroll lock is handled synchronously in handleCardClick to prevent visual jump
+
+    // Cleanup on unmount
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.classList.remove('prevent-scroll');
+      document.body.classList.remove('modal-active');
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    };
+  }, [selectedExperience]);
+
+  // Render modal using Portal to escape About section's stacking context
+  const modalContent = selectedExperience && ReactDOM.createPortal(
+    (
+      <>
+          <div
+            className="modal-overlay"
+            onClick={closeModal}
+            onWheel={(e) => e.preventDefault()}
+            onTouchMove={(e) => e.preventDefault()}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'transparent', // TRANSPARENT: Don't darken the background
+              zIndex: 9998,
+              overflow: 'hidden'
+            }}
+          />
+          <div
+            className="modal-content"
+            onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            style={{
+              position: 'fixed',
+              top: isMobile ? '2vh' : '80px', // Just below navbar (navbar is ~70px high)
+              left: isMobile ? '2vw' : '2vw',
+              right: isMobile ? '2vw' : '2vw',
+              bottom: isMobile ? '2vh' : '2vh',
+              borderRadius: '1.5rem',
+              zIndex: 9999,
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row', // Stack vertically on mobile
+              overflow: 'hidden',
+
+              // Glass morphism base
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+
+              // Theme-aware glass effect - black in dark mode, white in light mode
+              background: isDark ? 'rgba(0, 0, 0, 0.85)' : 'rgba(255, 255, 255, 0.35)',
+              border: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.4)',
+              boxShadow: isDark
+                ? '0 20px 60px rgba(0, 0, 0, 0.9), 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                : '0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 0 rgba(255, 255, 255, 0.1)'
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.3)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                color: isDark ? '#ffffff' : '#1f2937',
+                fontSize: '1.5rem',
+                zIndex: 10000,
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.5)';
+                e.target.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.3)';
+                e.target.style.transform = 'scale(1)';
+              }}
+            >
+              ×
+            </button>
+            
+            {/* Protein viewer */}
+            <div
+              onWheel={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              style={{
+              flex: isMobile ? '0 0 50%' : '2', // Fixed 50% height on mobile, flex 2 on desktop
+              height: isMobile ? '50%' : '100%',
+              background: 'transparent',
+              borderRadius: isMobile ? '12px 12px 0 0' : '12px 0 0 12px', // Top corners on mobile, left corners on desktop
+              overflow: 'hidden',
+              filter: 'none',
+              backdropFilter: 'none'
+            }}>
+              {selectedExperience && (
+                <ProteinViewer 
+                  path={selectedExperience.component.props.path}
+                  position={selectedExperience.component.props.position}
+                  scale={selectedExperience.component.props.scale}
+                  cameraZ={selectedExperience.component.props.cameraZ}
+                  tooltip={selectedExperience.component.props.tooltip}
+                  expanded={true}
+                  key={`modal-direct-${selectedExperience.id}`}
+                />
+              )}
+            </div>
+            
+            {/* Content */}
+            <div
+              onWheel={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              style={{
+              flex: isMobile ? '0 0 50%' : '1', // Fixed 50% height on mobile, flex 1 on desktop
+              height: isMobile ? '50%' : '100%',
+              padding: isMobile ? '1.5rem' : '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              color: isDark ? '#ffffff' : '#1f2937',
+              overflow: 'auto',
+              overscrollBehavior: 'contain', // Prevent scroll chaining to background
+              textShadow: 'none',
+              filter: 'none',
+              fontSmooth: 'always',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+              textRendering: 'optimizeLegibility'
+            }}>
+              <span style={{
+                fontSize: '0.75rem',
+                opacity: '0.7',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '0.5rem'
+              }}>
+                {selectedExperience.years}
+              </span>
+              <h3 style={{
+                margin: '0 0 1rem 0',
+                fontSize: isMobile ? '1.4rem' : '1.8rem',
+                fontWeight: '600',
+                color: isDark ? 'rgba(255, 255, 255, 0.95)' : 'rgba(31, 41, 55, 1)'
+              }}>
+                {selectedExperience.title}
+              </h3>
+
+              {/* Display expanded content if available, otherwise fallback to description */}
+              {selectedExperience.expandedContent ? (
+                <div>
+                  <h4 style={{
+                    margin: '0 0 0.75rem 0',
+                    fontSize: isMobile ? '1rem' : '1.2rem',
+                    fontWeight: '600',
+                    color: isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(31, 41, 55, 0.9)'
+                  }}>
+                    What I Did
+                  </h4>
+                  <p style={{
+                    margin: '0 0 1rem 0',
+                    lineHeight: '1.5',
+                    fontSize: isMobile ? '0.9rem' : '1rem',
+                    color: isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(31, 41, 55, 0.8)'
+                  }}>
+                    {selectedExperience.expandedContent.whatIDid}
+                  </p>
+
+                  <h4 style={{
+                    margin: '0 0 0.75rem 0',
+                    fontSize: isMobile ? '1rem' : '1.2rem',
+                    fontWeight: '600',
+                    color: isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(31, 41, 55, 0.9)'
+                  }}>
+                    Why It Mattered
+                  </h4>
+                  <p style={{
+                    margin: '0 0 1rem 0',
+                    lineHeight: '1.5',
+                    fontSize: isMobile ? '0.9rem' : '1rem',
+                    color: isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(31, 41, 55, 0.8)'
+                  }}>
+                    {selectedExperience.expandedContent.whyItMattered}
+                  </p>
+
+                  <h4 style={{
+                    margin: '0 0 0.75rem 0',
+                    fontSize: isMobile ? '1rem' : '1.2rem',
+                    fontWeight: '600',
+                    color: isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(31, 41, 55, 0.9)'
+                  }}>
+                    Protein Choice – Histone H1 (PDB: 1hst)
+                  </h4>
+                  <p style={{
+                    margin: '0 0 1rem 0',
+                    lineHeight: '1.5',
+                    fontSize: isMobile ? '0.9rem' : '1rem',
+                    color: isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(31, 41, 55, 0.8)'
+                  }}>
+                    {selectedExperience.expandedContent.proteinChoice}
+                  </p>
+                </div>
+              ) : (
+                <p style={{
+                  margin: '0 0 1rem 0',
+                  lineHeight: '1.5',
+                  fontSize: isMobile ? '0.9rem' : '1rem',
+                  color: isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(31, 41, 55, 0.8)'
+                }}>
+                  {selectedExperience.description}
+                </p>
+              )}
+              {!isMobile && (
+                <div style={{
+                  marginTop: 'auto',
+                  padding: '1rem 0',
+                  borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(31, 41, 55, 0.2)'
+                }}>
+                  <p style={{
+                    margin: '0',
+                    fontSize: '0.9rem',
+                    color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(31, 41, 55, 0.6)',
+                    lineHeight: '1.5'
+                  }}>
+                    Click and drag to rotate the protein structure. Use your mouse wheel to zoom in and out for a detailed view.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+    ),
+    document.body
+  );
+
+  return (
+    <>
+      {/* Modal rendered via Portal outside sections */}
+      {modalContent}
+
+      {/* SECTION 1: Intro/Hola Section */}
+      <section className={`screen-section ${isMobile ? "about-intro-section-mobile" : "about-intro-section"}`} id="intro">
+        <AboutIntro />
+      </section>
+
+      {/* SECTION 2: Skills Banner Section */}
+      <section className="screen-section skills-section">
+        <div className="skills-banners-container">
+          <SkillsBannerGlass
+            direction="right-to-left"
+            inclination={0}
+            zIndex={3}
+            speed={100}
+          />
+          <SkillsBannerGlass
+            direction="right-to-left"
+            inclination={0}
+            zIndex={2}
+            speed={120}
+          />
+          <SkillsBannerGlass
+            direction="right-to-left"
+            inclination={0}
+            zIndex={1}
+            speed={140}
+          />
+        </div>
+      </section>
+
+      {/* SECTION 3: Academic Journey Timeline */}
+      <section ref={sectionRef} className={`screen-section about-section`} id="about">
+        <div className="about-layout about-container">
+              <div className="about-timeline" ref={timelineRef}>
+          {/* Timeline structure with sequential positioning */}
+
+          {/* Title/Subtitle block in first card position (top left) - Animated with viewport entry */}
+          <motion.div
+            className="timeline-intro-block"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    left: "auto",
+                    top: "auto",
+                    width: "auto",
+                    margin: "0 1.5rem 3rem",
+                    padding: "0",
+                    textAlign: "left",
+                    zIndex: 2,
+                  }
+                : {
+                    position: "absolute",
+                    left: "var(--timeline-side-offset)",
+                    top: "50px",
+                    width: "var(--timeline-card-width)",
+                    zIndex: 2,
+                  }
+            }
+          >
+            <h2 className="timeline-intro-title">Academic Journey</h2>
+            <p className="timeline-intro-subtitle">From Biotechnology to Bioinformatics</p>
+            <p className="timeline-intro-description">
+              Each protein structure represents a milestone in my journey through genetics, research, and computational biology. Click any card to explore the story behind each stage.
+            </p>
+          </motion.div>
+          
+          {/* Entry 1: 2016 + Universidad Europea (Left, Grid 2) */}
+          <motion.div
+            className="timeline-dot"
+            initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
+            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={isMobile
+              ? { duration: 0.6, delay: 0, type: "spring", stiffness: 150, damping: 12 }
+              : { duration: 0.3, delay: 0, ease: "easeOut" }
+            }
+            style={{
+              position: 'absolute',
+              top: '50px',
+              left: 'calc(50% - 30px)', // Center 60px dot on timeline spine - at very top of timeline
+              zIndex: 10 // Higher than cards so always visible
+            }}
+          >
+            2016
+          </motion.div>
+          
+          {/* Card 1: Universidad Europea Madrid 2016 */}
+          <motion.div
+            className={`about-card right-card`}
+            data-year="2016"
+            initial={isMobile
+              ? { opacity: 0, y: -300, scale: 0.7, rotateX: -25 }
+              : { opacity: 0, x: -40 }
+            }
+            whileInView={isMobile ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={isMobile
+              ? {
+                  duration: 0.8,
+                  delay: 0,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }
+              : { duration: 0.4, delay: 0, ease: "easeOut" }
+            }
+            onClick={() => handleCardClick(experiences[0])}
+            style={isMobile ? {
+              position: 'static',
+              width: '90%',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem auto',
+              left: 'unset',
+              right: 'unset',
+              top: 'unset'
+            } : {
+              position: 'absolute',
+              top: '50px',
+              right: "var(--timeline-side-offset)", // RIGHT CARD: UQ 2016 - aligned with 2016 year label at very top
+              width: "var(--timeline-card-width)", // Constrain within left half of content area
+              zIndex: 5,
+            }}
+          >
+            <div className="about-card-content">
+              <div className="protein-viewer-container" style={{ cursor: 'pointer' }}>
+                {!selectedExperience && React.cloneElement(experiences[0].component, { 
+                  expanded: false, 
+                  key: `card-0-disabled` 
+                })}
+                {selectedExperience && <div style={{background: 'rgba(100,100,100,0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>Click to view in modal</div>}
+              </div>
+              <div className="about-card-text">
+                <span className="card-phase">{experiences[0].years}</span>
+                <h3>{experiences[0].title}</h3>
+                <p>{experiences[0].description}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LASER 1: 2016 → 2019 - Desktop only */}
+          {!isMobile && (
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: 534 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.2, delay: 0, ease: "easeInOut" }}
+                style={{
+                  position: 'absolute',
+                  top: '66px', // Start just below 2016 dot (50px + 16px)
+                  left: 'calc(50% - 1px)', // Center on spine
+                  width: '2px',
+                  background: isDark
+                    ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(200, 200, 200, 0.25))'
+                    : 'linear-gradient(to bottom, #ffffff, #fef3cd, #fed7aa, #fb923c)',
+                  boxShadow: isDark
+                    ? '0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.1)'
+                    : '0 0 12px rgba(255, 248, 220, 0.9), 0 0 24px rgba(251, 146, 60, 0.7), 0 0 36px rgba(249, 115, 22, 0.5), 0 0 48px rgba(234, 88, 12, 0.3)',
+                  opacity: isDark ? 0.35 : 1,
+                  zIndex: 8,
+                  transformOrigin: 'top'
+                }}
+              />
+          )}
+
+          {/* Entry 2: 2019 + UQ */}
+          <motion.div
+            className="timeline-dot"
+            initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
+            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={isMobile
+              ? { duration: 0.6, delay: 0, type: "spring", stiffness: 150, damping: 12 }
+              : { duration: 0.3, ease: "easeOut" }
+            }
+            style={{
+              position: 'absolute',
+              top: '600px',
+              left: 'calc(50% - 30px)', // Center 60px dot on timeline spine
+              zIndex: 10 // Higher than cards so always visible
+            }}
+          >
+            2019
+          </motion.div>
+          
+          {/* Card 2: University of Queensland 2019 */}
+          <motion.div
+            className={`about-card left-card`}
+            data-year="2019"
+            initial={isMobile
+              ? { opacity: 0, y: -300, scale: 0.7, rotateX: -25 }
+              : { opacity: 0, x: -40 }
+            }
+            whileInView={isMobile ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={isMobile
+              ? {
+                  duration: 0.8,
+                  delay: 0,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }
+              : { duration: 0.4, delay: 0, ease: "easeOut" }
+            }
+            onClick={() => handleCardClick(experiences[1])}
+            style={isMobile ? {
+              position: 'static',
+              width: '90%',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem auto',
+              left: 'unset',
+              right: 'unset',
+              top: 'unset'
+            } : {
+              position: 'absolute',
+              top: '600px', // LEFT CARD: UQ positioned with proper spacing from UEM
+              left: 'var(--timeline-side-offset)', // LEFT CARD: Align with intro block
+              width: 'var(--timeline-card-width)', // Match left cards exactly
+              zIndex: 5
+            }}
+          >
+            <div className="about-card-content">
+              <div className="protein-viewer-container" style={{ cursor: 'pointer' }}>
+                {!selectedExperience && React.cloneElement(experiences[1].component, { 
+                  expanded: false, 
+                  key: `card-1-disabled` 
+                })}
+                {selectedExperience && <div style={{background: 'rgba(100,100,100,0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>Click to view in modal</div>}
+              </div>
+              <div className="about-card-text">
+                <span className="card-phase">{experiences[1].years}</span>
+                <h3>{experiences[1].title}</h3>
+                <p>{experiences[1].description}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LASER 2: 2019 → 2022 - Desktop only */}
+          {!isMobile && (
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: 534 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+                style={{
+                  position: 'absolute',
+                  top: '616px', // Start just below 2019 dot (600px + 16px)
+                  left: 'calc(50% - 1px)', // Center on spine
+                  width: '2px',
+                  background: isDark
+                    ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(200, 200, 200, 0.25))'
+                    : 'linear-gradient(to bottom, #ffffff, #fef3cd, #fed7aa, #fb923c)',
+                  boxShadow: isDark
+                    ? '0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.1)'
+                    : '0 0 12px rgba(255, 248, 220, 0.9), 0 0 24px rgba(251, 146, 60, 0.7), 0 0 36px rgba(249, 115, 22, 0.5), 0 0 48px rgba(234, 88, 12, 0.3)',
+                  opacity: isDark ? 0.35 : 1,
+                  zIndex: 8,
+                  transformOrigin: 'top'
+                }}
+              />
+          )}
+
+          {/* Entry 3: 2022 + IGM */}
+          <motion.div
+            className="timeline-dot"
+            initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
+            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={isMobile
+              ? { duration: 0.6, delay: 0, type: "spring", stiffness: 150, damping: 12 }
+              : { duration: 0.3, ease: "easeOut" }
+            }
+            style={{
+              position: 'absolute',
+              top: '1150px',
+              left: 'calc(50% - 30px)', // Center 60px dot on timeline spine - aligned with IGM card
+              zIndex: 10 // Higher than cards so always visible
+            }}
+          >
+            2022
+          </motion.div>
+          
+          {/* Card 3: IGM Team 2022 */}
+          <motion.div
+            className={`about-card right-card`}
+            data-year="2022"
+            initial={isMobile
+              ? { opacity: 0, y: -300, scale: 0.7, rotateX: -25 }
+              : { opacity: 0, x: 40 }
+            }
+            whileInView={isMobile ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={isMobile
+              ? {
+                  duration: 0.8,
+                  delay: 0,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }
+              : { duration: 0.4, delay: 0, ease: "easeOut" }
+            }
+            onClick={() => handleCardClick(experiences[3])}
+            style={isMobile ? {
+              position: 'static',
+              width: '90%',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem auto',
+              left: 'unset',
+              right: 'unset',
+              top: 'unset'
+            } : {
+              position: 'absolute',
+              top: '1150px', // RIGHT CARD: IGM positioned with proper spacing
+              right: 'var(--timeline-side-offset)', // RIGHT CARD: Align with right boundary
+              width: 'var(--timeline-card-width)',
+              zIndex: 5
+            }}
+          >
+            <div className="about-card-content">
+              <div className="protein-viewer-container" style={{ cursor: 'pointer' }}>
+                {!selectedExperience && React.cloneElement(experiences[3].component, { 
+                  expanded: false, 
+                  key: `card-3-disabled` 
+                })}
+                {selectedExperience && <div style={{background: 'rgba(100,100,100,0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>Click to view in modal</div>}
+              </div>
+              <div className="about-card-text">
+                <span className="card-phase">{experiences[3].years}</span>
+                <h3>{experiences[3].title}</h3>
+                <p>{experiences[3].description}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 4: UTS 2022 */}
+          <motion.div
+            className={`about-card left-card`}
+            data-year="2022"
+            initial={isMobile
+              ? { opacity: 0, y: -300, scale: 0.7, rotateX: -25 }
+              : { opacity: 0, x: -40 }
+            }
+            whileInView={isMobile ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={isMobile
+              ? {
+                  duration: 0.8,
+                  delay: 0,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }
+              : { duration: 0.4, delay: 0, ease: "easeOut" }
+            }
+            onClick={() => handleCardClick(experiences[2])}
+            style={isMobile ? {
+              position: 'static',
+              width: '90%',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem auto',
+              left: 'unset',
+              right: 'unset',
+              top: 'unset'
+            } : {
+              position: 'absolute',
+              top: '1400px', // LEFT CARD: UTS positioned after IGM with proper spacing
+              left: 'var(--timeline-side-offset)', // LEFT CARD: Align with left boundary
+              width: 'var(--timeline-card-width)',
+              zIndex: 5
+            }}
+          >
+            <div className="about-card-content">
+              <div className="protein-viewer-container" style={{ cursor: 'pointer' }}>
+                {!selectedExperience && React.cloneElement(experiences[2].component, { 
+                  expanded: false, 
+                  key: `card-2-disabled` 
+                })}
+                {selectedExperience && <div style={{background: 'rgba(100,100,100,0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>Click to view in modal</div>}
+              </div>
+              <div className="about-card-text">
+                <span className="card-phase">{experiences[2].years}</span>
+                <h3>{experiences[2].title}</h3>
+                <p>{experiences[2].description}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LASER 3: 2022 → 2025 - Desktop only */}
+          {!isMobile && (
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: 784 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+                style={{
+                  position: 'absolute',
+                  top: '1166px', // Start just below 2022 dot (1150px + 16px)
+                  left: 'calc(50% - 1px)', // Center on spine
+                  width: '2px',
+                  background: isDark
+                    ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(200, 200, 200, 0.25))'
+                    : 'linear-gradient(to bottom, #ffffff, #fef3cd, #fed7aa, #fb923c)',
+                  boxShadow: isDark
+                    ? '0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.1)'
+                    : '0 0 12px rgba(255, 248, 220, 0.9), 0 0 24px rgba(251, 146, 60, 0.7), 0 0 36px rgba(249, 115, 22, 0.5), 0 0 48px rgba(234, 88, 12, 0.3)',
+                  opacity: isDark ? 0.35 : 1,
+                  zIndex: 8,
+                  transformOrigin: 'top'
+                }}
+              />
+          )}
+
+          {/* Entry 5: 2025 + Lanzarote & Beyond */}
+          <motion.div
+            className="timeline-dot"
+            initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
+            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={isMobile
+              ? { duration: 0.6, delay: 0, type: "spring", stiffness: 150, damping: 12 }
+              : { duration: 0.3, ease: "easeOut" }
+            }
+            style={{
+              position: 'absolute',
+              top: '1950px',
+              left: 'calc(50% - 30px)', // Center 60px dot on timeline spine - aligned with Lanzarote card
+              zIndex: 10 // Higher than cards so always visible
+            }}
+          >
+            2025
+          </motion.div>
+          
+          {/* Card 5: Lanzarote 2025 */}
+          <motion.div
+            className={`about-card right-card`}
+            data-year="2025"
+            initial={isMobile
+              ? { opacity: 0, y: -300, scale: 0.7, rotateX: -25 }
+              : { opacity: 0, x: 40 }
+            }
+            whileInView={isMobile ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={isMobile
+              ? {
+                  duration: 0.8,
+                  delay: 0,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }
+              : { duration: 0.4, delay: 0, ease: "easeOut" }
+            }
+            onClick={() => handleCardClick(experiences[4])}
+            style={isMobile ? {
+              position: 'static',
+              width: '90%',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem auto',
+              left: 'unset',
+              right: 'unset',
+              top: 'unset'
+            } : {
+              position: 'absolute',
+              top: '1950px', // RIGHT CARD: Lanzarote positioned after UTS with proper spacing
+              right: 'var(--timeline-side-offset)', // RIGHT CARD: Mirror left cards positioning
+              width: 'var(--timeline-card-width)',
+              zIndex: 5
+            }}
+          >
+            <div className="about-card-content">
+              <div className="protein-viewer-container" style={{ cursor: 'pointer' }}>
+                {!selectedExperience && React.cloneElement(experiences[4].component, { 
+                  expanded: false, 
+                  key: `card-4-disabled` 
+                })}
+                {selectedExperience && <div style={{background: 'rgba(100,100,100,0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>Click to view in modal</div>}
+              </div>
+              <div className="about-card-text">
+                <span className="card-phase">{experiences[4].years}</span>
+                <h3>{experiences[4].title}</h3>
+                <p>{experiences[4].description}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Final timeline segment - REMOVED for cleaner design */}
+
+          {/* Timeline continuation effect - sparkles/dots fading away - Desktop only */}
+          {!isMobile && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 5.0, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.2, margin: "-100px" }}
+              style={{
+                position: 'absolute',
+                top: '2400px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 10,
+                display: 'flex',
+                gap: '8px'
+              }}
+            >
+              {/* Three sparkle dots indicating continuation */}
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0, 1, 0],
+                    y: [0, -10, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: 5.2 + (i * 0.3),
+                    repeat: Infinity,
+                    repeatDelay: 2
+                  }}
+                  style={{
+                    width: '6px',
+                    height: '6px',
+                    background: 'rgba(255, 255, 255, 0.8)',
+                    borderRadius: '50%',
+                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
+                  }}
+                />
+              ))}
+            </motion.div>
+          )}
+
+          {/* Grid containers for structure - timeline-center removed */}
+          <div className="left-side"></div>
+          <div className="right-side"></div>
+        </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default About;

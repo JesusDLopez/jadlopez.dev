@@ -1,0 +1,9 @@
+{
+  "dataset_overview": {
+    "total_pregnancies": 330000,
+    "hearing_loss_cases": 825,
+    "hearing_loss_rate": 0.25,
+    "gestational_diabetes_cases": 13200,
+    "gestational_diabetes_rate": 4.0
+  }
+}

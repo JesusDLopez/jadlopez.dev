@@ -1,0 +1,47 @@
+{
+  "q1_1": [
+    {
+      "response": "Very Positive",
+      "count": 20,
+      "percentage": 39.2
+    },
+    {
+      "response": "Positive",
+      "count": 25,
+      "percentage": 49.0
+    },
+    {
+      "response": "Neutral",
+      "count": 5,
+      "percentage": 9.8
+    },
+    {
+      "response": "Negative",
+      "count": 1,
+      "percentage": 2.0
+    }
+  ],
+  "q1_2": [
+    {
+      "response": "Very Confident",
+      "count": 8,
+      "percentage": 15.7
+    },
+    {
+      "response": "Confident",
+      "count": 18,
+      "percentage": 35.3
+    },
+    {
+      "response": "Somewhat Confident",
+      "count": 20,
+      "percentage": 39.2
+    },
+    {
+      "response": "Not Confident",
+      "count": 5,
+      "percentage": 9.8
+    }
+  ],
+  "notes": "Baseline attitudes from N=51 pre-workshop participants. This is placeholder data - replace with actual R export."
+}

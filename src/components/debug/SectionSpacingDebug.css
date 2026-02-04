@@ -1,0 +1,407 @@
+/* ============================================
+   SECTION SPACING DEBUG OVERLAY
+   Shows clear boundaries, padding, and spacing
+   ============================================ */
+
+.section-spacing-debug {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+/* ============================================
+   LEGEND
+   ============================================ */
+.debug-legend {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  border: 2px solid #00ff00;
+  pointer-events: auto;
+  z-index: 10000000;
+  max-width: 280px;
+}
+
+.debug-legend h4 {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+}
+
+.legend-color {
+  width: 40px;
+  height: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.legend-color.section-boundary {
+  background: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.legend-color.section-padding {
+  background: rgba(255, 165, 0, 0.4);
+  border: 1px dashed orange;
+}
+
+.legend-color.section-spacer {
+  background: rgba(255, 0, 255, 0.4);
+  border: 1px dashed magenta;
+}
+
+/* ============================================
+   SECTION BOUNDARIES (Green Lines)
+   ============================================ */
+.screen-section {
+  position: relative;
+  outline: 2px solid #00ff00 !important;
+  outline-offset: 0px;
+}
+
+/* Section labels - top right */
+#hero::after {
+  content: 'HERO' !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: rgba(0, 255, 0, 0.95) !important;
+  color: black !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  z-index: 10000000 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+#about::after {
+  content: 'ABOUT' !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: rgba(0, 255, 0, 0.95) !important;
+  color: black !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  z-index: 10000000 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+#work::after {
+  content: 'WORK' !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: rgba(0, 255, 0, 0.95) !important;
+  color: black !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  z-index: 10000000 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+#blog::after {
+  content: 'BLOG' !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: rgba(0, 255, 0, 0.95) !important;
+  color: black !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  z-index: 10000000 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+#contact::after {
+  content: 'CONTACT' !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: rgba(0, 255, 0, 0.95) !important;
+  color: black !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  z-index: 10000000 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+/* ============================================
+   SECTION PADDING VISUALIZATION (Orange)
+   ============================================ */
+.screen-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--section-padding-top, 0);
+  background: rgba(255, 165, 0, 0.3);
+  border-bottom: 2px dashed orange;
+  z-index: 9999999;
+  pointer-events: none;
+}
+
+/* Padding bottom indicator */
+.screen-section > *:last-child::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--section-padding-bottom, 0);
+  background: rgba(255, 165, 0, 0.3);
+  border-top: 2px dashed orange;
+  z-index: 9999999;
+  pointer-events: none;
+}
+
+/* ============================================
+   SECTION SPACER VISUALIZATION (Magenta)
+   ============================================ */
+.section-spacer {
+  position: relative;
+  background: rgba(255, 0, 255, 0.3) !important;
+  border-top: 2px dashed magenta !important;
+  border-bottom: 2px dashed magenta !important;
+  outline: 1px solid magenta !important;
+  z-index: 9999998 !important;
+}
+
+.section-spacer::before {
+  content: 'SPACER: ' attr(data-height);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 255, 0.95);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Monaco', monospace;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 10000000;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.section-spacer--tight::before {
+  content: 'SPACER (tight): 2.5vh';
+}
+
+.section-spacer--default::before {
+  content: 'SPACER (default): 3.5vh';
+}
+
+.section-spacer--reveal::before {
+  content: 'SPACER (reveal): 3vh';
+}
+
+.section-spacer--extended::before {
+  content: 'SPACER (extended): 7.5vh';
+}
+
+.section-spacer--flush::before {
+  content: 'SPACER (flush): 0';
+}
+
+/* ============================================
+   PADDING MEASUREMENT LABELS
+   ============================================ */
+.screen-section::after {
+  /* We use ::after for section labels, so padding measurements go elsewhere */
+}
+
+/* Add padding top measurement */
+#hero::before {
+  content: '↕ PADDING: 0 (flush)' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 165, 0, 0.95) !important;
+  color: black !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  z-index: 10000001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#about::before {
+  content: '↕ PADDING: 6vh top/bottom' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 165, 0, 0.95) !important;
+  color: black !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  z-index: 10000001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#work::before {
+  content: '↕ PADDING: 6vh top/bottom' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 165, 0, 0.95) !important;
+  color: black !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  z-index: 10000001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#blog::before {
+  content: '↕ PADDING: 6vh top/bottom' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 165, 0, 0.95) !important;
+  color: black !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  z-index: 10000001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#contact::before {
+  content: '↕ PADDING: 6vh top/bottom' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 165, 0, 0.95) !important;
+  color: black !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  z-index: 10000001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+/* ============================================
+   WIDTH INFO BOX
+   ============================================ */
+.width-info-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 10px;
+  border: 2px solid #00ffff;
+  pointer-events: auto;
+  z-index: 10000000;
+  max-width: 280px;
+}
+
+.width-info-box h4 {
+  margin: 0 0 10px 0;
+  font-size: 11px;
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.width-info-item {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  font-size: 10px;
+}
+
+.width-info-item strong {
+  color: #00ffff;
+}
+
+/* ============================================
+   CONTENT WIDTH VISUALIZATION
+   ============================================ */
+.legend-color.content-width {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px dashed cyan;
+}

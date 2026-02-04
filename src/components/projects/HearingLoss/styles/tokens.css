@@ -1,0 +1,62 @@
+/* Hearing Loss Report - Specific Tokens */
+/* Extends reports-core platform tokens with project-specific values */
+
+.hl-root {
+  /* === PROJECT-SPECIFIC COLORS === */
+  /* Extend platform accent with hearing loss specific colors */
+  --hl-primary: var(--rp-accent);
+  --hl-secondary: #10b981;  /* Emerald green for medical theme */
+  --hl-accent: #3b82f6;     /* Blue for statistical elements */
+  --hl-warning: #f59e0b;    /* Amber for important notes */
+  --hl-success: #059669;    /* Green for positive outcomes */
+
+  /* Medical/scientific color palette */
+  --hl-medical-blue: #0ea5e9;
+  --hl-statistical-purple: #8b5cf6;
+  --hl-data-orange: #f97316;
+
+  /* === CARD SYSTEM === */
+  /* Build on platform card tokens */
+  --hl-card-bg: var(--rp-card-bg);
+  --hl-card-border: var(--rp-card-border);
+  --hl-card-shadow: var(--rp-card-shadow);
+  --hl-card-radius: var(--rp-border-radius-lg);
+
+  /* Interactive card states */
+  --hl-card-hover-bg: var(--rp-hover-bg);
+  --hl-card-active-bg: var(--rp-active-bg);
+  --hl-card-hover-shadow: 0 8px 25px color-mix(in srgb, var(--rp-bg) 50%, black 50%);
+
+  /* === SECTION SPACING === */
+  /* Consistent spacing for report sections */
+  --hl-section-padding: var(--rp-space-16);
+  --hl-section-gap: var(--rp-space-6);
+  --hl-content-max-width: 1200px;
+
+  /* === TYPOGRAPHY OVERRIDES === */
+  /* Project-specific text colors */
+  --hl-title-color: var(--rp-text-primary);
+  --hl-subtitle-color: var(--rp-text-secondary);
+  --hl-body-color: var(--rp-text-secondary);
+  --hl-muted-color: var(--rp-text-muted);
+
+  /* === ANIMATION SETTINGS === */
+  --hl-animation-fast: var(--rp-transition-fast);
+  --hl-animation-normal: var(--rp-transition-normal);
+  --hl-animation-slow: var(--rp-transition-slow);
+
+  /* Card flip animation duration */
+  --hl-flip-duration: 600ms;
+
+  /* === CHART COLORS === */
+  /* D3 compatible color scheme for visualizations */
+  --hl-chart-primary: var(--hl-primary);
+  --hl-chart-secondary: var(--hl-secondary);
+  --hl-chart-axis: var(--rp-text-muted);
+  --hl-chart-grid: color-mix(in srgb, var(--rp-text-muted) 20%, transparent);
+
+  /* Statistical significance colors */
+  --hl-significant: var(--hl-success);
+  --hl-non-significant: var(--rp-text-muted);
+  --hl-marginal: var(--hl-warning);
+}

@@ -1,0 +1,120 @@
+/* Reports Platform - Scoped CSS Reset */
+/* Only applies within .rp-root to avoid global conflicts */
+
+.rp-root {
+  /* Box model normalization */
+  box-sizing: border-box;
+}
+
+.rp-root *,
+.rp-root *::before,
+.rp-root *::after {
+  box-sizing: inherit;
+}
+
+/* Reset margins and padding for common elements within reports */
+.rp-root h1,
+.rp-root h2,
+.rp-root h3,
+.rp-root h4,
+.rp-root h5,
+.rp-root h6,
+.rp-root p,
+.rp-root blockquote,
+.rp-root pre,
+.rp-root dl,
+.rp-root dd,
+.rp-root ol,
+.rp-root ul,
+.rp-root figure,
+.rp-root hr,
+.rp-root fieldset,
+.rp-root legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles */
+.rp-root ol,
+.rp-root ul {
+  list-style: none;
+}
+
+/* Remove default button styles */
+.rp-root button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Remove default link styles */
+.rp-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Table reset */
+.rp-root table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Form element reset */
+.rp-root input,
+.rp-root button,
+.rp-root textarea,
+.rp-root select {
+  font: inherit;
+}
+
+/* Media reset */
+.rp-root img,
+.rp-root picture,
+.rp-root video,
+.rp-root canvas,
+.rp-root svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+.rp-root input,
+.rp-root button,
+.rp-root textarea,
+.rp-root select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+.rp-root p,
+.rp-root h1,
+.rp-root h2,
+.rp-root h3,
+.rp-root h4,
+.rp-root h5,
+.rp-root h6 {
+  overflow-wrap: break-word;
+}
+
+/* Improve media defaults */
+.rp-root img,
+.rp-root picture,
+.rp-root video,
+.rp-root canvas,
+.rp-root svg {
+  height: auto;
+}
+
+/* Remove default focus outline and add custom one */
+.rp-root *:focus {
+  outline: 2px solid var(--rp-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure proper stacking context */
+.rp-root {
+  isolation: isolate;
+}

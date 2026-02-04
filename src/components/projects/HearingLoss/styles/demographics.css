@@ -1,0 +1,310 @@
+/* NEW Demographics Section - Clean styling following established patterns */
+
+.new-demographics-section {
+  background: transparent;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+/* Header styling with explicit values */
+.new-demo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.new-demo-header h2 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  background: linear-gradient(135deg, #ffffff, #3b82f6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.new-demo-subtitle {
+  font-size: 1.125rem !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  margin-bottom: 2rem !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* KEY FINDING - Now handled by KeyFinding component */
+
+/* Donut Charts Box */
+.new-demo-donut-charts-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem 2.5rem 0 2.5rem;
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.new-demo-box-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #1f2937, #3b82f6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.new-demo-box-description {
+  color: var(--hl-body-color);
+  font-size: var(--rp-text-base);
+  line-height: var(--rp-leading-relaxed);
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+  opacity: 0.9;
+}
+
+body.dark-theme .new-demo-box-description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.new-demo-subsection-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin: 3rem 0 1.5rem 0 !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #10b981, #06b6d4) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.dark-theme .new-demo-subsection-title {
+  background: linear-gradient(135deg, #34d399, #22d3ee) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.new-demo-footnote {
+  font-size: 0.875rem;
+  color: var(--hl-body-color);
+  opacity: 0.7;
+  font-style: italic;
+  text-align: left;
+  margin: 3rem -2.5rem 0 -2.5rem;
+  padding: 1.5rem 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 0 0 20px 20px;
+}
+
+body.dark-theme .new-demo-footnote {
+  color: rgba(255, 255, 255, 0.7);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.new-demo-donut-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Dark theme adjustments for donut charts box */
+body.dark-theme .new-demo-donut-charts-box {
+  background: var(--hl-card-bg);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+}
+
+body.dark-theme .new-demo-box-title {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff, #3b82f6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Responsive design for donut charts box */
+@media (max-width: 768px) {
+  .new-demo-donut-charts-box {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .new-demo-donut-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .new-demo-box-title {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Bar Charts Box - Same styling as donut charts box */
+.new-demo-bar-charts-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.new-demo-bar-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Dark theme adjustments for bar charts box */
+body.dark-theme .new-demo-bar-charts-box {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive design for bar charts box */
+@media (max-width: 768px) {
+  .new-demo-bar-charts-box {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .new-demo-bar-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.new-demo-subsection {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Section header for Clinical Characteristics */
+.new-demo-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.new-demo-section-title {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #ffffff, #3b82f6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.new-demo-section-subtitle {
+  font-size: 1rem !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  margin: 0 auto !important;
+  max-width: 500px !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+}
+
+.new-demo-subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  background: linear-gradient(135deg, var(--text-color), var(--accent-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.new-demo-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.new-demo-chart-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure DonutChart components use proper styling */
+.new-demo-donut-chart {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Ensure BarChart components use proper styling */
+.new-demo-bar-chart {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .new-demo-chart-container {
+  background: var(--hl-card-bg);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+}
+
+body.dark-theme .new-demo-subsection-title {
+  color: var(--text-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .new-demo-charts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .new-demo-chart-container {
+    padding: var(--spacing-md);
+  }
+
+  .new-demo-subsection-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-demographics-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .new-demo-subsection {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+}

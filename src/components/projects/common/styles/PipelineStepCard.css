@@ -1,0 +1,109 @@
+/* PipelineStepCard - Generic flip card styles for pipeline steps */
+
+.pipeline-step {
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.pipeline-card-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Taller cards for model validation section */
+.model-validation-unified .pipeline-card-inner {
+  height: 280px;
+}
+
+.pipeline-step.flipped .pipeline-card-inner {
+  transform: rotateY(180deg);
+}
+
+.pipeline-card-front,
+.pipeline-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pipeline-card-back {
+  transform: rotateY(180deg);
+  text-align: left;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.step-content h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.tech-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tech-term {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pipeline-card-inner {
+    height: 180px;
+  }
+
+  /* Keep model validation cards tall even on mobile */
+  .model-validation-unified .pipeline-card-inner {
+    height: 280px;
+  }
+
+  .pipeline-card-front,
+  .pipeline-card-back {
+    padding: 1rem;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .step-content h4 {
+    font-size: 1.1rem;
+  }
+}

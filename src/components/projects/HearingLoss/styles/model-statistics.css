@@ -1,0 +1,686 @@
+/* Model Statistics Section - Final section styling */
+
+.model-statistics-section {
+  background: transparent;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+/* Model Comparison Table */
+.model-comparison-table {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.comparison-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.comparison-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.comparison-table-row:hover {
+  background: rgba(6, 182, 212, 0.02);
+}
+
+.comparison-table-row.final-model {
+  background: linear-gradient(90deg,
+    rgba(6, 182, 212, 0.08),
+    rgba(6, 182, 212, 0.05),
+    rgba(6, 182, 212, 0.05),
+    rgba(6, 182, 212, 0.05),
+    rgba(6, 182, 212, 0.08)
+  );
+  font-weight: 600;
+  border: 2px solid rgba(6, 182, 212, 0.2);
+}
+
+.table-header-cell,
+.table-cell {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.table-header-cell {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+  background: rgba(6, 182, 212, 0.05);
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.metric-hint {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.table-header-cell:last-child {
+  border-right: none;
+}
+
+.table-cell.model-name {
+  font-weight: 500;
+  color: #374151;
+  border-right: 1px solid #f1f5f9;
+  background: rgba(248, 250, 252, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.model-step {
+  background: #06b6d4;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.table-cell.metric {
+  color: #059669;
+  font-weight: 600;
+  border-right: 1px solid #f1f5f9;
+  justify-content: center;
+}
+
+.table-cell.interpretation {
+  color: #4b5563;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Model Improvement Summary */
+.model-improvement-summary {
+  background: rgba(6, 182, 212, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid #06b6d4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.improvement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.improvement-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.improvement-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.improvement-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #059669;
+  line-height: 1.4;
+}
+
+/* Model Validation Unified Box */
+.model-validation-unified {
+  margin: 2rem auto 1rem auto;
+  max-width: var(--hl-content-max-width);
+  transition: none !important;
+}
+
+/* Validation Results Transition Text */
+.validation-results-transition {
+  text-align: center;
+  color: var(--hl-text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem auto 1.5rem auto;
+  max-width: var(--hl-content-max-width);
+}
+
+.model-validation-unified:hover {
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.dark-theme .model-validation-unified:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.validation-intro-text {
+  text-align: center;
+  color: var(--hl-text-color);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.validation-intro-text strong {
+  color: var(--hl-primary);
+  font-weight: 600;
+}
+
+/* Taller cards for model metrics - USE HL-SPECIFIC CLASSES */
+.model-validation-unified .hl-pipeline-steps .hl-pipeline-step {
+  margin-bottom: 0;
+}
+
+.model-validation-unified .hl-pipeline-steps .hl-pipeline-step .hl-pipeline-card-inner {
+  height: 280px !important;
+  min-height: 280px !important;
+}
+
+.model-validation-unified .hl-pipeline-steps .hl-pipeline-step .hl-pipeline-card-front,
+.model-validation-unified .hl-pipeline-steps .hl-pipeline-step .hl-pipeline-card-back {
+  height: 100% !important;
+}
+
+/* Model Metrics Explanation */
+.model-metrics-explanation {
+  margin: 3rem auto;
+  max-width: var(--hl-content-max-width);
+}
+
+.model-metrics-explanation .hl-h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--hl-title-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.metrics-intro-text {
+  text-align: center;
+  color: var(--hl-text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.metric-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Model Metrics Container */
+.model-metrics-container {
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+}
+
+.model-metrics-container .metrics-intro-text {
+  text-align: center;
+  color: var(--hl-text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Diagnostics Container */
+.diagnostics-container {
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+}
+
+/* Diagnostic Tests Grid */
+.diagnostic-tests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.diagnostic-test-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.9) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.diagnostic-test-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.diagnostic-test-card.calibration {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.diagnostic-test-card.validation {
+  border-left: 4px solid #3b82f6;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.diagnostic-icon {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.1);
+  flex-shrink: 0;
+}
+
+.diagnostic-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+}
+
+.diagnostic-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.diagnostic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.diagnostic-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.diagnostic-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: right;
+}
+
+.diagnostic-interpretation {
+  background: rgba(6, 182, 212, 0.05);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.diagnostic-interpretation strong {
+  color: #06b6d4;
+}
+
+/* Feature Importance */
+.importance-chart-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.importance-bar-chart {
+  width: 100%;
+}
+
+.gdm-ranking-highlight {
+  background: rgba(239, 68, 68, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #ef4444;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.gdm-ranking-highlight strong {
+  color: #ef4444;
+}
+
+/* Clinical Interpretation Card */
+.clinical-interpretation-card {
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+}
+
+.interpretation-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.9) 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #06b6d4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.interpretation-section:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.interpretation-section:last-child {
+  margin-bottom: 0;
+}
+
+.interpretation-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--hl-title-color);
+  margin-bottom: 1rem;
+}
+
+.section-icon {
+  font-size: 1.3rem;
+}
+
+.interpretation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.interpretation-list li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--hl-text-color);
+  position: relative;
+}
+
+.interpretation-list li::before {
+  content: "•";
+  color: #06b6d4;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+/* Final Summary */
+.final-summary-box {
+  background: linear-gradient(135deg,
+    rgba(6, 182, 212, 0.1),
+    rgba(6, 182, 212, 0.05)
+  );
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(6, 182, 212, 0.2);
+}
+
+.final-summary-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.summary-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.summary-text h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #1f2937, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary-text p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+}
+
+.summary-text strong {
+  color: #06b6d4;
+  font-weight: 700;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .final-summary-box {
+  background: linear-gradient(135deg,
+    rgba(6, 182, 212, 0.15),
+    rgba(6, 182, 212, 0.08)
+  );
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+body.dark-theme .model-comparison-table {
+  background: var(--rp-bg-elevated);
+  border-color: var(--hl-card-border);
+}
+
+body.dark-theme .diagnostic-test-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.7) 100%);
+  border-color: var(--hl-card-border);
+}
+
+body.dark-theme .diagnostic-test-card.calibration {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-left-color: #10b981;
+}
+
+body.dark-theme .diagnostic-test-card.validation {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-left-color: #3b82f6;
+}
+
+body.dark-theme .comparison-table-header {
+  background: var(--rp-bg-elevated);
+  border-bottom-color: var(--hl-card-border);
+}
+
+body.dark-theme .table-header-cell {
+  color: #f1f5f9;
+  background: transparent;
+}
+
+body.dark-theme .metric-hint {
+  color: #94a3b8;
+}
+
+body.dark-theme .table-cell.model-name {
+  color: #f1f5f9;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-theme .diagnostic-content h4,
+body.dark-theme .diagnostic-value {
+  color: #f1f5f9;
+}
+
+body.dark-theme .summary-text h3 {
+  background: linear-gradient(135deg, #f1f5f9, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .improvement-value {
+  color: #10b981;
+}
+
+body.dark-theme .table-cell.interpretation,
+body.dark-theme .diagnostic-label,
+body.dark-theme .improvement-label,
+body.dark-theme .summary-text p {
+  color: #94a3b8;
+}
+
+body.dark-theme .interpretation-section {
+  background: var(--rp-bg-elevated);
+  border-left-color: #06b6d4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .interpretation-list li {
+  color: #cbd5e1;
+}
+
+body.dark-theme .interpretation-section-title {
+  color: #f1f5f9;
+}
+
+body.dark-theme .model-improvement-summary {
+  background: rgba(6, 182, 212, 0.1);
+}
+
+body.dark-theme .improvement-item {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-theme .improvement-item:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+body.dark-theme .diagnostic-interpretation {
+  background: rgba(6, 182, 212, 0.1);
+  color: #cbd5e1;
+}
+
+body.dark-theme .validation-intro-text {
+  color: #cbd5e1;
+}
+
+body.dark-theme .validation-intro-text strong {
+  color: var(--hl-primary);
+}
+
+body.dark-theme .model-metrics-explanation .hl-h3 {
+  color: #f1f5f9;
+}
+
+body.dark-theme .metrics-intro-text {
+  color: #cbd5e1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .final-summary-box {
+    padding: 2rem;
+  }
+
+  .metric-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Override PipelineStepCard default responsive height for model metrics */
+  .model-validation-unified .hl-pipeline-steps .hl-pipeline-step .hl-pipeline-card-inner {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .metric-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Maintain tall cards on mobile too */
+  .model-validation-unified .hl-pipeline-steps .hl-pipeline-step .hl-pipeline-card-inner {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+
+  .diagnostic-tests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table-header,
+  .comparison-table-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .table-header-cell,
+  .table-cell {
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    justify-content: space-between;
+  }
+
+  .model-improvement-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .final-summary-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .final-summary-box {
+    padding: 1.5rem;
+  }
+
+  .diagnostic-test-card {
+    padding: 1rem;
+  }
+
+  .summary-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .summary-text p {
+    font-size: 1rem;
+  }
+}

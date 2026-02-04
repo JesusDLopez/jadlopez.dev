@@ -1,0 +1,115 @@
+{
+  "forest_data": [
+    {
+      "variable": "Gestational Diabetes",
+      "category": "primary_predictor",
+      "odds_ratio": 1.093,
+      "ci_lower": 0.904,
+      "ci_upper": 1.312,
+      "p_value": 0.348,
+      "reference": false,
+      "sample_size": 38789
+    },
+    {
+      "variable": "Craniofacial Abnormalities",
+      "category": "strong_risk",
+      "odds_ratio": 36.603,
+      "ci_lower": 26.67,
+      "ci_upper": 49.544,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 472
+    },
+    {
+      "variable": "Family History",
+      "category": "strong_risk",
+      "odds_ratio": 14.296,
+      "ci_lower": 11.612,
+      "ci_upper": 17.437,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 2982
+    },
+    {
+      "variable": "Syndromes Associated with HL",
+      "category": "strong_risk",
+      "odds_ratio": 13.834,
+      "ci_lower": 8.799,
+      "ci_upper": 21.254,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 312
+    },
+    {
+      "variable": "Perinatal Infection",
+      "category": "strong_risk",
+      "odds_ratio": 12.908,
+      "ci_lower": 7.19,
+      "ci_upper": 21.716,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 269
+    },
+    {
+      "variable": "Severe Asphyxia",
+      "category": "strong_risk",
+      "odds_ratio": 8.426,
+      "ci_lower": 5.109,
+      "ci_upper": 13.269,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 496
+    },
+    {
+      "variable": "Nursing Admission >5 days",
+      "category": "moderate_risk",
+      "odds_ratio": 1.996,
+      "ci_lower": 1.464,
+      "ci_upper": 2.676,
+      "p_value": 0.001,
+      "reference": false,
+      "sample_size": 4359
+    },
+    {
+      "variable": "Hyperbilirubinemia",
+      "category": "non_significant",
+      "odds_ratio": 2.341,
+      "ci_lower": 0.167,
+      "ci_upper": 11.094,
+      "p_value": 0.398,
+      "reference": false,
+      "sample_size": 90
+    },
+    {
+      "variable": "Hypertension",
+      "category": "non_significant",
+      "odds_ratio": 3.461,
+      "ci_lower": 0.565,
+      "ci_upper": 11.1,
+      "p_value": 0.085,
+      "reference": false,
+      "sample_size": 194
+    },
+    {
+      "variable": "Advanced Maternal Age",
+      "category": "non_significant",
+      "odds_ratio": 0.913,
+      "ci_lower": 0.782,
+      "ci_upper": 1.06,
+      "p_value": 0.238,
+      "reference": false,
+      "sample_size": 74729
+    }
+  ],
+  "model_summary": {
+    "model_name": "Multivariable Logistic Regression",
+    "outcome": "Permanent Congenital Hearing Loss",
+    "sample_size": 328751,
+    "cases": 1049,
+    "aic": 8742.3,
+    "bic": 8821.7,
+    "pseudo_r_squared": 0.024,
+    "c_statistic": 0.582,
+    "interpretation": "Adjusted odds ratios accounting for confounding factors. Variables with p<0.05 are considered statistically significant."
+  }
+}

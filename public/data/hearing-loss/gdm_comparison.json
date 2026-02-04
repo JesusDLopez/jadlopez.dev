@@ -1,0 +1,52 @@
+{
+  "comparison_data": [
+    {
+      "gdm_status": "No Diabetes",
+      "hearing_loss_rate": 0.0032,
+      "total_cases": 289962,
+      "hearing_loss_cases": 921,
+      "confidence_interval": {
+        "lower": 0.0030,
+        "upper": 0.0034
+      },
+      "p_value": 0.348,
+      "odds_ratio": 1.0
+    },
+    {
+      "gdm_status": "Gestational Diabetes",
+      "hearing_loss_rate": 0.0033,
+      "total_cases": 38789,
+      "hearing_loss_cases": 128,
+      "confidence_interval": {
+        "lower": 0.0027,
+        "upper": 0.0039
+      },
+      "p_value": 0.348,
+      "odds_ratio": 1.093
+    }
+  ],
+  "statistical_tests": [
+    {
+      "test_name": "Multivariable Logistic Regression",
+      "test_statistic": null,
+      "p_value": 0.348,
+      "interpretation": "After adjusting for confounding factors, there is NO statistically significant association between gestational diabetes and hearing loss (p = 0.348)."
+    },
+    {
+      "test_name": "Chi-square",
+      "test_statistic": 0.89,
+      "p_value": 0.345,
+      "interpretation": "Chi-square test confirms no significant association in univariate analysis (p = 0.345)."
+    }
+  ],
+  "effect_size": {
+    "cohens_h": 0.001,
+    "interpretation": "Negligible effect size, indicating no meaningful association."
+  },
+  "clinical_context": {
+    "baseline_risk": "Hearing loss affects approximately 3.2 per 1000 births in the general population.",
+    "absolute_risk_increase": "0.0001 percentage points (0.001 per 1000 births)",
+    "number_needed_to_harm": "No increased risk - confidence interval includes null",
+    "clinical_significance": "No clinical significance. Gestational diabetes does not independently increase hearing loss risk."
+  }
+}

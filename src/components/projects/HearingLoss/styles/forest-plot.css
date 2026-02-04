@@ -1,0 +1,505 @@
+/* Forest Plot Section - Multivariable analysis styling */
+
+.forest-plot-section {
+  background: transparent;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+/* Model Summary Box */
+.forest-model-summary-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.forest-box-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #1f2937, #8b5cf6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.model-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.model-summary-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.model-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.summary-icon {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.1);
+  flex-shrink: 0;
+}
+
+.summary-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.model-interpretation {
+  background: rgba(139, 92, 246, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #8b5cf6;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Forest Plot Box */
+.forest-plot-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.forest-plot-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Forest Plot Categories - Using StatCards */
+.forest-categories-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--rp-space-6);
+  margin-top: var(--rp-space-8);
+}
+
+/* Category Info Panel */
+.forest-categories-overview + .category-info-panel {
+  background: var(--hl-card-bg);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  padding: var(--rp-space-6);
+  margin-top: var(--rp-space-6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forest-categories-overview + .category-info-panel h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--hl-title-color);
+  margin: 0 0 var(--rp-space-3) 0;
+}
+
+.forest-categories-overview + .category-info-panel .category-info-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--hl-text-secondary);
+  margin-bottom: var(--rp-space-4);
+  font-style: italic;
+}
+
+.forest-categories-overview + .category-info-panel .category-info-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--rp-space-3);
+}
+
+.forest-categories-overview + .category-info-panel .category-info-item {
+  background: rgba(59, 130, 246, 0.05);
+  border-left: 3px solid var(--hl-primary);
+  padding: var(--rp-space-3);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--hl-text-color);
+  transition: all 0.2s ease;
+}
+
+.forest-categories-overview + .category-info-panel .category-info-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(4px);
+}
+
+/* Forest Plot Stat Cards - Color Variants */
+.forest-categories-overview .hl-stat-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hl-stat-card.forest-primary {
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.hl-stat-card.forest-primary .hl-stat-number {
+  color: #3b82f6 !important;
+}
+
+.hl-stat-card.forest-primary:hover {
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.25), var(--hl-card-shadow) !important;
+}
+
+.hl-stat-card.forest-strong {
+  border-color: rgba(220, 38, 38, 0.4) !important;
+  border-left: 4px solid #dc2626 !important;
+}
+
+.hl-stat-card.forest-strong .hl-stat-number {
+  color: #dc2626 !important;
+}
+
+.hl-stat-card.forest-strong:hover {
+  border-color: rgba(220, 38, 38, 0.6) !important;
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.25), var(--hl-card-shadow) !important;
+}
+
+.hl-stat-card.forest-moderate {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  border-left: 4px solid #f59e0b !important;
+}
+
+.hl-stat-card.forest-moderate .hl-stat-number {
+  color: #f59e0b !important;
+}
+
+.hl-stat-card.forest-moderate:hover {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  box-shadow: 0 12px 35px rgba(245, 158, 11, 0.25), var(--hl-card-shadow) !important;
+}
+
+.hl-stat-card.forest-non-sig {
+  border-color: rgba(107, 114, 128, 0.4) !important;
+  border-left: 4px solid #6b7280 !important;
+}
+
+.hl-stat-card.forest-non-sig .hl-stat-number {
+  color: #6b7280 !important;
+}
+
+.hl-stat-card.forest-non-sig:hover {
+  border-color: rgba(107, 114, 128, 0.6) !important;
+  box-shadow: 0 12px 35px rgba(107, 114, 128, 0.25), var(--hl-card-shadow) !important;
+}
+
+/* Old legend styles (keep for backwards compatibility if needed) */
+.forest-legend {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.forest-legend h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-color.primary {
+  background: #3b82f6;
+}
+
+.legend-color.strong {
+  background: #dc2626;
+}
+
+.legend-color.moderate {
+  background: #f59e0b;
+}
+
+.legend-color.non-sig {
+  background: #6b7280;
+}
+
+.legend-item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Analysis Summary */
+.forest-analysis-summary {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: var(--hl-content-max-width);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.analysis-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.analysis-summary-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.analysis-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-summary-card.primary-result {
+  border-left: 4px solid #3b82f6;
+}
+
+.analysis-summary-card.strong-factors {
+  border-left: 4px solid #dc2626;
+}
+
+.analysis-summary-card.clinical-impact {
+  border-left: 4px solid #10b981;
+}
+
+.analysis-icon {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.1);
+  flex-shrink: 0;
+}
+
+.analysis-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+}
+
+.analysis-content p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .forest-model-summary-box,
+body.dark-theme .forest-plot-box,
+body.dark-theme .forest-analysis-summary {
+  background: var(--hl-card-bg);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+}
+
+body.dark-theme .forest-box-title {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff, #8b5cf6) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.dark-theme .model-summary-card,
+body.dark-theme .analysis-summary-card,
+body.dark-theme .legend-item,
+body.dark-theme .legend-stat-card {
+  background: var(--rp-bg-elevated);
+  border-color: var(--hl-card-border);
+}
+
+body.dark-theme .summary-content h4,
+body.dark-theme .analysis-content h4,
+body.dark-theme .forest-legend h4,
+body.dark-theme .stat-value,
+body.dark-theme .legend-card-label {
+  color: #f1f5f9;
+}
+
+body.dark-theme .stat-label,
+body.dark-theme .legend-item span,
+body.dark-theme .analysis-content p,
+body.dark-theme .legend-card-desc {
+  color: #94a3b8;
+}
+
+body.dark-theme .model-interpretation {
+  background: rgba(139, 92, 246, 0.1);
+  color: #cbd5e1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .forest-model-summary-box,
+  .forest-plot-box,
+  .forest-analysis-summary {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .forest-box-title {
+    font-size: 1.25rem !important;
+  }
+
+  .model-summary-grid,
+  .analysis-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .legend-items {
+    grid-template-columns: 1fr;
+  }
+
+  .forest-legend-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .forest-categories-overview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--rp-space-4);
+  }
+
+  .forest-plot-container {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .forest-model-summary-box,
+  .forest-plot-box,
+  .forest-analysis-summary {
+    padding: 1rem;
+  }
+
+  .model-summary-card,
+  .analysis-summary-card {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .forest-legend-cards {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .legend-stat-card {
+    padding: 1rem;
+  }
+
+  .forest-categories-overview {
+    grid-template-columns: 1fr;
+    gap: var(--rp-space-3);
+  }
+}

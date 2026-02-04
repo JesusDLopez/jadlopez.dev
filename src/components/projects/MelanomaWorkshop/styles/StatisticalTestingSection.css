@@ -1,0 +1,227 @@
+/* ============================================
+   StatisticalTestingSection - Statistical Analysis
+   ============================================ */
+
+.mw-statistical-section {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.mw-statistical-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Interpretation Guide */
+.mw-interpretation-guide {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mw-interpretation-guide h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mw-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mw-guide-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+}
+
+.mw-guide-card h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.mw-guide-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mw-guide-card li {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.mw-guide-card strong {
+  color: #1f2937;
+  font-family: 'Courier New', monospace;
+}
+
+/* Tests Table */
+.mw-tests-table-container {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.mw-tests-table-container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mw-tests-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mw-tests-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mw-tests-table thead th {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mw-tests-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.mw-tests-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.mw-tests-table tbody tr.mw-significant-row {
+  background-color: #f0fdf4;
+}
+
+.mw-tests-table tbody tr.mw-significant-row:hover {
+  background-color: #dcfce7;
+}
+
+.mw-tests-table tbody td {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.mw-question-cell {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.mw-significance-cell,
+.mw-effect-size-cell {
+  text-align: center;
+}
+
+/* Badges */
+.mw-significance-badge,
+.mw-effect-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mw-significance-badge.mw-sig {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.mw-significance-badge.mw-ns {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.mw-effect-badge.mw-effect-large {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #3b82f6;
+}
+
+.mw-effect-badge.mw-effect-medium {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.mw-effect-badge.mw-effect-small {
+  background: #fce7f3;
+  color: #831843;
+  border: 1px solid #ec4899;
+}
+
+.mw-effect-badge.mw-effect-negligible {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+/* Statistical Findings */
+.mw-statistical-findings {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px solid #667eea;
+}
+
+.mw-statistical-findings h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mw-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mw-tests-table-container {
+    padding: 1rem;
+  }
+
+  .mw-tests-table {
+    font-size: 0.75rem;
+  }
+
+  .mw-tests-table thead th,
+  .mw-tests-table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+}

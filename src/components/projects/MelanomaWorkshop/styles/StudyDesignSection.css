@@ -1,0 +1,241 @@
+/* ============================================
+   StudyDesignSection - Study Design & Methodology
+   ============================================ */
+
+.mw-study-design-section {
+  padding: 5rem 2rem;
+  background: #f9fafb;
+}
+
+.mw-study-design-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mw-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Design Card */
+.mw-design-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.mw-design-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.mw-design-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Flow Diagram */
+.mw-flow-diagram {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.mw-flow-diagram h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mw-flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mw-flow-step {
+  flex: 1;
+  min-width: 180px;
+}
+
+.mw-flow-box {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.mw-flow-box.mw-flow-pre {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.mw-flow-box.mw-flow-paired {
+  border-color: #667eea;
+  background: #eef2ff;
+}
+
+.mw-flow-box.mw-flow-post {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.mw-flow-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.mw-flow-count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.mw-flow-arrow {
+  font-size: 2rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+/* Data Strategy */
+.mw-data-strategy {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.mw-data-strategy h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mw-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mw-strategy-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+}
+
+.mw-strategy-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.75rem;
+}
+
+.mw-strategy-sample {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.mw-strategy-sample strong {
+  color: #667eea;
+}
+
+.mw-strategy-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.mw-strategy-list li {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Survey Structure */
+.mw-survey-structure {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mw-survey-structure h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mw-survey-domains {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.mw-domain-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.mw-domain-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.mw-domain-card p {
+  font-size: 0.875rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mw-section-title {
+    font-size: 2rem;
+  }
+
+  .mw-flow-chart {
+    flex-direction: column;
+  }
+
+  .mw-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .mw-strategy-grid,
+  .mw-survey-domains {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,58 @@
+/* TransitionCard - Reusable transition card styling */
+
+.hl-methodology-transition {
+  margin: var(--rp-space-16) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hl-transition-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: var(--rp-border-width) solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--hl-card-radius);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+  padding: var(--rp-space-8);
+  max-width: 600px;
+  text-align: center;
+  transition: transform var(--hl-animation-normal), box-shadow var(--hl-animation-normal);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hl-transition-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Dark mode - gradient background */
+body.dark-theme .hl-transition-card {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--hl-primary) 8%, var(--hl-card-bg)),
+    color-mix(in srgb, var(--hl-secondary) 8%, var(--hl-card-bg))
+  );
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+body.dark-theme .hl-transition-card:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+}
+
+.hl-transition-icon {
+  font-size: 3rem;
+  margin-bottom: var(--rp-space-4);
+  filter: drop-shadow(0 4px 8px color-mix(in srgb, var(--hl-primary) 30%, transparent));
+}
+
+.hl-transition-content h4 {
+  color: var(--hl-title-color);
+  font-size: var(--rp-text-xl);
+  font-weight: var(--rp-font-semibold);
+  margin-bottom: var(--rp-space-4);
+}
+
+.hl-transition-content p {
+  color: var(--hl-body-color);
+  line-height: var(--rp-leading-relaxed);
+  margin: 0;
+}

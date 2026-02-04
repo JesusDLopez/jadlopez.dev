@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "analysis_timestamp": "2025-10-13 09:42:29",
+    "n_paired_participants": 47,
+    "n_pre_all": 51,
+    "n_post_all": 52,
+    "data_completeness": 99.1,
+    "total_execution_time_seconds": 2.7,
+    "workshop_composition": "Workshop 1 (2023) + Perth (July 2024)"
+  },
+  "primary_outcomes": {
+    "all_skills_significant": true,
+    "n_skills_improved": 12,
+    "mean_skill_improvement": 1.3407,
+    "mean_cohens_d": 1.2263,
+    "skills_improvement_range": [0.6889, 1.7333]
+  },
+  "knowledge_outcomes": {
+    "moratorium_awareness_pre": 25,
+    "moratorium_awareness_post": 95.5,
+    "moratorium_change": 70.5,
+    "relevance_pre": {},
+    "relevance_post": {},
+    "relevance_change": {}
+  },
+  "satisfaction_metrics": {
+    "overall_satisfaction": 9.0204,
+    "pct_highly_satisfied": 85.7143,
+    "confidence_to_offer": 7.2885,
+    "workplace_support": 7.2917,
+    "satisfaction_skill_correlation": 0.504,
+    "satisfaction_skill_p_value": 0.0007
+  },
+  "implementation_barriers": {
+    "top_barrier": "Time constraints",
+    "top_barrier_pct": 57.1,
+    "second_barrier": "Cost/Funding",
+    "second_barrier_pct": 26.2,
+    "genetic_counselor_support_pct": 79.4,
+    "barriers_interpretation": "95% systemic, 5% educational"
+  },
+  "phase_execution_times": {
+    "Phase_0": 0.7184,
+    "Phase_1a": 0.1331,
+    "Phase_1b": 0.2398,
+    "Phase_2": 0.0291,
+    "Phase_3": 0.5049,
+    "Phase_4": 0.7447,
+    "Phase_5": 0.3312
+  },
+  "generated_outputs": {
+    "json_exports": 6,
+    "visualizations": ["Q2_7_Moratorium_Awareness.png", "Skill_Correlation_Matrix.png", "Satisfaction_vs_Skill_Gains.png", "Data_Quality_Heatmap.png", "Q10_word_frequency.png", "Q11_word_frequency.png"],
+    "documentation_files": ["N35_vs_N47_Comparison.md", "Qualitative_Methodology_Notes.md", "Qualitative_Interpretive_Synthesis.md", "Master_Executive_Summary.md"]
+  }
+}

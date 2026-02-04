@@ -1,0 +1,638 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "n_participants": 52,
+    "note": "Post-workshop qualitative responses - thematic analysis"
+  },
+  "q10_barriers": {
+    "n_responses": 42,
+    "responses": [
+      {
+        "Participant ID": "0004",
+        "10": "Time. Affordability for patients."
+      },
+      {
+        "Participant ID": "0015",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0019",
+        "10": "Time in a busy clinic setting"
+      },
+      {
+        "Participant ID": "0021",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0022",
+        "10": "Guidelines of institution"
+      },
+      {
+        "Participant ID": "0025",
+        "10": "Cost"
+      },
+      {
+        "Participant ID": "0026",
+        "10": "Time involved. Expertise involved."
+      },
+      {
+        "Participant ID": "0028",
+        "10": "Cost"
+      },
+      {
+        "Participant ID": "0029",
+        "10": "Cost"
+      },
+      {
+        "Participant ID": "0031",
+        "10": "I work in NZ. Not quite sure if this can be done in the same way."
+      },
+      {
+        "Participant ID": "0034",
+        "10": "Timing. Price."
+      },
+      {
+        "Participant ID": "0037",
+        "10": "Length of time theragnees in family history; pedigree taking."
+      },
+      {
+        "Participant ID": "0040",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0048",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0049",
+        "10": "I work in primary care setting - difficult with timing"
+      },
+      {
+        "Participant ID": "0050",
+        "10": "Time/ cost"
+      },
+      {
+        "Participant ID": "0051",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0053",
+        "10": "Time. Funding. Access"
+      },
+      {
+        "Participant ID": "0057",
+        "10": "Availability of testing services; funding (in public); lack of clinictime."
+      },
+      {
+        "Participant ID": "0058",
+        "10": "Time"
+      },
+      {
+        "Participant ID": "0060",
+        "10": "Clientele, specialty area, relevance, time."
+      },
+      {
+        "Participant ID": "0068",
+        "10": "No answer to clinic"
+      },
+      {
+        "Participant ID": "0069",
+        "10": "Not many patients concerned in my practice"
+      },
+      {
+        "Participant ID": "0070",
+        "10": "Time & Cost:like in rural area &  variable socioecon. Patient fear: have already discussed with at risk patients and they have declined."
+      },
+      {
+        "Participant ID": "0073",
+        "10": "Time, clinic structure, testing pathways."
+      },
+      {
+        "Participant ID": "0076",
+        "10": "Time Constraints"
+      },
+      {
+        "Participant ID": "0087",
+        "10": "Cost. Accesibility."
+      },
+      {
+        "Participant ID": "0088",
+        "10": "Time available"
+      },
+      {
+        "Participant ID": "0093",
+        "10": "Regional centre. Patient attitudes."
+      },
+      {
+        "Participant ID": "0094",
+        "10": "Cost to patient. Time in clinic."
+      },
+      {
+        "Participant ID": "0095",
+        "10": "?Cost, ?site"
+      },
+      {
+        "Participant ID": "0096",
+        "10": "Remembering when busy. Differences between willingness to test from various local hospital cancer genetic departments."
+      },
+      {
+        "Participant ID": "0098",
+        "10": "Time required to pre- and post-test counselling"
+      },
+      {
+        "Participant ID": "0102",
+        "10": "Education and continuing professional development to maintain up to date knowleddge and skins."
+      },
+      {
+        "Participant ID": "0103",
+        "10": "In Cambodia, the genetic testing facility is not available."
+      },
+      {
+        "Participant ID": "0104",
+        "10": "Local Services"
+      },
+      {
+        "Participant ID": "0105",
+        "10": "Not enough time"
+      },
+      {
+        "Participant ID": "0106",
+        "10": "Depends on where I practice & whether there is easy access for specialist referral"
+      },
+      {
+        "Participant ID": "0108",
+        "10": "CAN't UNDERSTAND HANDWRITING"
+      },
+      {
+        "Participant ID": "0109",
+        "10": "Consultation times too short. Could use Telederm."
+      },
+      {
+        "Participant ID": "0111",
+        "10": "CAN't UNDERSTAND HANDWRITING"
+      },
+      {
+        "Participant ID": "0113",
+        "10": "Time required to take pedigree pre-counselling. Ease of collection kits for saliva sample. Need further info related to practicalities of sending samples/kits."
+      }
+    ],
+    "themes": [
+      {
+        "Theme": "Time Constraints",
+        "Count": 24,
+        "Percentage": 57.1429
+      },
+      {
+        "Theme": "Cost/Funding Issues",
+        "Count": 11,
+        "Percentage": 26.1905
+      },
+      {
+        "Theme": "Patient Attitudes",
+        "Count": 7,
+        "Percentage": 16.6667
+      },
+      {
+        "Theme": "Regional/Access",
+        "Count": 4,
+        "Percentage": 9.5238
+      },
+      {
+        "Theme": "Expertise/Knowledge",
+        "Count": 2,
+        "Percentage": 4.7619
+      },
+      {
+        "Theme": "Institutional/Guidelines",
+        "Count": 1,
+        "Percentage": 2.381
+      }
+    ],
+    "word_frequency": [
+      {
+        "word": "time",
+        "n": 21
+      },
+      {
+        "word": "cost",
+        "n": 8
+      },
+      {
+        "word": "clinic",
+        "n": 4
+      },
+      {
+        "word": "patient",
+        "n": 3
+      },
+      {
+        "word": "patients",
+        "n": 3
+      },
+      {
+        "word": "access",
+        "n": 2
+      },
+      {
+        "word": "area",
+        "n": 2
+      },
+      {
+        "word": "available",
+        "n": 2
+      },
+      {
+        "word": "busy",
+        "n": 2
+      },
+      {
+        "word": "counselling",
+        "n": 2
+      },
+      {
+        "word": "funding",
+        "n": 2
+      },
+      {
+        "word": "handwriting",
+        "n": 2
+      },
+      {
+        "word": "involved",
+        "n": 2
+      },
+      {
+        "word": "kits",
+        "n": 2
+      },
+      {
+        "word": "local",
+        "n": 2
+      },
+      {
+        "word": "pedigree",
+        "n": 2
+      },
+      {
+        "word": "pre",
+        "n": 2
+      },
+      {
+        "word": "required",
+        "n": 2
+      },
+      {
+        "word": "services",
+        "n": 2
+      },
+      {
+        "word": "setting",
+        "n": 2
+      }
+    ]
+  },
+  "q11_facilitators": {
+    "n_responses": 30,
+    "responses": [
+      {
+        "Participant ID": "0015",
+        "11": "Public Hospital System Barreirs"
+      },
+      {
+        "Participant ID": "0019",
+        "11": "Educating RMOs on genetic testing to enable registrars/SMOs to offload this."
+      },
+      {
+        "Participant ID": "0021",
+        "11": "These training or these three hours?"
+      },
+      {
+        "Participant ID": "0022",
+        "11": "Guidelines"
+      },
+      {
+        "Participant ID": "0026",
+        "11": "Cost, clinic space, time."
+      },
+      {
+        "Participant ID": "0028",
+        "11": "request forus"
+      },
+      {
+        "Participant ID": "0034",
+        "11": "A person trained in delivering information about the tests."
+      },
+      {
+        "Participant ID": "0037",
+        "11": "Pre-printed guided pedigree shuts."
+      },
+      {
+        "Participant ID": "0040",
+        "11": "Genetic specialists/nurse available."
+      },
+      {
+        "Participant ID": "0048",
+        "11": "Collaboration with GC"
+      },
+      {
+        "Participant ID": "0049",
+        "11": "Packages/info that is easy to give to patients"
+      },
+      {
+        "Participant ID": "0050",
+        "11": "Powerpoint Slides. TED talks"
+      },
+      {
+        "Participant ID": "0058",
+        "11": "Booklets, genetic counsellor on site."
+      },
+      {
+        "Participant ID": "0070",
+        "11": "Aids such as flip books provided"
+      },
+      {
+        "Participant ID": "0073",
+        "11": "Hopefully better understanding of testing + referral pathways inc. genetic counselling services."
+      },
+      {
+        "Participant ID": "0075",
+        "11": "Our boss is the head of Melanoma and Skin Cancer at Peter Mac. Assoc Prof Chris McCormack."
+      },
+      {
+        "Participant ID": "0087",
+        "11": "?"
+      },
+      {
+        "Participant ID": "0088",
+        "11": "PT handouts"
+      },
+      {
+        "Participant ID": "0093",
+        "11": "Education. Improvement in pathology facilities."
+      },
+      {
+        "Participant ID": "0094",
+        "11": "Ease of ordering. Access to genetic counsellor."
+      },
+      {
+        "Participant ID": "0096",
+        "11": "We already have a protocol for CDKN2A baned on eviQ."
+      },
+      {
+        "Participant ID": "0098",
+        "11": "Nurse education"
+      },
+      {
+        "Participant ID": "0102",
+        "11": "Links from presentation"
+      },
+      {
+        "Participant ID": "0103",
+        "11": "We need to run a genetic testing in Cambodia or in Asian countries."
+      },
+      {
+        "Participant ID": "0104",
+        "11": "Nursing Staff/services within local area."
+      },
+      {
+        "Participant ID": "0106",
+        "11": "Education support to staff"
+      },
+      {
+        "Participant ID": "0108",
+        "11": "CAN't UNDERSTAND HANDWRITING"
+      },
+      {
+        "Participant ID": "0109",
+        "11": "Telederm. Saliva Kits."
+      },
+      {
+        "Participant ID": "0111",
+        "11": "CAN't UNDERSTAND HANDWRITING"
+      },
+      {
+        "Participant ID": "0113",
+        "11": "More information about where to send saliva samplers. Ability to order kits for testing."
+      }
+    ],
+    "themes": [
+      {
+        "Theme": "Access to Specialists",
+        "Count": 6,
+        "Percentage": 20
+      },
+      {
+        "Theme": "Collaboration/Support",
+        "Count": 5,
+        "Percentage": 16.6667
+      },
+      {
+        "Theme": "Education/Training",
+        "Count": 4,
+        "Percentage": 13.3333
+      },
+      {
+        "Theme": "Guidelines/Protocols",
+        "Count": 3,
+        "Percentage": 10
+      },
+      {
+        "Theme": "Resources/Tools",
+        "Count": 2,
+        "Percentage": 6.6667
+      },
+      {
+        "Theme": "Funding",
+        "Count": 1,
+        "Percentage": 3.3333
+      }
+    ],
+    "word_frequency": [
+      {
+        "word": "education",
+        "n": 3
+      },
+      {
+        "word": "about",
+        "n": 2
+      },
+      {
+        "word": "counsellor",
+        "n": 2
+      },
+      {
+        "word": "handwriting",
+        "n": 2
+      },
+      {
+        "word": "information",
+        "n": 2
+      },
+      {
+        "word": "kits",
+        "n": 2
+      },
+      {
+        "word": "nurse",
+        "n": 2
+      },
+      {
+        "word": "saliva",
+        "n": 2
+      },
+      {
+        "word": "services",
+        "n": 2
+      },
+      {
+        "word": "staff",
+        "n": 2
+      },
+      {
+        "word": "these",
+        "n": 2
+      },
+      {
+        "word": "understand",
+        "n": 2
+      }
+    ]
+  },
+  "q12_counselor": {
+    "responses": [
+      {
+        "Response": "Yes",
+        "Count": 27,
+        "Percentage": 79.4118
+      },
+      {
+        "Response": "No",
+        "Count": 7,
+        "Percentage": 20.5882
+      }
+    ],
+    "elaborations": [
+      {
+        "Participant ID": "0019",
+        "12.1": "would enable iscussions with ample time. Would likely be best in high risk skin cancer clinicians only/TBP studies."
+      },
+      {
+        "Participant ID": "0026",
+        "12.1": "Possibly more costly. Potentially out of clinic hour."
+      },
+      {
+        "Participant ID": "0049",
+        "12.1": "but not as feasible in primary care setting (GP)"
+      },
+      {
+        "Participant ID": "0051",
+        "12.1": "Time is the issue"
+      },
+      {
+        "Participant ID": "0053",
+        "12.1": "Unlikely to have funding"
+      },
+      {
+        "Participant ID": "0060",
+        "12.1": "with time"
+      },
+      {
+        "Participant ID": "0070",
+        "12.1": "Definitely would help if numbers high enough"
+      },
+      {
+        "Participant ID": "0093",
+        "12.1": "Improved access!"
+      },
+      {
+        "Participant ID": "0109",
+        "12.1": "In our group practice this would be invaluable"
+      },
+      {
+        "Participant ID": "0111",
+        "12.1": "CAN't UNDERSTAND HANDWRITING"
+      },
+      {
+        "Participant ID": "0113",
+        "12.1": "When necessary"
+      }
+    ]
+  },
+  "additional_thoughts": [
+    {
+      "Participant ID": "0015",
+      "Additional thoughts?": "Excellent Workshop"
+    },
+    {
+      "Participant ID": "0022",
+      "Additional thoughts?": "Thanks!"
+    },
+    {
+      "Participant ID": "0026",
+      "Additional thoughts?": "Would be interesting to gain insight into whether or nor the public is aware of the relevance of genomics in melanoma and availability of testing."
+    },
+    {
+      "Participant ID": "0031",
+      "Additional thoughts?": "This is a great survey."
+    },
+    {
+      "Participant ID": "0050",
+      "Additional thoughts?": "To me, Men area so good to find out what is happening"
+    },
+    {
+      "Participant ID": "0069",
+      "Additional thoughts?": "pedigree-taking role play a bit too long"
+    },
+    {
+      "Participant ID": "0075",
+      "Additional thoughts?": "Answering from a nurses perspective."
+    },
+    {
+      "Participant ID": "0096",
+      "Additional thoughts?": "Could be faster and more focussed on information relevant to experienced clinicians. We all spend our lives explaining complex topics to patients."
+    },
+    {
+      "Participant ID": "0102",
+      "Additional thoughts?": "Thank you for your presentation"
+    },
+    {
+      "Participant ID": "0111",
+      "Additional thoughts?": "CAN't UNDERSTAND HANDWRITING"
+    },
+    {
+      "Participant ID": "0113",
+      "Additional thoughts?": "Thank you for a fantastic session"
+    }
+  ],
+  "group_comparisons": {
+    "time_vs_cost_mentioners": [
+      {
+        "Group": "All Paired",
+        "N": 40,
+        "Mean_Q1_1": 3.85,
+        "Mean_Q1_2": 4.275,
+        "Mean_Satisfaction": 9.0256,
+        "Mean_Confidence": 7.35,
+        "Mean_Workplace_Support": 7.3158
+      },
+      {
+        "Group": "Time Mentioners",
+        "N": 22,
+        "Mean_Q1_1": 4.0455,
+        "Mean_Q1_2": 4.0909,
+        "Mean_Satisfaction": 9.0455,
+        "Mean_Confidence": 7.4091,
+        "Mean_Workplace_Support": 7.5714
+      },
+      {
+        "Group": "Cost Mentioners",
+        "N": 10,
+        "Mean_Q1_1": 3.5,
+        "Mean_Q1_2": 3.8,
+        "Mean_Satisfaction": 8.8,
+        "Mean_Confidence": 7.5,
+        "Mean_Workplace_Support": 7.4444
+      }
+    ]
+  }
+}

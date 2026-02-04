@@ -1,0 +1,103 @@
+/* Reports Platform - Main CSS Entry Point */
+/* Import order matters: reset first, then tokens */
+
+@import './styles/reset.css';
+@import './tokens/platform.css';
+
+/* Base typography styles for all reports */
+.rp-root {
+  font-family: var(--rp-font-family);
+  font-size: var(--rp-text-base);
+  line-height: var(--rp-leading-normal);
+  color: var(--rp-text-primary);
+
+  /* IMPORTANT: Keep background transparent to preserve site shader */
+  background-color: transparent;
+
+  /* Enable hardware acceleration for smooth animations */
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading hierarchy */
+.rp-root h1 {
+  font-size: var(--rp-text-4xl);
+  font-weight: var(--rp-font-bold);
+  line-height: var(--rp-leading-tight);
+  color: var(--rp-text-primary);
+}
+
+.rp-root h2 {
+  font-size: var(--rp-text-3xl);
+  font-weight: var(--rp-font-semibold);
+  line-height: var(--rp-leading-tight);
+  color: var(--rp-text-primary);
+}
+
+.rp-root h3 {
+  font-size: var(--rp-text-2xl);
+  font-weight: var(--rp-font-semibold);
+  line-height: var(--rp-leading-tight);
+  color: var(--rp-text-primary);
+}
+
+.rp-root h4 {
+  font-size: var(--rp-text-xl);
+  font-weight: var(--rp-font-medium);
+  line-height: var(--rp-leading-normal);
+  color: var(--rp-text-primary);
+}
+
+.rp-root h5 {
+  font-size: var(--rp-text-lg);
+  font-weight: var(--rp-font-medium);
+  line-height: var(--rp-leading-normal);
+  color: var(--rp-text-secondary);
+}
+
+.rp-root h6 {
+  font-size: var(--rp-text-base);
+  font-weight: var(--rp-font-medium);
+  line-height: var(--rp-leading-normal);
+  color: var(--rp-text-secondary);
+}
+
+/* Body text */
+.rp-root p {
+  color: var(--rp-text-secondary);
+  line-height: var(--rp-leading-relaxed);
+}
+
+/* Code elements */
+.rp-root code {
+  font-family: var(--rp-font-mono);
+  font-size: 0.875em;
+  background-color: var(--rp-bg-secondary);
+  padding: var(--rp-space-1) var(--rp-space-2);
+  border-radius: var(--rp-border-radius-sm);
+}
+
+.rp-root pre {
+  font-family: var(--rp-font-mono);
+  background-color: var(--rp-bg-secondary);
+  padding: var(--rp-space-4);
+  border-radius: var(--rp-border-radius);
+  overflow-x: auto;
+}
+
+/* Links */
+.rp-root a {
+  color: var(--rp-accent);
+  transition: opacity var(--rp-transition-fast);
+}
+
+.rp-root a:hover {
+  opacity: 0.8;
+}
+
+/* Strong/bold text */
+.rp-root strong {
+  font-weight: var(--rp-font-semibold);
+  color: var(--rp-text-primary);
+}

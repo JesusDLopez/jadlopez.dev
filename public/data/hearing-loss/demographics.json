@@ -1,0 +1,70 @@
+{
+  "maternal_characteristics": {
+    "Maternal Age Group": {
+      "variable_code": "MAG",
+      "counts": {
+        "<35 years": 254069,
+        "≥35 years": 74682
+      },
+      "percentages": {
+        "<35 years": 77.3,
+        "≥35 years": 22.7
+      },
+      "total": 328751
+    },
+    "Diabetes Status": {
+      "variable_code": "DM",
+      "counts": {
+        "No Diabetes": 289962,
+        "Gestational Diabetes": 38789
+      },
+      "percentages": {
+        "No Diabetes": 88.2,
+        "Gestational Diabetes": 11.8
+      },
+      "total": 328751
+    }
+  },
+  "infant_characteristics": {
+    "Gender": {
+      "variable_code": "GEN",
+      "counts": {
+        "Male": 168546,
+        "Female": 160205
+      },
+      "percentages": {
+        "Male": 51.3,
+        "Female": 48.7
+      },
+      "total": 328751
+    },
+    "Delivery Method": {
+      "variable_code": "DEL",
+      "counts": {
+        "Caesarean Section (CS)": 108625,
+        "Vaginal Non-Instrumental (VNI)": 184592,
+        "Vaginal Instrumental (VI)": 35534
+      },
+      "percentages": {
+        "Caesarean Section (CS)": 33.0,
+        "Vaginal Non-Instrumental (VNI)": 56.2,
+        "Vaginal Instrumental (VI)": 10.8
+      },
+      "total": 328751
+    },
+    "Birth Weight": {
+      "variable_code": "BW",
+      "counts": {
+        "Normal (2500-4000g)": 278838,
+        "Low (<2500g)": 32876,
+        "High (>4000g)": 17037
+      },
+      "percentages": {
+        "Normal (2500-4000g)": 84.8,
+        "Low (<2500g)": 10.0,
+        "High (>4000g)": 5.2
+      },
+      "total": 328751
+    }
+  }
+}

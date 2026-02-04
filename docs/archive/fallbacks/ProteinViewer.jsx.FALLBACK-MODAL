@@ -1,0 +1,126 @@
+import { Suspense, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, OrbitControls } from "@react-three/drei";
+import { motion } from "framer-motion";
+
+function ProteinModel({
+  path,
+  position = [0, -0.2, 0],
+  scale = [0.9, 0.9, 0.9],
+  expanded = false,
+}) {
+  const ref = useRef();
+  const { scene } = useGLTF(path);
+
+  useFrame(() => {
+    if (ref.current && !expanded) {
+      // Only auto-rotate when not expanded
+      ref.current.rotation.y += 0.003;
+    }
+  });
+
+  return (
+    <primitive ref={ref} object={scene} position={position} scale={scale} />
+  );
+}
+
+export default function ProteinViewer({
+  path,
+  position,
+  scale,
+  cameraZ = 18, // ← increased from 25 to 18 for closer framing
+  tooltip,
+  debugBorder = false, // optionally show a border for debugging
+  expanded = false, // new prop to handle expanded state
+}) {
+  // CLEAN: Removed debug logging
+  const [hovered, setHovered] = useState(false);
+  const adjustedCameraZ = expanded ? cameraZ * 0.5 : cameraZ; // CLOSER: More dramatic zoom when expanded
+  
+  // Force a unique key for each protein model to prevent Three.js issues
+  const modelKey = `${path}-${expanded ? 'expanded' : 'normal'}`;
+
+  return (
+    <div
+      className="protein-viewer"
+      style={{
+        margin: 0,
+        border: debugBorder ? "1px dashed red" : "none",
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div 
+        className="protein-viewer-container" 
+        style={{
+          width: "100%",
+          height: "100%",
+          flex: 1,
+        }}
+      >
+        <Canvas
+          key={modelKey}
+          gl={{ alpha: true, antialias: true }}
+          onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}
+          camera={{ position: [0, 0, adjustedCameraZ] }}
+          style={{
+            width: '100%',
+            height: '100%',
+            background: 'transparent',
+            display: 'block'
+          }}
+          resize={{ scroll: false, debounce: { scroll: 50, resize: 50 } }}
+          dpr={[1, 2]}
+        >
+          <ambientLight intensity={expanded ? 1.2 : 0.8} />
+          <directionalLight position={[2, 2, 3]} intensity={expanded ? 1.5 : 1} />
+          {expanded && <directionalLight position={[-2, -2, -3]} intensity={0.5} />}
+          <Suspense fallback={null}>
+            <ProteinModel key={`model-${modelKey}`} path={path} position={position} scale={scale} expanded={expanded} />
+          </Suspense>
+          {expanded && (
+            <OrbitControls
+              enablePan={true}
+              enableZoom={true}
+              enableRotate={true}
+              zoomSpeed={0.6}
+              panSpeed={0.8}
+              rotateSpeed={0.4}
+              minDistance={5}
+              maxDistance={50}
+              autoRotate={false}
+              enableDamping={true}
+              dampingFactor={0.05}
+            />
+          )}
+        </Canvas>
+      </div>
+      {tooltip && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 10 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          style={{
+            position: "absolute",
+            bottom: 10,
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(0,0,0,0.6)",
+            color: "#fff",
+            padding: "0.25rem 0.5rem",
+            borderRadius: "4px",
+            fontSize: "0.75rem",
+            pointerEvents: "auto",
+          }}
+        >
+          {tooltip}
+        </motion.div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,8 @@
+/* SectionHeader - Centralized Reusable Component */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Uses global .fresh-title and .fresh-subtitle from HearingLossIsolation.css */
+/* No need to redefine - let global styles handle typography */

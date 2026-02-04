@@ -1,0 +1,170 @@
+/* ============================================
+   SITE FOOTER
+   Professional footer bar with personal touch
+   ============================================ */
+
+.site-footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem 0rem 2rem; /* Minimal top padding - nearly touching border */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  margin-top: 0;
+}
+
+/* Light theme */
+body.light-theme .site-footer {
+  background: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* Thank you message - warm and welcoming */
+.footer-thanks {
+  font-family: "DM Sans", "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Personal statement */
+.footer-statement {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.85;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tech stack */
+.footer-tech {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 0.5rem 0 0 0;
+}
+
+.footer-tech strong {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Features list */
+.footer-features {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin: 0.25rem 0 0 0;
+  line-height: 1.6;
+}
+
+/* AI assistance mention */
+.footer-ai {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.65;
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.6;
+  margin: 1rem 0 0 0;
+  padding-bottom: 1rem; /* Small padding just for the copyright text */
+  letter-spacing: 0.02em;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 1.5rem 0 1.5rem;
+  }
+
+  .footer-container {
+    gap: 0.875rem;
+  }
+
+  .footer-thanks {
+    font-size: 1rem;
+  }
+
+  .footer-statement {
+    font-size: 0.95rem;
+  }
+
+  .footer-tech {
+    font-size: 0.9rem;
+  }
+
+  .footer-features {
+    font-size: 0.85rem;
+  }
+
+  .footer-ai {
+    font-size: 0.85rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .footer-container {
+    gap: 0.75rem;
+  }
+
+  .footer-thanks {
+    font-size: 0.95rem;
+  }
+
+  .footer-statement {
+    font-size: 0.9rem;
+  }
+
+  .footer-tech {
+    font-size: 0.85rem;
+  }
+
+  .footer-features {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}

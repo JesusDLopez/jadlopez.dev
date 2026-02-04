@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "n_participants": 52,
+    "scale": "1-10",
+    "note": "Post-workshop evaluation only (descriptive statistics)"
+  },
+  "activity_usefulness": [
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "N": 52,
+      "Mean": 8.9615,
+      "SD": 1.4547,
+      "Median": 9,
+      "Min": 2,
+      "Max": 10,
+      "SE": 0.2017,
+      "CI_lower": 8.5661,
+      "CI_upper": 9.3569
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "N": 51,
+      "Mean": 8.7451,
+      "SD": 1.8745,
+      "Median": 10,
+      "Min": 1,
+      "Max": 10,
+      "SE": 0.2625,
+      "CI_lower": 8.2306,
+      "CI_upper": 9.2596
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "N": 52,
+      "Mean": 8.8269,
+      "SD": 2.0362,
+      "Median": 10,
+      "Min": 1,
+      "Max": 10,
+      "SE": 0.2824,
+      "CI_lower": 8.2735,
+      "CI_upper": 9.3804
+    }
+  ],
+  "satisfaction": [
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "N": 49,
+      "Mean": 9.0204,
+      "SD": 1.3148,
+      "Median": 10,
+      "Min": 4,
+      "Max": 10,
+      "SE": 0.1878,
+      "CI_lower": 8.6523,
+      "CI_upper": 9.3886
+    }
+  ],
+  "confidence_and_support": [
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "N": 52,
+      "Mean": 7.2885,
+      "SD": 1.8294,
+      "Median": 8,
+      "Min": 1,
+      "Max": 10,
+      "SE": 0.2537,
+      "CI_lower": 6.7912,
+      "CI_upper": 7.7857
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "N": 48,
+      "Mean": 7.2917,
+      "SD": 2.1334,
+      "Median": 8,
+      "Min": 1,
+      "Max": 10,
+      "SE": 0.3079,
+      "CI_lower": 6.6881,
+      "CI_upper": 7.8952
+    }
+  ],
+  "satisfaction_vs_skill_gains": {
+    "n": 42,
+    "correlation": 0.504,
+    "p_value": 0.0007,
+    "ci_lower": 0.2362,
+    "ci_upper": 0.7006,
+    "interpretation": "Significant positive correlation"
+  },
+  "rating_distributions": [
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 2,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 6,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 7,
+      "Count": 5,
+      "Percentage": 9.6154
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 8,
+      "Count": 6,
+      "Percentage": 11.5385
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 9,
+      "Count": 15,
+      "Percentage": 28.8462
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Rating": 10,
+      "Count": 24,
+      "Percentage": 46.1538
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 1,
+      "Count": 1,
+      "Percentage": 1.9608
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 2,
+      "Count": 1,
+      "Percentage": 1.9608
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 6,
+      "Count": 1,
+      "Percentage": 1.9608
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 7,
+      "Count": 5,
+      "Percentage": 9.8039
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 8,
+      "Count": 11,
+      "Percentage": 21.5686
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 9,
+      "Count": 6,
+      "Percentage": 11.7647
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Rating": 10,
+      "Count": 26,
+      "Percentage": 50.9804
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 1,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 2,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 3,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 5,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 7,
+      "Count": 3,
+      "Percentage": 5.7692
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 8,
+      "Count": 7,
+      "Percentage": 13.4615
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 9,
+      "Count": 9,
+      "Percentage": 17.3077
+    },
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Rating": 10,
+      "Count": 29,
+      "Percentage": 55.7692
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Rating": 4,
+      "Count": 1,
+      "Percentage": 2.0408
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Rating": 7,
+      "Count": 6,
+      "Percentage": 12.2449
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Rating": 8,
+      "Count": 8,
+      "Percentage": 16.3265
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Rating": 9,
+      "Count": 8,
+      "Percentage": 16.3265
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Rating": 10,
+      "Count": 26,
+      "Percentage": 53.0612
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 1,
+      "Count": 1,
+      "Percentage": 1.9231
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 3,
+      "Count": 2,
+      "Percentage": 3.8462
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 5,
+      "Count": 5,
+      "Percentage": 9.6154
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 6,
+      "Count": 4,
+      "Percentage": 7.6923
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 7,
+      "Count": 12,
+      "Percentage": 23.0769
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 8,
+      "Count": 18,
+      "Percentage": 34.6154
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 9,
+      "Count": 5,
+      "Percentage": 9.6154
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Rating": 10,
+      "Count": 5,
+      "Percentage": 9.6154
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 1,
+      "Count": 1,
+      "Percentage": 2.0833
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 3,
+      "Count": 1,
+      "Percentage": 2.0833
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 4,
+      "Count": 4,
+      "Percentage": 8.3333
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 5,
+      "Count": 3,
+      "Percentage": 6.25
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 6,
+      "Count": 8,
+      "Percentage": 16.6667
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 7,
+      "Count": 5,
+      "Percentage": 10.4167
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 8,
+      "Count": 8,
+      "Percentage": 16.6667
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 9,
+      "Count": 12,
+      "Percentage": 25
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Rating": 10,
+      "Count": 6,
+      "Percentage": 12.5
+    }
+  ],
+  "high_ratings_summary": [
+    {
+      "Question": "6",
+      "Label": "Pre/post consultation role plays usefulness",
+      "Pct_8_or_higher": 86.5385
+    },
+    {
+      "Question": "4",
+      "Label": "Slide presentation usefulness",
+      "Pct_8_or_higher": 86.5385
+    },
+    {
+      "Question": "7",
+      "Label": "Overall workshop satisfaction",
+      "Pct_8_or_higher": 85.7143
+    },
+    {
+      "Question": "5",
+      "Label": "Pedigree role play usefulness",
+      "Pct_8_or_higher": 84.3137
+    },
+    {
+      "Question": "9",
+      "Label": "Workplace supportiveness",
+      "Pct_8_or_higher": 54.1667
+    },
+    {
+      "Question": "8",
+      "Label": "Confidence to offer genetic testing",
+      "Pct_8_or_higher": 53.8462
+    }
+  ],
+  "q6_1_suggestions": [
+    {
+      "Participant ID": "0015",
+      "6.1": "Specimen Collection"
+    },
+    {
+      "Participant ID": "0022",
+      "6.1": "Maybe a brief slide on other malignancies on age range that may indicate testing."
+    },
+    {
+      "Participant ID": "0023",
+      "6.1": "Excellent session, thank you"
+    },
+    {
+      "Participant ID": "0031",
+      "6.1": "Very good!"
+    },
+    {
+      "Participant ID": "0037",
+      "6.1": "how to deal with anxious parents who are aware of having mutation and are worried for their children."
+    },
+    {
+      "Participant ID": "0040",
+      "6.1": "Information about different companies."
+    },
+    {
+      "Participant ID": "0093",
+      "6.1": "Genetic mechanisms i.e. cell biology in more defen would be really useful!"
+    },
+    {
+      "Participant ID": "0097",
+      "6.1": "Short summary paper or printout on different melanoma risk genes/associations (as covered in your presentation) to take home."
+    },
+    {
+      "Participant ID": "0103",
+      "6.1": "Other melanoma genetic testing short course would be helpful."
+    }
+  ],
+  "overall_summary": {
+    "mean_activity_usefulness": 8.8445,
+    "mean_satisfaction": 9.0204,
+    "mean_confidence_to_offer": 7.2885,
+    "mean_workplace_support": 7.2917,
+    "pct_highly_satisfied": 85.7143
+  }
+}

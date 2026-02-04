@@ -1,0 +1,297 @@
+/* === Glass Morphism Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1200px;
+  height: 3rem;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: visible;
+  
+  /* Glass morphism effect */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.05);
+    
+  /* Subtle animation */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Light theme navbar adjustments */
+body.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* Hover effect for the entire navbar */
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .navbar:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Remove the center divider since we have a new design */
+.navbar::after {
+  display: none;
+}
+
+/* Navbar left section */
+.navbar-left {
+  padding-left: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.4rem;
+  color: var(--nav-text);
+  display: block;
+}
+
+/* Remove default image whitespace so the logo does not increase navbar height */
+.navbar-logo img {
+  display: block;
+  margin: 0;
+}
+
+/* Navbar right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  gap: 1.8rem;
+}
+
+.navbar-right a {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--nav-text);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-right a:hover {
+  color: var(--nav-text);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .navbar-right a:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--nav-text);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  pointer-events: none;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+.theme-toggle--dark {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle--dark:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.theme-toggle--light {
+  background: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.14);
+}
+
+.theme-toggle--light:hover {
+  background: rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .theme-toggle {
+  color: #1f2937;
+}
+
+body.light-theme .theme-toggle:focus-visible {
+  outline: 2px solid rgba(15, 23, 42, 0.65);
+}
+
+body.light-theme .theme-toggle--dark {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+}
+
+body.light-theme .theme-toggle--light {
+  background: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.14);
+}
+
+/* Subtle breathing pulse for theme toggle - NEON (dark mode) */
+@keyframes themeTogglePulseNeon {
+  0% {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.22),
+      0 0 10px rgba(0, 255, 200, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.25),
+      0 0 20px rgba(0, 255, 200, 0.4);
+  }
+  75% {
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.22),
+      0 0 10px rgba(0, 255, 200, 0.2);
+  }
+  100% {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Subtle breathing pulse for theme toggle - FIRE (light mode) */
+@keyframes themeTogglePulseFire {
+  0% {
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+  }
+  25% {
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.2),
+      0 0 10px rgba(255, 100, 50, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.22),
+      0 0 20px rgba(255, 100, 50, 0.5);
+  }
+  75% {
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.2),
+      0 0 10px rgba(255, 100, 50, 0.3);
+  }
+  100% {
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+  }
+}
+
+/* Theme toggle with heavy pulse active */
+.theme-toggle.heavy-pulse {
+  animation: themeTogglePulseNeon 4s ease-in-out infinite !important;
+}
+
+body.light-theme .theme-toggle.heavy-pulse {
+  animation: themeTogglePulseFire 4s ease-in-out infinite !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    width: calc(100% - 2rem);
+    top: 0.5rem;
+    height: 2.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-left {
+    padding-left: 1rem;
+  }
+  
+  .navbar-right {
+    padding-right: 1rem;
+    gap: 1.2rem;
+  }
+  
+  .navbar-right a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 1rem);
+    border-radius: 1.5rem;
+  }
+  
+  .navbar-right {
+    gap: 1rem;
+  }
+  
+  .navbar-right a {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+/* Remove scroll adjustment for new design */
+body.prevent-scroll .navbar {
+  /* No adjustment needed for centered design */
+}

@@ -1,0 +1,73 @@
+/* Generic Analysis Card Styles (for non-HL projects) */
+
+.analysis-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.analysis-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.analysis-header h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.analysis-content p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Dark theme for generic cards */
+body.dark-theme .analysis-card {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .analysis-header h4 {
+  color: #f9fafb;
+}
+
+body.dark-theme .analysis-content p {
+  color: #d1d5db;
+}
+
+/* Variant: Findings (Blue) */
+.analysis-card.findings {
+  border-left: 4px solid #3b82f6;
+}
+
+/* Variant: Recommendations (Green) */
+.analysis-card.recommendations {
+  border-left: 4px solid #10b981;
+}
+
+/* Variant: Limitations (Amber) */
+.analysis-card.limitations {
+  border-left: 4px solid #f59e0b;
+}

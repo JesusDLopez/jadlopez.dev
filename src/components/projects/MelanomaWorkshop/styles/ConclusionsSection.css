@@ -1,0 +1,198 @@
+/* ============================================
+   ConclusionsSection - Conclusions & Recommendations
+   ============================================ */
+
+.mw-conclusions-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.mw-conclusions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Conclusion Cards */
+.mw-conclusion-card {
+  background: white;
+  color: #1f2937;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mw-conclusion-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.mw-conclusion-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Effectiveness Card */
+.mw-conclusion-card.mw-effectiveness {
+  border-top: 4px solid #10b981;
+}
+
+/* Key Findings */
+.mw-conclusion-card.mw-key-findings {
+  border-top: 4px solid #667eea;
+}
+
+.mw-findings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mw-findings-list li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mw-findings-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.mw-findings-list strong {
+  color: #1f2937;
+}
+
+/* Clinical Implications */
+.mw-conclusion-card.mw-implications {
+  border-top: 4px solid #f59e0b;
+}
+
+/* Limitations */
+.mw-conclusion-card.mw-limitations {
+  border-top: 4px solid #ef4444;
+}
+
+.mw-limitations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mw-limitations-list li {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mw-limitations-list li::before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Recommendations */
+.mw-conclusion-card.mw-recommendations {
+  border-top: 4px solid #8b5cf6;
+}
+
+.mw-recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.mw-recommendation-item {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mw-recommendation-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mw-recommendation-item h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.75rem;
+}
+
+.mw-recommendation-item p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Study Footer */
+.mw-study-footer {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.mw-study-info {
+  font-size: 0.875rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.mw-study-info strong {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mw-conclusions-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .mw-conclusion-card {
+    padding: 1.5rem;
+  }
+
+  .mw-recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mw-study-info {
+    font-size: 0.75rem;
+  }
+}

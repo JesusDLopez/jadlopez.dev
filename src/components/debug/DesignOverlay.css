@@ -1,0 +1,415 @@
+/* Design Overlay System - Red Theme */
+.design-overlay-system {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000;
+  font-family: 'Monaco', 'Menlo', monospace;
+  overflow: hidden;
+}
+
+/* Toggle hint when overlay is hidden */
+.design-overlay-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+.toggle-hint {
+  background: rgba(255, 51, 51, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: Monaco, monospace;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Grid Overlay */
+.design-grid-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Vertical Grid Lines */
+.grid-line.vertical {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #ff3333;
+  z-index: 10002;
+}
+
+.grid-line.vertical.boundary {
+  background: #ff6666;
+  width: 2px;
+}
+
+.grid-line.vertical.content {
+  background: #ff3333;
+  width: 1px;
+}
+
+.grid-line.vertical.center {
+  background: #ff0000;
+  width: 3px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.grid-line.vertical.custom {
+  background: #ffaa33;
+  width: 2px;
+  border-left: 1px dashed #ff6600;
+}
+
+/* Anchor Points */
+.anchor-point {
+  position: absolute;
+  top: 20px;
+  left: -8px;
+  z-index: 10003;
+}
+
+.anchor-dot {
+  width: 16px;
+  height: 16px;
+  background: #ff3333;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.anchor-label {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  background: rgba(255, 51, 51, 0.95);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  min-width: 60px;
+}
+
+.anchor-id {
+  font-weight: bold;
+  display: block;
+  font-size: 11px;
+}
+
+.anchor-name {
+  display: block;
+  font-size: 9px;
+  opacity: 0.9;
+}
+
+.anchor-position {
+  display: block;
+  font-size: 8px;
+  opacity: 0.7;
+}
+
+/* Center Spine Special Treatment */
+.center-spine {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, 
+    rgba(255, 0, 0, 0.8) 0%, 
+    rgba(255, 51, 51, 1) 50%, 
+    rgba(255, 0, 0, 0.8) 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  z-index: 10004;
+}
+
+.center-label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%) rotate(90deg);
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+/* Content Zones */
+.content-zone {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(255, 51, 51, 0.05);
+  border: 1px dashed rgba(255, 51, 51, 0.3);
+  z-index: 10001;
+}
+
+.zone-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 51, 51, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+/* Section-Specific Guides */
+.section-guide {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border: 2px solid;
+  border-left: none;
+  border-right: none;
+  background: rgba(255, 51, 51, 0.02);
+  z-index: 10002;
+}
+
+.section-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.8);
+  color: currentColor;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.horizontal-center-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 2px dashed;
+  z-index: 10003;
+}
+
+.h-line-label {
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  font-size: 10px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.8);
+  color: currentColor;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Section Coordinates */
+.section-coordinates {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 20px;
+}
+
+.section-coord {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.coord-marker {
+  width: 8px;
+  height: 20px;
+  background: currentColor;
+  margin: 0 auto 4px;
+  opacity: 0.7;
+}
+
+.coord-label {
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: currentColor;
+  padding: 1px 3px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* Control Panel */
+.design-overlay-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ff3333;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #ff3333;
+  max-width: 300px;
+  pointer-events: auto;
+  z-index: 10005;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.design-overlay-controls h3 {
+  margin: 0 0 12px 0;
+  color: #ff6666;
+  font-size: 14px;
+}
+
+.control-group {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-group label {
+  font-size: 12px;
+  color: #ffcccc;
+}
+
+.control-group input,
+.control-group select {
+  background: rgba(255, 51, 51, 0.1);
+  border: 1px solid #ff6666;
+  color: #ff3333;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.anchor-reference {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ff6666;
+}
+
+.anchor-reference h4 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #ff6666;
+}
+
+.anchor-ref {
+  font-size: 10px;
+  color: #ffcccc;
+  margin: 2px 0;
+}
+
+.anchor-ref strong {
+  color: #ff3333;
+}
+
+/* Bounding Boxes */
+.bounding-boxes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10003;
+}
+
+.bounding-box {
+  border: 1px solid #ff3333 !important;
+  background: rgba(255, 51, 51, 0.1) !important;
+}
+
+.box-label {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  background: #ff3333;
+  color: white;
+  padding: 1px 4px;
+  font-size: 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-indicator {
+  position: absolute;
+  background: rgba(255, 102, 102, 0.3);
+  border: 1px dashed #ff6666;
+}
+
+.margin-indicator.top {
+  top: -100%;
+  left: 0;
+  width: 100%;
+}
+
+.margin-indicator.bottom {
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+}
+
+.margin-indicator.left {
+  top: 0;
+  left: -100%;
+  height: 100%;
+}
+
+.margin-indicator.right {
+  top: 0;
+  right: -100%;
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Hide entire design overlay system on mobile to prevent glitches */
+  .design-overlay-system {
+    display: none !important;
+  }
+
+  .design-overlay-toggle {
+    display: none !important;
+  }
+
+  .design-overlay-controls {
+    display: none !important;
+  }
+}
+
+/* High contrast mode for better visibility */
+.design-overlay-system.high-contrast .grid-line,
+.design-overlay-system.high-contrast .anchor-dot {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+}
+
+/* Animation for anchor points */
+.anchor-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}

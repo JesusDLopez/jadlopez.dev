@@ -1,0 +1,179 @@
+/* HEARING LOSS REPORT - CONSISTENT HEADER SYSTEM */
+
+/* === H1 - Main Report Title (Hero only) === */
+.hl-h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+  line-height: 1.1 !important;
+  background: linear-gradient(135deg, var(--hl-title-color), var(--hl-primary)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* === H2 - Section Titles === */
+.hl-h2 {
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, var(--hl-title-color), var(--hl-primary)) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  line-height: 1.2 !important;
+}
+
+/* H2 with subtitle */
+.hl-h2-subtitle {
+  font-size: 1.125rem !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  margin: 0 auto 1rem auto !important;
+  max-width: 700px !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* H2 with note (smaller, less prominent) */
+.hl-h2-note {
+  font-size: 0.95rem !important;
+  color: #ffffff !important;
+  opacity: 0.65 !important;
+  margin: 0 auto 2rem auto !important;
+  max-width: 650px !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+}
+
+/* === H3 - Subsection Titles === */
+.hl-h3 {
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #cbd5e1, #0891b2) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  line-height: 1.3 !important;
+}
+
+/* H3 with subtitle */
+.hl-h3-subtitle {
+  font-size: 1rem !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  margin: 0 auto 1.5rem auto !important;
+  max-width: 500px !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+}
+
+/* === H4 - Small Subsection Titles === */
+.hl-h4 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: var(--hl-title-color) !important;
+  margin-bottom: 0.75rem !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+}
+
+/* === Header Container Classes === */
+.hl-header-container {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.hl-header-container-sm {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .hl-h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hl-h2 {
+    font-size: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hl-h2-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hl-h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hl-h3-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hl-h4 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hl-h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .hl-h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .hl-h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* === Dark Theme Support === */
+body.dark .hl-h1 {
+  background: linear-gradient(135deg, var(--hl-title-color), var(--hl-primary)) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.dark .hl-h2 {
+  background: linear-gradient(135deg, var(--hl-title-color), var(--hl-primary)) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.dark .hl-h3 {
+  background: linear-gradient(135deg, #e2e8f0, #0ea5e9) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.dark .hl-h2-subtitle,
+body.dark .hl-h2-note,
+body.dark .hl-h3-subtitle {
+  color: #ffffff !important;
+}
+
+body.dark .hl-h4 {
+  color: var(--hl-title-color) !important;
+}

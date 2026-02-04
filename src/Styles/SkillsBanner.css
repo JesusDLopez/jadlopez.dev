@@ -1,0 +1,245 @@
+/* Wrapper - full width container for all three zones */
+.skills-banner-wrapper {
+  width: 100vw;
+  height: 60px;
+  position: relative;
+  margin: 0; /* No vertical margin - will be centered by positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center vertically between sections */
+  padding: 15vh 0; /* Equal spacing above and below */
+}
+
+/* Solid Glass Tube - Center terminal banner (84vw, matches sections) */
+.skills-banner-tube {
+  width: 84vw;
+  height: 60px;
+  position: relative;
+  overflow: hidden; /* Clip text to tube boundaries */
+
+  /* Glass tube material - black with depth */
+  background: #000000;
+
+  /* Layered glass effect */
+  background-image:
+    /* Glossy highlight on top edge */
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+    /* Horizontal scanlines */
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    /* Vertical pixel columns */
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  background-size: 100%, 2px 2px, 2px 2px;
+
+  /* Frosted glass borders */
+  border-top: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+
+  /* Glass depth - floating tube effect */
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3), /* Shadow beneath */
+    inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Inner rim highlight */
+
+  /* Terminal flicker effect */
+  animation: terminalFlicker 0.15s infinite alternate;
+}
+
+/* Canvas particle layers - extend beyond tube into cytoplasm */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  height: 80px; /* Extends above/below tube */
+  pointer-events: none;
+  z-index: 5; /* Behind tube borders but above background */
+}
+
+.particle-canvas-left {
+  right: 84vw; /* Start at tube's left edge, extend leftward */
+}
+
+.particle-canvas-right {
+  left: 84vw; /* Start at tube's right edge, extend rightward */
+}
+
+/* Terminal flicker animation - subtle screen flicker */
+@keyframes terminalFlicker {
+  0% {
+    opacity: 0.98;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.02);
+  }
+  100% {
+    opacity: 0.99;
+    filter: brightness(0.98);
+  }
+}
+
+/* Light theme - same glass tube aesthetic */
+body.light-theme .skills-banner-tube {
+  background: #000000;
+  /* Keep same glass effects */
+}
+
+/* Scrolling track */
+.skills-banner-track {
+  display: flex;
+  gap: 6rem; /* Large gap between skills */
+  animation: scroll 60s linear infinite;
+  width: fit-content;
+  align-items: stretch; /* Stretch to fill height */
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+/* Pause animation on hover */
+.skills-banner-track:hover {
+  animation-play-state: paused;
+}
+
+/* Seamless infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Individual skill - terminal/code aesthetic */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  /* Inspect mode font - Monaco/Menlo */
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 1.5rem; /* Small terminal text */
+  font-weight: 400; /* Normal weight */
+  letter-spacing: 0.05em; /* Slight spacing for readability */
+  line-height: 1; /* Tight line height */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  height: 100%; /* Fill container height completely */
+}
+
+/* White text for terminal aesthetic */
+.skill-pill .skill-name {
+  color: rgba(255, 255, 255, 0.9); /* White text */
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect - slight brightness */
+.skill-pill:hover {
+  transform: scale(1.05);
+}
+
+.skill-pill:hover .skill-name {
+  filter: brightness(1.1);
+}
+
+.skill-name {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-banner-wrapper {
+    padding: 4vh 0;
+    height: 48px;
+  }
+
+  .skills-banner-container {
+    height: auto;
+    min-height: unset;
+    max-height: none;
+    margin: 0;
+    perspective: none;
+  }
+
+  .skills-banner-track {
+    gap: 2rem;
+    animation: scroll 36s linear infinite;
+    transform-style: flat;
+  }
+
+  .skill-pill {
+    font-size: 1.2rem;
+    animation: none;
+  }
+
+  /* 3D Pop-out animation for mobile - creates U-turn tube effect */
+  @keyframes popOut {
+    0% {
+      transform: translateZ(0) scale(0.8);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translateZ(80px) scale(1.2); /* Pop out at center */
+      opacity: 1;
+    }
+    50% {
+      transform: translateZ(0) scale(0.8);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translateZ(80px) scale(1.2); /* Pop out again */
+      opacity: 1;
+    }
+    100% {
+      transform: translateZ(0) scale(0.8);
+      opacity: 0.6;
+    }
+  }
+
+  /* Stagger the pop-out effect for each skill */
+  .skill-pill:nth-child(2n) {
+    animation-delay: -22.5s; /* Half offset */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-banner-container {
+    height: 8vh;
+    min-height: 70px;
+    max-height: 100px;
+  }
+
+  .skills-banner-track {
+    gap: 3rem;
+    animation: scroll 35s linear infinite;
+  }
+
+  .skill-pill {
+    font-size: 1.1rem; /* Smaller on mobile */
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .skills-banner-track {
+    animation: none !important;
+  }
+}

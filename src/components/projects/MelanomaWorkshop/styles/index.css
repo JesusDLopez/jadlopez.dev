@@ -1,0 +1,128 @@
+/* Melanoma Workshop Report - Main CSS Entry */
+/* Import platform foundation first, then project tokens */
+
+@import '../../reports-core/index.css';
+@import './tokens.css';
+@import './MelanomaWorkshop.css';
+
+/* === PROJECT ROOT CONTAINER === */
+.mw-root {
+  /* Ensure we inherit platform foundation */
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  /* Override any site-level constraints */
+  display: block !important;
+  align-items: initial !important;
+  justify-content: initial !important;
+  min-height: auto !important;
+  height: auto !important;
+
+  /* IMPORTANT: Preserve shader background */
+  background: transparent !important;
+
+  /* Establish local stacking context but allow background through */
+  isolation: isolate;
+}
+
+/* === LAYOUT SYSTEM === */
+.mw-section {
+  padding: var(--mw-section-padding) 0;
+  width: 100%;
+}
+
+/* First section gets extra top padding to clear navbar */
+.mw-section:first-child {
+  padding-top: calc(var(--mw-section-padding) + var(--rp-space-16));
+}
+
+.mw-container {
+  max-width: var(--mw-content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--rp-space-6);
+}
+
+.mw-section + .mw-section {
+  margin-top: var(--mw-section-gap);
+}
+
+/* === CARD SYSTEM === */
+.mw-card {
+  background: var(--mw-card-bg);
+  border: var(--rp-border-width) solid var(--mw-card-border);
+  border-radius: var(--mw-card-radius);
+  box-shadow: var(--mw-card-shadow);
+  transition:
+    transform var(--mw-animation-normal),
+    box-shadow var(--mw-animation-normal);
+}
+
+.mw-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--mw-card-hover-shadow);
+}
+
+.mw-card-content {
+  padding: var(--rp-space-6);
+}
+
+/* === TYPOGRAPHY SYSTEM === */
+/* Override platform typography with project colors */
+.mw-root h1,
+.mw-root h2,
+.mw-root h3,
+.mw-root h4,
+.mw-root h5,
+.mw-root h6 {
+  color: var(--mw-title-color) !important;
+}
+
+.mw-root p {
+  color: var(--mw-body-color) !important;
+}
+
+/* === UTILITY CLASSES === */
+.mw-text-primary { color: var(--mw-title-color) !important; }
+.mw-text-secondary { color: var(--mw-subtitle-color) !important; }
+.mw-text-muted { color: var(--mw-muted-color) !important; }
+
+.mw-text-center { text-align: center; }
+.mw-text-left { text-align: left; }
+.mw-text-right { text-align: right; }
+
+/* === LOADING STATE === */
+.mw-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--mw-subtitle-color);
+  font-size: var(--rp-text-lg);
+}
+
+/* === HIGHLIGHT TEXT === */
+.mw-highlight {
+  padding: 0.25rem 0.5rem;
+  background: rgba(6, 182, 212, 0.1);
+  border-left: 3px solid var(--mw-primary);
+  border-radius: 4px;
+}
+
+/* === DEBUG HELPERS === */
+.mw-debug {
+  border: 2px solid var(--mw-warning) !important;
+  position: relative;
+}
+
+.mw-debug::before {
+  content: "MW-DEBUG";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--mw-warning);
+  color: white;
+  font-size: var(--rp-text-xs);
+  padding: var(--rp-space-1);
+  border-radius: 0 var(--rp-border-radius-sm) 0 var(--rp-border-radius-sm);
+}

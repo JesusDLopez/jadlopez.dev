@@ -1,0 +1,48 @@
+{
+  "comparison_data": [
+    {
+      "gdm_status": "No Diabetes",
+      "hearing_loss_rate": 0.003121098626716604,
+      "total_cases": 289962,
+      "hearing_loss_cases": 905,
+      "confidence_interval": {
+        "lower": 0.002926,
+        "upper": 0.003323
+      },
+      "p_value": 1.0,
+      "odds_ratio": 1.0
+    },
+    {
+      "gdm_status": "All Types Diabetes",
+      "hearing_loss_rate": 0.003797530380243042,
+      "total_cases": 40816,
+      "hearing_loss_cases": 155,
+      "confidence_interval": {
+        "lower": 0.003225,
+        "upper": 0.004457
+      },
+      "p_value": 0.026615416822675254,
+      "odds_ratio": 1.217554905191707
+    }
+  ],
+  "statistical_tests": [
+    {
+      "test_name": "Chi-square",
+      "test_statistic": 4.95,
+      "p_value": 0.026615416822675254,
+      "interpretation": "Statistically significant association between diabetes (all types) and hearing loss"
+    },
+    {
+      "test_name": "Odds Ratio",
+      "test_statistic": 1.217554905191707,
+      "p_value": 0.026615416822675254,
+      "interpretation": "21.8% increased odds of hearing loss with any type of diabetes"
+    }
+  ],
+  "summary": {
+    "conclusion": "Significant association found between diabetes (any type) and congenital hearing loss",
+    "effect_size": "Small but significant (OR = 1.22)",
+    "clinical_significance": "Diabetes increases hearing loss risk by approximately 22%",
+    "study_population": "330,778 pregnancies from comprehensive diabetes analysis"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "model_comparison": [
+    {
+      "model_name": "Univariate GDM Model",
+      "aic": 8751.2,
+      "bic": 8765.4,
+      "pseudo_r_squared": 0.001,
+      "c_statistic": 0.521,
+      "deviance": 8747.2,
+      "log_likelihood": -4373.6
+    },
+    {
+      "model_name": "Maternal Factors Model",
+      "aic": 8698.7,
+      "bic": 8741.3,
+      "pseudo_r_squared": 0.008,
+      "c_statistic": 0.548,
+      "deviance": 8684.7,
+      "log_likelihood": -4341.4
+    },
+    {
+      "model_name": "Infant Factors Model",
+      "aic": 8672.4,
+      "bic": 8729.8,
+      "pseudo_r_squared": 0.016,
+      "c_statistic": 0.567,
+      "deviance": 8654.4,
+      "log_likelihood": -4324.2
+    },
+    {
+      "model_name": "Final Multivariable Model",
+      "aic": 8642.3,
+      "bic": 8721.7,
+      "pseudo_r_squared": 0.024,
+      "c_statistic": 0.582,
+      "deviance": 8618.3,
+      "log_likelihood": -4309.2
+    }
+  ],
+  "diagnostic_tests": {
+    "hosmer_lemeshow": {
+      "chi_square": 12.47,
+      "p_value": 0.131,
+      "interpretation": "Good calibration indicated (p > 0.05), suggesting the model fits the data well across risk groups."
+    },
+    "deviance_residuals": {
+      "mean": 0.0002,
+      "std_dev": 1.023,
+      "max_residual": 3.21
+    }
+  },
+  "validation_results": {
+    "cross_validation": {
+      "mean_auc": 0.578,
+      "std_auc": 0.015,
+      "confidence_interval": {
+        "lower": 0.549,
+        "upper": 0.607
+      }
+    },
+    "bootstrap": {
+      "optimism_corrected_c": 0.576,
+      "bias": 0.006,
+      "corrected_r_squared": 0.021
+    }
+  },
+  "feature_importance": [
+    {
+      "variable": "Low Birth Weight",
+      "importance_score": 0.45,
+      "rank": 1
+    },
+    {
+      "variable": "Multiple Birth",
+      "importance_score": 0.38,
+      "rank": 2
+    },
+    {
+      "variable": "Preterm Birth",
+      "importance_score": 0.31,
+      "rank": 3
+    },
+    {
+      "variable": "Hypertensive Disorders",
+      "importance_score": 0.22,
+      "rank": 4
+    },
+    {
+      "variable": "Male Gender",
+      "importance_score": 0.18,
+      "rank": 5
+    },
+    {
+      "variable": "Maternal Age ≥35",
+      "importance_score": 0.12,
+      "rank": 6
+    },
+    {
+      "variable": "Caesarean Delivery",
+      "importance_score": 0.09,
+      "rank": 7
+    },
+    {
+      "variable": "Gestational Diabetes",
+      "importance_score": 0.08,
+      "rank": 8
+    }
+  ],
+  "clinical_interpretation": {
+    "primary_findings": [
+      "Gestational diabetes shows weak association with hearing loss after adjusting for confounders",
+      "Infant factors (birth weight, prematurity, multiple births) are stronger predictors than maternal factors",
+      "Model discrimination is moderate, reflecting the complex nature of congenital hearing loss"
+    ],
+    "clinical_recommendations": [
+      "Use risk stratification approach combining multiple factors rather than single-factor screening",
+      "Focus intensive screening on pregnancies with multiple risk factors",
+      "Consider genetic and environmental factors in future research"
+    ],
+    "study_limitations": [
+      "Administrative data may not capture all relevant clinical details",
+      "Hearing loss severity and timing of detection not specified",
+      "Potential unmeasured confounders including genetic factors"
+    ]
+  }
+}

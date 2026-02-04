@@ -1,0 +1,115 @@
+{
+  "pairedTTests": [
+    {
+      "question": "Q1.1: Attitude Toward Genetic Testing",
+      "tStatistic": 5.234,
+      "pValue": 0.000012,
+      "cohensD": 1.25,
+      "confidenceInterval": {
+        "lower": 0.65,
+        "upper": 1.15
+      }
+    },
+    {
+      "question": "Q1.2: Confidence in Discussing Genetics",
+      "tStatistic": 6.891,
+      "pValue": 0.000001,
+      "cohensD": 1.48,
+      "confidenceInterval": {
+        "lower": 0.85,
+        "upper": 1.55
+      }
+    },
+    {
+      "question": "Q2.1: Understanding Melanoma Genetics",
+      "tStatistic": 8.245,
+      "pValue": 0.0000001,
+      "cohensD": 2.15,
+      "confidenceInterval": {
+        "lower": 1.05,
+        "upper": 1.75
+      }
+    },
+    {
+      "question": "Q2.2: Knowledge of Genetic Testing Options",
+      "tStatistic": 7.923,
+      "pValue": 0.0000003,
+      "cohensD": 2.05,
+      "confidenceInterval": {
+        "lower": 1.10,
+        "upper": 1.90
+      }
+    },
+    {
+      "question": "Q2.3: Interpretation of Genetic Results",
+      "tStatistic": 8.456,
+      "pValue": 0.0000001,
+      "cohensD": 1.95,
+      "confidenceInterval": {
+        "lower": 1.20,
+        "upper": 2.00
+      }
+    },
+    {
+      "question": "Q2.4: Risk Communication Skills",
+      "tStatistic": 5.678,
+      "pValue": 0.000008,
+      "cohensD": 1.38,
+      "confidenceInterval": {
+        "lower": 0.65,
+        "upper": 1.35
+      }
+    },
+    {
+      "question": "Q2.5: Identifying Appropriate Candidates",
+      "tStatistic": 7.234,
+      "pValue": 0.0000005,
+      "cohensD": 1.82,
+      "confidenceInterval": {
+        "lower": 0.85,
+        "upper": 1.55
+      }
+    },
+    {
+      "question": "Q2.6: Ethical Considerations",
+      "tStatistic": 6.789,
+      "pValue": 0.000002,
+      "cohensD": 2.12,
+      "confidenceInterval": {
+        "lower": 0.80,
+        "upper": 1.60
+      }
+    },
+    {
+      "question": "Q3.1: Intent to Use Testing in Practice",
+      "tStatistic": 6.456,
+      "pValue": 0.000003,
+      "cohensD": 1.65,
+      "confidenceInterval": {
+        "lower": 0.80,
+        "upper": 1.60
+      }
+    },
+    {
+      "question": "Q3.2: Intent to Refer to Genetic Counselor",
+      "tStatistic": 5.890,
+      "pValue": 0.000006,
+      "cohensD": 1.72,
+      "confidenceInterval": {
+        "lower": 0.70,
+        "upper": 1.50
+      }
+    },
+    {
+      "question": "Q3.3: Intent to Discuss Genetics with Patients",
+      "tStatistic": 6.123,
+      "pValue": 0.000004,
+      "cohensD": 1.60,
+      "confidenceInterval": {
+        "lower": 0.80,
+        "upper": 1.60
+      }
+    }
+  ],
+  "notes": "Paired t-tests for N=48 paired participants. All tests are two-tailed with α=0.05. This is placeholder data - replace with actual R export."
+}

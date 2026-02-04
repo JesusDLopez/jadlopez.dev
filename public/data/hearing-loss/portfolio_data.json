@@ -1,0 +1,214 @@
+{
+  "study_info": {
+    "title": "Hearing Loss & Diabetes Analysis",
+    "subtitle": "Association between gestational diabetes and neonatal hearing loss",
+    "dataset": "~330k pregnancies, Queensland health data, ~7 years",
+    "analysis_type": "Multivariable logistic regression",
+    "my_role": "Statistical analysis, model specification, results presentation"
+  },
+  "summary_statistics": {
+    "dataset_overview": {
+      "total_pregnancies": 328751,
+      "hearing_loss_cases": 1049,
+      "hearing_loss_rate": 0.32,
+      "gestational_diabetes_cases": 38789,
+      "gestational_diabetes_rate": 11.8
+    },
+    "risk_factor_prevalence": {
+      "Craniofacial Abnormalities": {
+        "cases": 472,
+        "rate_percent": 0.14,
+        "variable_code": "CFA_bin"
+      },
+      "Family History": {
+        "cases": 2982,
+        "rate_percent": 0.91,
+        "variable_code": "FH_bin"
+      },
+      "Syndromes Associated with HL": {
+        "cases": 312,
+        "rate_percent": 0.09,
+        "variable_code": "SyndAs_bin"
+      },
+      "Perinatal Infection": {
+        "cases": 269,
+        "rate_percent": 0.08,
+        "variable_code": "PI_bin"
+      },
+      "Severe Asphyxia": {
+        "cases": 496,
+        "rate_percent": 0.15,
+        "variable_code": "SevAsph_bin"
+      },
+      "Nursing Admission >5 days": {
+        "cases": 4359,
+        "rate_percent": 1.33,
+        "variable_code": "NursAdm_bin"
+      },
+      "Hyperbilirubinemia": {
+        "cases": 90,
+        "rate_percent": 0.03,
+        "variable_code": "HB_bin"
+      },
+      "Hypertension": {
+        "cases": 194,
+        "rate_percent": 0.06,
+        "variable_code": "HT_bin"
+      },
+      "Advanced Maternal Age": {
+        "cases": 74729,
+        "rate_percent": 22.73,
+        "variable_code": "MatAge_bin"
+      },
+      "Obesity": {
+        "cases": 14632,
+        "rate_percent": 4.45,
+        "variable_code": "Ob_bin"
+      }
+    },
+    "hearing_loss_by_diabetes": {
+      "no_diabetes": {
+        "no_hearing_loss": 289057,
+        "hearing_loss": 905,
+        "total": 289962,
+        "hearing_loss_rate": 0.31
+      },
+      "gestational_diabetes": {
+        "no_hearing_loss": 38645,
+        "hearing_loss": 144,
+        "total": 38789,
+        "hearing_loss_rate": 0.37
+      }
+    }
+  },
+  "demographics": {
+    "maternal_characteristics": {
+      "Maternal Age Group": {
+        "variable_code": "MatAgeGr",
+        "counts": {
+          "<35": 254022,
+          "\u226535": 74729
+        },
+        "percentages": {
+          "<35": 77.3,
+          "\u226535": 22.7
+        },
+        "total": 328751
+      },
+      "Gravidity": {
+        "variable_code": "Grav",
+        "counts": {
+          "MP": 229106,
+          "PP": 99645
+        },
+        "percentages": {
+          "MP": 69.7,
+          "PP": 30.3
+        },
+        "total": 328751
+      },
+      "Delivery Method": {
+        "variable_code": "Delivery",
+        "counts": {
+          "VNI": 184592,
+          "CS": 108625,
+          "VI": 35534
+        },
+        "percentages": {
+          "VNI": 56.1,
+          "CS": 33.0,
+          "VI": 10.8
+        },
+        "total": 328751
+      },
+      "Obesity": {
+        "variable_code": "Ob",
+        "counts": {
+          "N": 314119,
+          "Y": 14632
+        },
+        "percentages": {
+          "N": 95.5,
+          "Y": 4.5
+        },
+        "total": 328751
+      },
+      "Hypertension": {
+        "variable_code": "HT",
+        "counts": {
+          "N": 328557,
+          "Y": 194
+        },
+        "percentages": {
+          "N": 99.9,
+          "Y": 0.1
+        },
+        "total": 328751
+      }
+    },
+    "infant_characteristics": {
+      "Infant Gender": {
+        "variable_code": "Gender",
+        "counts": {
+          "M": 168506,
+          "F": 160242,
+          "I": 2,
+          "O": 1
+        },
+        "percentages": {
+          "M": 51.3,
+          "F": 48.7,
+          "I": 0.0,
+          "O": 0.0
+        },
+        "total": 328751
+      },
+      "Gestational Age": {
+        "variable_code": "Gest",
+        "counts": {
+          "FT": 177621,
+          "ET": 113771,
+          "LT": 36084,
+          "PT": 1275
+        },
+        "percentages": {
+          "FT": 54.0,
+          "ET": 34.6,
+          "LT": 11.0,
+          "PT": 0.4
+        },
+        "total": 328751
+      },
+      "Birth Weight Group": {
+        "variable_code": "BWG",
+        "counts": {
+          "2500-4000": 284714,
+          ">4000": 37436,
+          "<2500": 6598
+        },
+        "percentages": {
+          "2500-4000": 86.6,
+          ">4000": 11.4,
+          "<2500": 2.0
+        },
+        "total": 328748
+      },
+      "APGAR Score at 5 Minutes": {
+        "variable_code": "AP5",
+        "counts": {
+          "G7": 323798,
+          "4-6": 4226,
+          "0-3": 512,
+          "NI": 215
+        },
+        "percentages": {
+          "G7": 98.5,
+          "4-6": 1.3,
+          "0-3": 0.2,
+          "NI": 0.1
+        },
+        "total": 328751
+      }
+    }
+  }
+}

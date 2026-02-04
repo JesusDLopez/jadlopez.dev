@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "n_pre_all": 54,
+    "n_post_all": 52,
+    "n_paired": 47,
+    "questions": {
+      "1.1": "Melanoma genomic testing is relevant to my practice today",
+      "1.2": "Melanoma genomic testing will become increasingly relevant in the future"
+    },
+    "scale": "1 (Strongly Disagree) - 5 (Strongly Agree)"
+  },
+  "descriptive_stats": [
+    {
+      "Question": "1.1",
+      "N": 51,
+      "Mean": 4,
+      "SD": 1.2961,
+      "Median": 4,
+      "Min": 1,
+      "Max": 5,
+      "SE": 0.1815,
+      "CI_lower": 3.6443,
+      "CI_upper": 4.3557,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.1",
+      "N": 50,
+      "Mean": 3.52,
+      "SD": 1.2493,
+      "Median": 4,
+      "Min": 1,
+      "Max": 5,
+      "SE": 0.1767,
+      "CI_lower": 3.1737,
+      "CI_upper": 3.8663,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "N": 51,
+      "Mean": 4.3725,
+      "SD": 1.1993,
+      "Median": 5,
+      "Min": 1,
+      "Max": 5,
+      "SE": 0.1679,
+      "CI_lower": 4.0434,
+      "CI_upper": 4.7017,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.2",
+      "N": 50,
+      "Mean": 4.06,
+      "SD": 1.3614,
+      "Median": 5,
+      "Min": 1,
+      "Max": 5,
+      "SE": 0.1925,
+      "CI_lower": 3.6826,
+      "CI_upper": 4.4374,
+      "Survey": "Pre"
+    }
+  ],
+  "frequency_distributions": [
+    {
+      "Question": "1.1",
+      "Response": 1,
+      "Count": 5,
+      "Percentage": 10,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.1",
+      "Response": 2,
+      "Count": 4,
+      "Percentage": 8,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.1",
+      "Response": 3,
+      "Count": 14,
+      "Percentage": 28,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.1",
+      "Response": 4,
+      "Count": 14,
+      "Percentage": 28,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.1",
+      "Response": 5,
+      "Count": 13,
+      "Percentage": 26,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "Response": 1,
+      "Count": 5,
+      "Percentage": 10,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "Response": 2,
+      "Count": 4,
+      "Percentage": 8,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "Response": 3,
+      "Count": 2,
+      "Percentage": 4,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "Response": 4,
+      "Count": 11,
+      "Percentage": 22,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.2",
+      "Response": 5,
+      "Count": 28,
+      "Percentage": 56,
+      "Survey": "Pre"
+    },
+    {
+      "Question": "1.1",
+      "Response": 1,
+      "Count": 5,
+      "Percentage": 9.8039,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.1",
+      "Response": 2,
+      "Count": 3,
+      "Percentage": 5.8824,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.1",
+      "Response": 3,
+      "Count": 3,
+      "Percentage": 5.8824,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.1",
+      "Response": 4,
+      "Count": 16,
+      "Percentage": 31.3725,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.1",
+      "Response": 5,
+      "Count": 24,
+      "Percentage": 47.0588,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.2",
+      "Response": 1,
+      "Count": 4,
+      "Percentage": 7.8431,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.2",
+      "Response": 2,
+      "Count": 2,
+      "Percentage": 3.9216,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.2",
+      "Response": 4,
+      "Count": 10,
+      "Percentage": 19.6078,
+      "Survey": "Post"
+    },
+    {
+      "Question": "1.2",
+      "Response": 5,
+      "Count": 35,
+      "Percentage": 68.6275,
+      "Survey": "Post"
+    }
+  ],
+  "paired_t_tests": [
+    {
+      "Question": "1.1",
+      "N_pairs": 46,
+      "Pre_Mean": 3.5435,
+      "Pre_SD": 1.224,
+      "Post_Mean": 3.9565,
+      "Post_SD": 1.3326,
+      "Mean_Diff": 0.413,
+      "SD_Diff": 1.2923,
+      "t_statistic": 2.1678,
+      "df": 45,
+      "p_value": 0.0355,
+      "CI_lower": 0.0293,
+      "CI_upper": 0.7968,
+      "Cohens_d": 0.3196,
+      "Cohens_d_CI_lower": 0.0233,
+      "Cohens_d_CI_upper": 0.6159,
+      "Significance": "*",
+      "Effect_Size_Interpretation": "Small"
+    },
+    {
+      "Question": "1.2",
+      "N_pairs": 46,
+      "Pre_Mean": 4.1739,
+      "Pre_SD": 1.2526,
+      "Post_Mean": 4.3478,
+      "Post_SD": 1.2511,
+      "Mean_Diff": 0.1739,
+      "SD_Diff": 0.9263,
+      "t_statistic": 1.2734,
+      "df": 45,
+      "p_value": 0.2094,
+      "CI_lower": -0.1012,
+      "CI_upper": 0.449,
+      "Cohens_d": 0.1878,
+      "Cohens_d_CI_lower": -0.1038,
+      "Cohens_d_CI_upper": 0.4793,
+      "Significance": "ns",
+      "Effect_Size_Interpretation": "Negligible"
+    }
+  ],
+  "chi_square_tests": {
+    "q1_1": {
+      "chi_square": 10.6553,
+      "p_value": 0.0303,
+      "method": "Monte Carlo (B=10000)"
+    },
+    "q1_2": {
+      "chi_square": 3.5936,
+      "p_value": 0.5061,
+      "method": "Monte Carlo (B=10000)"
+    }
+  }
+}

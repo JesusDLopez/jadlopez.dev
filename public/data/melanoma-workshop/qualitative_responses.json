@@ -1,0 +1,20 @@
+{
+  "responses": [
+    {
+      "participantID": "0015",
+      "feedback": "Excellent workshop. Significantly improved my understanding of melanoma genetics.",
+      "category": "positive"
+    },
+    {
+      "participantID": "0029",
+      "feedback": "Would have liked more case studies, but overall very informative.",
+      "category": "constructive"
+    },
+    {
+      "participantID": "0048",
+      "feedback": "The genetic counseling section was particularly helpful.",
+      "category": "positive"
+    }
+  ],
+  "notes": "Optional qualitative feedback. This is placeholder data - replace with actual R export if available."
+}

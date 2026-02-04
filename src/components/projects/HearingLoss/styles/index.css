@@ -1,0 +1,120 @@
+/* Hearing Loss Report - Main CSS Entry */
+/* Import platform foundation first, then project tokens */
+
+@import '../../reports-core/index.css';
+@import './tokens.css';
+@import './headers.css';
+
+/* === PROJECT ROOT CONTAINER === */
+.hl-root {
+  /* Ensure we inherit platform foundation */
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  /* Override any site-level constraints */
+  display: block !important;
+  align-items: initial !important;
+  justify-content: initial !important;
+  min-height: auto !important;
+  height: auto !important;
+
+  /* IMPORTANT: Preserve shader background */
+  background: transparent !important;
+
+  /* Establish local stacking context but allow background through */
+  isolation: isolate;
+}
+
+/* === LAYOUT SYSTEM === */
+.hl-section {
+  padding: var(--hl-section-padding) 0;
+  width: 100%;
+}
+
+/* First section gets extra top padding to clear navbar */
+.hl-section:first-child {
+  padding-top: calc(var(--hl-section-padding) + var(--rp-space-16));
+}
+
+.hl-container {
+  max-width: var(--hl-content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--rp-space-6);
+}
+
+.hl-section + .hl-section {
+  margin-top: var(--hl-section-gap);
+}
+
+/* === CARD SYSTEM === */
+.hl-card {
+  background: var(--hl-card-bg);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  transition:
+    transform var(--hl-animation-normal),
+    box-shadow var(--hl-animation-normal);
+}
+
+.hl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hl-card-hover-shadow);
+}
+
+.hl-card-content {
+  padding: var(--rp-space-6);
+}
+
+/* === TYPOGRAPHY SYSTEM === */
+/* Override platform typography with project colors */
+.hl-root h1,
+.hl-root h2,
+.hl-root h3,
+.hl-root h4,
+.hl-root h5,
+.hl-root h6 {
+  color: var(--hl-title-color) !important;
+}
+
+.hl-root p {
+  color: var(--hl-body-color) !important;
+}
+
+/* === UTILITY CLASSES === */
+.hl-text-primary { color: var(--hl-title-color) !important; }
+.hl-text-secondary { color: var(--hl-subtitle-color) !important; }
+.hl-text-muted { color: var(--hl-muted-color) !important; }
+
+.hl-text-center { text-align: center; }
+.hl-text-left { text-align: left; }
+.hl-text-right { text-align: right; }
+
+/* === LOADING STATE === */
+.hl-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--hl-subtitle-color);
+  font-size: var(--rp-text-lg);
+}
+
+/* === DEBUG HELPERS === */
+.hl-debug {
+  border: 2px solid var(--hl-warning) !important;
+  position: relative;
+}
+
+.hl-debug::before {
+  content: "HL-DEBUG";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--hl-warning);
+  color: white;
+  font-size: var(--rp-text-xs);
+  padding: var(--rp-space-1);
+  border-radius: 0 var(--rp-border-radius-sm) 0 var(--rp-border-radius-sm);
+}

@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "n_paired": 44,
+    "n_tests": 4,
+    "correction_method": "Benjamini-Hochberg (False Discovery Rate)",
+    "questions": ["MGT could be of value to the patient", "MGT could be of value to the patient's family", "MGT could be of value in informing management decisions", "MGT could be of value in improving primary/secondary prevention", "MGT could limit the patient's private health insurance coverage", "MGT could limit the patient's life insurance coverage", "Were you aware of the 2019 moratorium?", "Genomic testing could stigmatise a patient as 'worried well'"]
+  },
+  "percentage_agreement": [
+    {
+      "Question": "2.1",
+      "Percentage_Pre": 97.7273,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 100,
+      "Survey_Post": "Post",
+      "Change": 2.2727,
+      "Label": "MGT could be of value to the patient"
+    },
+    {
+      "Question": "2.2",
+      "Percentage_Pre": 97.7273,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 100,
+      "Survey_Post": "Post",
+      "Change": 2.2727,
+      "Label": "MGT could be of value to the patient's family"
+    },
+    {
+      "Question": "2.3",
+      "Percentage_Pre": 97.7273,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 100,
+      "Survey_Post": "Post",
+      "Change": 2.2727,
+      "Label": "MGT could be of value in informing management decisions"
+    },
+    {
+      "Question": "2.4",
+      "Percentage_Pre": 95.4545,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 100,
+      "Survey_Post": "Post",
+      "Change": 4.5455,
+      "Label": "MGT could be of value in improving primary/secondary prevention"
+    },
+    {
+      "Question": "2.5",
+      "Percentage_Pre": 86.3636,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 63.6364,
+      "Survey_Post": "Post",
+      "Change": -22.7273,
+      "Label": "MGT could limit the patient's private health insurance coverage"
+    },
+    {
+      "Question": "2.6",
+      "Percentage_Pre": 95.4545,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 88.6364,
+      "Survey_Post": "Post",
+      "Change": -6.8182,
+      "Label": "MGT could limit the patient's life insurance coverage"
+    },
+    {
+      "Question": "2.7",
+      "Percentage_Pre": 25,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 95.4545,
+      "Survey_Post": "Post",
+      "Change": 70.4545,
+      "Label": "Were you aware of the 2019 moratorium?"
+    },
+    {
+      "Question": "2.8",
+      "Percentage_Pre": 59.0909,
+      "Survey_Pre": "Pre",
+      "Percentage_Post": 38.6364,
+      "Survey_Post": "Post",
+      "Change": -20.4545,
+      "Label": "Genomic testing could stigmatise a patient as 'worried well'"
+    }
+  ],
+  "mcnemar_tests": [
+    {
+      "Question": "2.1",
+      "Valid": false,
+      "Reason": "Not a 2x2 table",
+      "Significance_Uncorrected": "N/A"
+    },
+    {
+      "Question": "2.2",
+      "Valid": false,
+      "Reason": "Not a 2x2 table",
+      "Significance_Uncorrected": "N/A"
+    },
+    {
+      "Question": "2.3",
+      "Valid": false,
+      "Reason": "Not a 2x2 table",
+      "Significance_Uncorrected": "N/A"
+    },
+    {
+      "Question": "2.4",
+      "Valid": false,
+      "Reason": "Not a 2x2 table",
+      "Significance_Uncorrected": "N/A"
+    },
+    {
+      "Question": "2.5",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 5.0625,
+      "p_value": 0.0244,
+      "Disagree_to_Agree": 13,
+      "Agree_to_Disagree": 3,
+      "Odds_Ratio": 3.8571,
+      "OR_CI_lower": 1.1904,
+      "OR_CI_upper": 12.4982,
+      "Significance_Uncorrected": "*",
+      "p_adjusted": 0.0489,
+      "Significance_Adjusted": "*"
+    },
+    {
+      "Question": "2.6",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 0.8,
+      "p_value": 0.3711,
+      "Disagree_to_Agree": 4,
+      "Agree_to_Disagree": 1,
+      "Odds_Ratio": 3,
+      "OR_CI_lower": 0.4727,
+      "OR_CI_upper": 19.0395,
+      "Significance_Uncorrected": "ns",
+      "p_adjusted": 0.3711,
+      "Significance_Adjusted": "ns"
+    },
+    {
+      "Question": "2.7",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 29.0323,
+      "p_value": 7.1183e-08,
+      "Disagree_to_Agree": 0,
+      "Agree_to_Disagree": 31,
+      "Odds_Ratio": 0.0159,
+      "OR_CI_lower": 0.001,
+      "OR_CI_upper": 0.2594,
+      "Significance_Uncorrected": "***",
+      "p_adjusted": 2.8473e-07,
+      "Significance_Adjusted": "***"
+    },
+    {
+      "Question": "2.8",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 4.2667,
+      "p_value": 0.0389,
+      "Disagree_to_Agree": 12,
+      "Agree_to_Disagree": 3,
+      "Odds_Ratio": 3.5714,
+      "OR_CI_lower": 1.0916,
+      "OR_CI_upper": 11.6845,
+      "Significance_Uncorrected": "*",
+      "p_adjusted": 0.0518,
+      "Significance_Adjusted": "ns"
+    }
+  ],
+  "significant_changes": [
+    {
+      "Question": "2.7",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 29.0323,
+      "p_value": 7.1183e-08,
+      "Disagree_to_Agree": 0,
+      "Agree_to_Disagree": 31,
+      "Odds_Ratio": 0.0159,
+      "OR_CI_lower": 0.001,
+      "OR_CI_upper": 0.2594,
+      "Significance_Uncorrected": "***",
+      "p_adjusted": 2.8473e-07,
+      "Significance_Adjusted": "***"
+    },
+    {
+      "Question": "2.5",
+      "Valid": true,
+      "N": 44,
+      "Chi_square": 5.0625,
+      "p_value": 0.0244,
+      "Disagree_to_Agree": 13,
+      "Agree_to_Disagree": 3,
+      "Odds_Ratio": 3.8571,
+      "OR_CI_lower": 1.1904,
+      "OR_CI_upper": 12.4982,
+      "Significance_Uncorrected": "*",
+      "p_adjusted": 0.0489,
+      "Significance_Adjusted": "*"
+    }
+  ],
+  "summary": {
+    "total_statements": 8,
+    "significant_uncorrected": 3,
+    "significant_adjusted": 2
+  }
+}

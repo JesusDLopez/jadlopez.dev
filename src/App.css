@@ -1,0 +1,150 @@
+/* ───────────── Hero Section ───────────── */
+
+/* Styles for the hero live in `src/styles/Hero.css`. */
+
+/* Revealed via JS by toggling a class on <body> */
+body.show-nav .navbar {
+  opacity: 1;
+}
+
+/* ───────────── Section Layout ───────────── */
+
+/* Shared layout rule: each section fills full viewport and centers content */
+.screen-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+}
+
+/* Merged About section (Hola + Banner) - Full viewport height */
+.section--about-merged {
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  overflow: visible !important; /* Changed from hidden to allow scrolling */
+}
+
+/* Auto-height section for Academic Journey */
+.section--auto-height {
+  min-height: auto !important;
+  height: auto !important;
+  display: block !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  overflow: visible !important;
+}
+
+/* Work section - Interactive Laboratory */
+#work.screen-section {
+  min-height: 100vh; /* Three-quarters viewport - gives breathing room */
+  align-items: flex-start; /* Align to top instead of centering */
+  padding-top: 0rem; /* Add controlled top spacing */
+}
+
+/* Blog section */
+#blog.screen-section {
+  min-height: 75vh; /* Two-thirds viewport - balanced spacing */
+}
+
+/* Contact section */
+#contact.screen-section {
+  min-height: 100vh; /* Half viewport - compact at bottom */
+}
+
+/* 🚫 Removed: #about.screen-section { min-height: 300vh; } */
+
+/* ───────────── Background & Layout ───────────── */
+
+/* Shader background stays fixed and non-interactive behind everything */
+.shader-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100dvh; /* Use dynamic viewport height for mobile coverage */
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* ───────────── Unified Grid System ───────────── */
+
+/* Kaito Notes inspired grid system with anchor points */
+.unified-grid-system {
+  /* Grid boundaries: 8%, 25%, 50%, 75%, 92% */
+  --anchor-1: 8%; /* Left Boundary */
+  --anchor-2: 25%; /* Left Content */
+  --anchor-3: 50%; /* Center Spine */
+  --anchor-4: 75%; /* Right Content */
+  --anchor-5: 92%; /* Right Boundary */
+
+  /* Content zones */
+  --left-zone-start: var(--anchor-1);
+  --left-zone-end: var(--anchor-2);
+  --main-zone-start: var(--anchor-2);
+  --main-zone-end: var(--anchor-4);
+  --right-zone-start: var(--anchor-4);
+  --right-zone-end: var(--anchor-5);
+}
+
+/* Apply grid system to all sections */
+.screen-section {
+  /* Inherit grid variables for anchor point positioning */
+}
+
+/* For layout blocks (like page wrappers, cards, etc.) */
+.layout-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* ───────────── Utility ───────────── */
+
+/* Inner section content container: centers, bounds, adds spacing */
+.section-inner {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0;
+  position: relative;
+}
+
+/* Optional: grid system if needed later */
+.grid-6-col {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-12-col {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ───────────── Navbar ───────────── */
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  width: 100%;
+  transition: opacity 1.2s ease-in-out, width 1.2s ease-in-out;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}

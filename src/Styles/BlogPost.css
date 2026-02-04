@@ -1,0 +1,19 @@
+.blog-post {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.75;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.blog-post p {
+  margin-bottom: 1.25rem;
+  font-family: "Inter", sans-serif;
+}

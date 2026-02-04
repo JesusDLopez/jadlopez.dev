@@ -1,0 +1,445 @@
+/* About Intro using unified anchor point system */
+/* CRITICAL: Override screen-section flex layout to prevent side-by-side display */
+.about-intro-section {
+  display: block !important; /* Override screen-section flex */
+  align-items: unset !important; /* Remove flex centering */
+  justify-content: unset !important; /* Remove flex centering */
+  height: 100vh;
+  width: 100%;
+  max-width: 100vw; /* Prevent overflow */
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden; /* Prevent content spillover */
+}
+
+.about-intro-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* Full viewport width for proper anchor positioning */
+  max-width: none;
+  margin: 0;
+}
+
+/* Title and content block with anchor point positioning */
+.about-intro-block {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* Remove flex - let absolute positioning handle layout */
+  display: block;
+}
+
+/* ¡Hola! title positioned exactly at A1 (8%) */
+.about-intro-title {
+  position: absolute;
+  left: 8%; /* A1 - exact anchor point */
+  top: 15%; /* Closer to the top of screen */
+  transform: translateY(-50%); /* Vertically center around the 15% mark */
+  font-size: clamp(70px, 10vw, 120px); /* Smaller on desktop */
+  line-height: 0.85;
+  letter-spacing: 0.12em;
+  font-family: "DM Sans", "Inter", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  /* Dark theme: blue/green gradient matching section titles */
+  background: linear-gradient(
+    135deg,
+    #60a5fa 0%,
+    #3b82f6 25%,
+    #06b6d4 75%,
+    #14b8a6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  text-shadow: none;
+  text-align: left;
+  z-index: 2;
+}
+
+/* Light theme title - restore original orange-pink gradient */
+body.light-theme .about-intro-title {
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8e53 25%,
+    #ff6b9d 75%,
+    #e91e63 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Text content positioned at A1.5 (16.5%) and centered to screen */
+.about-intro-content {
+  position: absolute;
+  left: 16.5%; /* A1.5 - halfway between A1 (8%) and A2 (25%) */
+  right: 8%; /* Extend to right boundary, leaving 8% margin */
+  top: 35%; /* Increased gap from title - more spacing */
+  bottom: 100px; /* More space for banner - prevents cropping when lines wrap */
+  width: auto;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start at top of content area */
+  padding-top: 2rem; /* Add some internal padding */
+}
+
+.about-intro-line {
+  font-size: clamp(
+    19px,
+    2.5vw,
+    34px
+  ); /* Further reduction for tighter layout */
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  margin: 0 0 3.5vh 0; /* More breathing space between lines */
+  color: rgba(255, 255, 255, 0.95);
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  font-weight: 300; /* Lighter weight on desktop */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  width: 100%;
+  /* Elegant, taller appearance */
+  font-stretch: semi-expanded;
+  font-optical-sizing: auto;
+}
+
+/* Light theme text styling - dark, readable text */
+body.light-theme .about-intro-line {
+  color: rgba(31, 41, 55, 0.95) !important;
+  text-shadow: none;
+}
+
+.about-intro-line:last-child {
+  margin-bottom: 0;
+}
+
+/* Simplified emphasis styling - just bolder */
+.emphasis-word {
+  font-weight: 500; /* Reduced from 600 to 500 for subtler emphasis */
+  font-family: inherit; /* Ensure it uses the same Playfair Display as parent */
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Name emphasis - DM Sans font but white color */
+.name-emphasis {
+  font-family: "DM Sans", "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 1) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Light theme emphasis styling */
+body.light-theme .emphasis-word {
+  color: rgba(31, 41, 55, 1) !important;
+}
+
+body.light-theme .name-emphasis {
+  color: rgba(31, 41, 55, 1) !important;
+  -webkit-text-fill-color: rgba(31, 41, 55, 1) !important;
+}
+
+/* Rotating words animation */
+.rotating-word-wrapper {
+  display: inline-block;
+  position: relative;
+  min-width: 1ch; /* Prevent layout shift */
+}
+
+.rotating-word {
+  display: inline-block;
+  animation: fadeInOut 4s ease-in-out; /* Slightly slower for smoother feel */
+  white-space: nowrap; /* Keep words together */
+  font-family: "DM Sans", "Inter", sans-serif !important; /* Match Hola title font */
+  font-size: 0.92em !important; /* Slightly smaller than parent text */
+  font-weight: 500 !important; /* Reduced from 600 for subtler emphasis */
+
+  /* Dark theme: blue/green gradient matching section titles */
+  background: linear-gradient(
+    135deg,
+    #60a5fa 0%,
+    #3b82f6 25%,
+    #06b6d4 75%,
+    #14b8a6 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Light theme - orange-pink gradient for rotating words */
+body.light-theme .rotating-word {
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8e53 25%,
+    #ff6b9d 75%,
+    #e91e63 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important; /* Remove any drop-shadow */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive grid adjustments */
+@media (min-width: 1400px) {
+  .about-intro-title {
+    font-size: clamp(100px, 12vw, 160px);
+  }
+
+  .about-intro-line {
+    font-size: clamp(32px, 3.8vw, 48px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-intro-title {
+    font-size: clamp(70px, 9vw, 120px);
+  }
+
+  .about-intro-line {
+    font-size: clamp(24px, 3vw, 36px);
+  }
+}
+
+/* OLD mobile media query removed - now using JS-toggled classes instead */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* MOBILE-SPECIFIC CLASSES (JS-toggled, no media queries)      */
+/* ═══════════════════════════════════════════════════════════ */
+
+.about-intro-section-mobile {
+  display: block !important; /* Override screen-section flex */
+  align-items: unset !important; /* Remove flex centering */
+  justify-content: unset !important; /* Remove flex centering */
+  position: relative;
+  height: auto;
+  min-height: auto;
+  width: 100%;
+  max-width: 100vw; /* Prevent overflow */
+  padding: 80px 20px 80px 20px; /* More bottom padding for dynamic content + banner */
+  margin: 0;
+  overflow: visible; /* Allow content to show */
+}
+
+.about-intro-container-mobile {
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.about-intro-block-mobile {
+  position: static;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-intro-title-mobile {
+  position: static;
+  transform: none;
+  font-size: clamp(60px, 15vw, 100px); /* Slightly smaller on mobile */
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  font-family: "DM Sans", "Inter", sans-serif;
+  font-weight: 600;
+  margin: 0 0 60px 0; /* Increased space below title */
+  /* DNA cyan gradient with subtle stroke - matches desktop */
+  background: linear-gradient(
+    135deg,
+    #00ffcc 0%,
+    #00e6ff 50%,
+    #64c8ff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  display: block;
+  text-shadow: none;
+  text-align: left;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Light theme mobile title - restore original orange-pink gradient */
+body.light-theme .about-intro-title-mobile {
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8e53 25%,
+    #ff6b9d 75%,
+    #e91e63 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.about-intro-content-mobile {
+  position: static;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  margin: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.about-intro-line-mobile {
+  font-size: clamp(22px, 6vw, 29px); /* Slightly smaller text on mobile */
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin: 0 0 28px 0; /* MORE breathing space - each line is a statement */
+  /* SOLID WHITE COLOR */
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.95) !important;
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.emphasis-word-mobile {
+  font-weight: 500;
+  font-family: "DM Sans", "Inter", sans-serif !important;
+  /* Add gradient for rotating words on mobile */
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8e53 25%,
+    #ff6b9d 75%,
+    #e91e63 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Light theme styles for mobile text */
+body.light-theme .about-intro-line-mobile {
+  color: rgba(31, 41, 55, 0.95) !important;
+  -webkit-text-fill-color: rgba(31, 41, 55, 0.95) !important;
+  text-shadow: none;
+}
+
+/* Allow rotating words to wrap naturally on mobile */
+@media (max-width: 768px) {
+  .rotating-word {
+    white-space: normal !important; /* Allow natural wrapping on mobile */
+    display: inline !important; /* Change to inline for natural text flow */
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-intro-title,
+  .about-intro-line,
+  .emphasis-word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Override Framer Motion animations when reduced motion is preferred */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hola debug overlay */
+.hola-debug-overlay {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: min(90vw, 260px);
+  background: rgba(0, 0, 0, 0.78);
+  color: #f8fafc;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding: 0.75rem 0.85rem 0.9rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  z-index: 20000;
+  pointer-events: auto;
+}
+
+.hola-debug-overlay pre {
+  margin: 0.5rem 0 0 0;
+  white-space: pre-wrap;
+}
+
+.hola-debug-overlay .hola-debug-refresh {
+  all: unset;
+  display: inline-block;
+  background: rgba(248, 250, 252, 0.1);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hola-debug-overlay .hola-debug-refresh:hover {
+  background: rgba(248, 250, 252, 0.2);
+  transform: translateY(-1px);
+}
+
+body.light-theme .hola-debug-overlay {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  border-color: rgba(51, 65, 85, 0.35);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}

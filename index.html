@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Use relative path so it works under base subpaths like /react-card/ -->
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Jesus Lopez O'Rourke | Clinical Genomics & Data Science</title>
+    <meta
+      name="description"
+      content="Portfolio of Jesus Lopez O'Rourke — clinical genomics, data science, and interactive scientific visualization."
+    />
+    <meta property="og:title" content="Jesus Lopez O'Rourke | Clinical Genomics & Data Science" />
+    <meta
+      property="og:description"
+      content="Interactive portfolio spanning clinical genomics, data science, and scientific visualization."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jesus Lopez O'Rourke | Clinical Genomics & Data Science" />
+    <meta
+      name="twitter:description"
+      content="Interactive portfolio spanning clinical genomics, data science, and scientific visualization."
+    />
+    <meta name="twitter:image" content="/logo.png" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+        position: relative;
+        min-height: 100dvh;
+        min-height: 100svh; /* Small viewport - covers when Safari toolbar visible */
+        min-height: -webkit-fill-available; /* Fallback for older Safari */
+        overflow-x: hidden;
+        background-color: #000000; /* Prevent white gaps */
+      }
+      body {
+        position: relative;
+        min-height: 100dvh;
+        min-height: 100svh;
+        min-height: -webkit-fill-available;
+        overflow-x: hidden;
+        background-color: #000000; /* Match shader background */
+        margin: 0;
+        padding: 0;
+        /* Add safe area padding for iPhone notch/home indicator */
+        padding-top: env(safe-area-inset-top, 0);
+        padding-bottom: env(safe-area-inset-bottom, 0);
+      }
+      /* Mobile-specific fixes for viewport coverage */
+      @media (max-width: 768px) {
+        html, body {
+          overscroll-behavior: contain;
+          width: 100%;
+          height: 100dvh;
+          height: 100svh; /* Use smallest viewport for consistent coverage */
+          height: -webkit-fill-available;
+        }
+        /* Ensure root element also covers full viewport */
+        #root {
+          min-height: 100dvh;
+          min-height: 100svh;
+          min-height: -webkit-fill-available;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

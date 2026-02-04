@@ -1,0 +1,213 @@
+/*
+===============================================
+PREVIOUS DESIGNS (for easy revert):
+===============================================
+
+--- ORIGINAL PILL DESIGN (centered with background) ---
+.section-separator {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.separator-line {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 90%, transparent 100%);
+  transform: translateY(-50%);
+}
+
+.separator-label {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.separator-label span {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+--- OPTION B: MINIMAL UNDERLINED (left-aligned with animated underline) ---
+.section-separator {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 1rem 0 0.5rem 0;
+  padding-left: 8%;
+}
+
+.separator-line {
+  display: none;
+}
+
+.separator-label {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0 0 0.5rem 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+
+.separator-label span {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter", "DM Sans", sans-serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  display: block;
+}
+
+.separator-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #e91e63);
+  animation: expandUnderline 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes expandUnderline {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+===============================================
+*/
+
+/* Section separator using anchor point system - OPTION C STYLE: Large left-aligned text */
+.section-separator {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* LEFT-ALIGNED */
+  margin: 1rem 0 0.5rem 0;
+  padding-left: 8%; /* A1 anchor point */
+}
+
+/* Hide horizontal separator line */
+.separator-line {
+  display: none;
+}
+
+/* Large centered label (Option C style - larger version) */
+.separator-label {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  z-index: 10;
+}
+
+.separator-label span {
+  /* Large minimal text - centered */
+  color: rgba(255, 255, 255, 0.7); /* Medium opacity */
+  font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 3.5vw, 40px); /* MUCH LARGER */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em; /* Wide letter spacing */
+  line-height: 1.3;
+  display: block;
+  text-align: center;
+}
+
+/* Light theme text */
+body.light-theme .separator-label span {
+  color: rgba(31, 41, 55, 0.6);
+}
+
+/* Specific separators for different sections - CONSISTENT LARGE SPACING */
+.separator-cv {
+  margin-top: 20vh; /* Large space to give About Me its own screen */
+  margin-bottom: 5rem; /* Space before Academic Journey cards */
+}
+
+.separator-work {
+  margin-top: 20vh; /* Consistent large spacing like About section */
+  margin-bottom: 5rem; /* Consistent spacing before content */
+}
+
+.separator-blog {
+  margin-top: 20vh; /* Consistent large spacing */
+  margin-bottom: 5rem; /* Consistent spacing before content */
+}
+
+.separator-contact {
+  margin-top: 20vh; /* Consistent large spacing */
+  margin-bottom: 5rem; /* Consistent spacing before content */
+}
+
+/* Animation on scroll */
+.separator-line {
+  opacity: 0;
+  animation: fadeInLine 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInLine {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .separator-line {
+    animation: none;
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+/* Mobile: Reduce spacing dramatically for better flow */
+@media (max-width: 768px) {
+  .separator-cv {
+    margin-top: 2rem !important; /* Comfortable space on mobile */
+    margin-bottom: 2rem !important;
+  }
+
+  .section-separator {
+    height: auto;
+    padding-left: 5%; /* Left-aligned on mobile with less indent */
+    justify-content: flex-start;
+  }
+
+  .separator-label span {
+    font-size: clamp(18px, 5vw, 28px); /* Large on mobile too */
+    letter-spacing: 0.12em; /* Slightly less spacing for mobile */
+  }
+}

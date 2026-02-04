@@ -1,0 +1,750 @@
+/* Methods Section - Interactive flip cards and pipeline visualization */
+
+/* === HEADER SECTION === */
+.hl-methods-header {
+  text-align: center;
+  margin-bottom: var(--rp-space-16);
+}
+
+.hl-methods-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--rp-font-bold);
+  margin-bottom: var(--rp-space-4);
+  background: linear-gradient(135deg, var(--hl-title-color), var(--hl-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.hl-methods-subtitle {
+  font-size: var(--rp-text-xl);
+  color: var(--hl-subtitle-color);
+  width: 100%;
+  margin: 0 0 var(--rp-space-8) 0;
+  line-height: var(--rp-leading-relaxed);
+  text-align: center;
+}
+
+/* Portfolio Highlight Box */
+.hl-portfolio-highlight {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--hl-primary) 8%, var(--hl-card-bg)),
+    color-mix(in srgb, var(--hl-primary) 4%, var(--hl-card-bg))
+  );
+  border: var(--rp-border-width) solid var(--hl-primary);
+  border-left: 4px solid var(--hl-primary);
+  border-radius: var(--hl-card-radius);
+  padding: var(--rp-space-6);
+  max-width: 800px;
+  margin: var(--rp-space-8) auto var(--rp-space-12) auto;
+  text-align: left;
+  color: var(--hl-body-color);
+  line-height: var(--rp-leading-relaxed);
+  box-shadow: var(--hl-card-shadow);
+  transition: transform var(--hl-animation-normal), box-shadow var(--hl-animation-normal);
+}
+
+.hl-portfolio-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hl-card-hover-shadow);
+}
+
+.hl-portfolio-highlight strong {
+  color: var(--hl-primary);
+  font-weight: var(--rp-font-semibold);
+}
+
+/* === ANALYSIS PIPELINE === */
+.hl-analysis-pipeline {
+  background: rgba(255, 255, 255, 0.95);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  padding: var(--rp-space-8);
+  margin: var(--rp-space-12) 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hl-analysis-pipeline h3 {
+  font-size: var(--rp-text-2xl);
+  font-weight: var(--rp-font-semibold);
+  color: var(--hl-title-color);
+  margin-bottom: var(--rp-space-4);
+  text-align: center;
+}
+
+.hl-analysis-pipeline > p {
+  font-size: var(--rp-text-lg);
+  color: var(--hl-subtitle-color);
+  text-align: center;
+  margin-bottom: var(--rp-space-8);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--rp-leading-relaxed);
+}
+
+/* Pipeline Steps Grid */
+.hl-pipeline-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--rp-space-6);
+  padding: var(--rp-space-8) 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual Pipeline Step Cards */
+.hl-pipeline-step {
+  background: rgba(255, 255, 255, 0.95);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  transition:
+    transform var(--hl-animation-normal),
+    box-shadow var(--hl-animation-normal),
+    border-color var(--hl-animation-normal);
+  position: relative;
+  perspective: 1000px;
+  min-height: 250px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.dark-theme .hl-pipeline-step {
+  background: var(--hl-card-bg);
+}
+
+.hl-pipeline-step:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--hl-card-hover-shadow);
+}
+
+/* Unified color for all My Analysis Strategy cards */
+.hl-pipeline-step:hover {
+  border-color: var(--hl-primary);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--hl-primary) 20%, transparent);
+}
+
+/* Rotation hint on hover */
+.hl-pipeline-step:hover::after {
+  content: "🔄";
+  position: absolute;
+  top: var(--rp-space-2);
+  right: var(--rp-space-2);
+  font-size: var(--rp-text-xl);
+  opacity: 0.7;
+  animation: gentle-rotate 2s linear infinite;
+}
+
+@keyframes gentle-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Flip Card Inner Container */
+.hl-pipeline-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  min-height: 250px;
+}
+
+.hl-pipeline-step.flipped .hl-pipeline-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.hl-pipeline-card-front,
+.hl-pipeline-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--hl-card-radius);
+  padding: var(--rp-space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hl-pipeline-card-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+}
+
+/* Card-specific flipped backgrounds - Step 1 (Primary - Blue) */
+.hl-step-1 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+  color: #1f2937 !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid var(--hl-primary) !important;
+}
+
+body.dark-theme .hl-step-1 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%) !important;
+  color: #e0e7ff !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+  border-left: 4px solid var(--hl-primary) !important;
+}
+
+/* Card-specific flipped backgrounds - Step 2 (Accent - Blue) */
+.hl-step-2 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+  color: #1f2937 !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid var(--hl-accent) !important;
+}
+
+body.dark-theme .hl-step-2 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%) !important;
+  color: #e0e7ff !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+  border-left: 4px solid var(--hl-accent) !important;
+}
+
+/* Card-specific flipped backgrounds - Step 3 (Primary - Blue) */
+.hl-step-3 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+  color: #1f2937 !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid var(--hl-primary) !important;
+}
+
+body.dark-theme .hl-step-3 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%) !important;
+  color: #e0e7ff !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+  border-left: 4px solid var(--hl-primary) !important;
+}
+
+/* Card-specific flipped backgrounds - Step 4 (Accent - Blue) */
+.hl-step-4 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+  color: #1f2937 !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid var(--hl-accent) !important;
+}
+
+body.dark-theme .hl-step-4 div.hl-pipeline-card-back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%) !important;
+  color: #e0e7ff !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+  border-left: 4px solid var(--hl-accent) !important;
+}
+
+.hl-pipeline-card-back.hl-pipeline-card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  justify-content: flex-start;
+  background: #f8fafc !important;
+  color: #374151 !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode for pipeline card back */
+body.dark-theme .hl-pipeline-card-back.hl-pipeline-card-back {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Step Number Styling */
+.hl-step-number {
+  position: absolute;
+  top: var(--rp-space-4);
+  left: var(--rp-space-4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--hl-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--rp-font-bold);
+  font-size: var(--rp-text-lg);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--hl-primary) 30%, transparent);
+}
+
+/* All step numbers use primary color for consistency */
+.hl-step-2 .hl-step-number { background: var(--hl-primary); }
+.hl-step-3 .hl-step-number { background: var(--hl-primary); }
+.hl-step-4 .hl-step-number { background: var(--hl-primary); }
+
+/* Step Content */
+.hl-step-content {
+  padding-top: var(--rp-space-12);
+}
+
+.hl-pipeline-card-front .hl-step-content {
+  padding-top: var(--rp-space-12);
+}
+
+.hl-pipeline-card-back .hl-step-content {
+  padding-top: 0;
+}
+
+.hl-step-content h4 {
+  color: var(--hl-title-color);
+  font-size: var(--rp-text-lg);
+  font-weight: var(--rp-font-semibold);
+  margin-bottom: var(--rp-space-3);
+  line-height: var(--rp-leading-tight);
+}
+
+.hl-pipeline-card-back .hl-step-content h4 {
+  color: var(--hl-primary) !important;
+  font-size: var(--rp-text-lg) !important;
+  font-weight: var(--rp-font-semibold) !important;
+  margin-bottom: var(--rp-space-3) !important;
+  line-height: var(--rp-leading-tight) !important;
+}
+
+body.dark-theme .hl-pipeline-card-back .hl-step-content h4 {
+  color: #818cf8 !important;
+}
+
+.hl-step-content p {
+  color: var(--hl-body-color);
+  line-height: var(--rp-leading-relaxed);
+  margin-bottom: var(--rp-space-3);
+}
+
+.hl-pipeline-card-back .hl-step-content p {
+  color: var(--hl-body-color) !important;
+  line-height: var(--rp-leading-relaxed) !important;
+  margin-bottom: var(--rp-space-3) !important;
+}
+
+body.dark-theme .hl-pipeline-card-back .hl-step-content p {
+  color: var(--hl-body-color) !important;
+}
+
+.hl-step-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Technical Terms */
+.hl-tech-term {
+  background: linear-gradient(135deg, var(--hl-primary), var(--hl-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--rp-font-semibold);
+  position: relative;
+  display: inline-block;
+  margin-left: var(--rp-space-2);
+  margin-right: var(--rp-space-1);
+}
+
+/* Inline Equations */
+.hl-equation {
+  font-family: 'Courier New', monospace;
+  background: color-mix(in srgb, var(--hl-primary) 10%, transparent);
+  padding: var(--rp-space-1) var(--rp-space-2);
+  border-radius: 4px;
+  font-weight: var(--rp-font-semibold);
+  color: var(--hl-primary);
+  white-space: nowrap;
+}
+
+body.dark-theme .hl-equation {
+  background: color-mix(in srgb, var(--hl-primary) 20%, transparent);
+  color: #818cf8;
+}
+
+/* Block Equations */
+.hl-equation-block {
+  font-family: 'Courier New', monospace;
+  background: color-mix(in srgb, var(--hl-primary) 8%, transparent);
+  padding: var(--rp-space-3);
+  border-radius: var(--hl-card-radius);
+  border-left: 3px solid var(--hl-primary);
+  margin: var(--rp-space-3) 0;
+  font-size: var(--rp-text-base);
+  font-weight: var(--rp-font-semibold);
+  color: var(--hl-primary);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+body.dark-theme .hl-equation-block {
+  background: color-mix(in srgb, var(--hl-primary) 15%, transparent);
+  color: #818cf8;
+  border-left-color: #818cf8;
+}
+
+/* === STATISTICAL METHODS SECTION === */
+.hl-methods-section {
+  margin: var(--rp-space-16) 0;
+}
+
+.hl-methods-section h3 {
+  font-size: var(--rp-text-2xl);
+  font-weight: var(--rp-font-semibold);
+  color: var(--hl-title-color);
+  margin-bottom: var(--rp-space-8);
+  text-align: center;
+}
+
+/* Method Cards Grid */
+.hl-method-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--rp-space-6);
+  margin-top: var(--rp-space-8);
+}
+
+/* Individual Method Cards */
+.hl-method-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: var(--rp-border-width) solid var(--hl-card-border);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  transition:
+    transform var(--hl-animation-normal),
+    box-shadow var(--hl-animation-normal),
+    border-color var(--hl-animation-normal);
+  position: relative;
+  perspective: 1000px;
+  min-height: 300px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hl-method-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--hl-card-hover-shadow);
+}
+
+/* Unified color for all Statistical Methods cards */
+.hl-method-card:hover {
+  border-color: var(--hl-secondary);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--hl-secondary) 20%, transparent);
+}
+
+/* Flip hint */
+.hl-method-card:hover::after {
+  content: "💻";
+  position: absolute;
+  top: var(--rp-space-2);
+  right: var(--rp-space-2);
+  font-size: var(--rp-text-lg);
+  opacity: 0.7;
+}
+
+/* Method Card Inner */
+.hl-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  min-height: 300px;
+}
+
+.hl-method-card.flipped .hl-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Front and Back */
+.hl-card-front,
+.hl-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--hl-card-radius);
+  padding: var(--rp-space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.hl-card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%) !important;
+  color: #1f2937 !important;
+  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.2) !important;
+  border-left: 4px solid var(--hl-secondary) !important;
+}
+
+/* Dark mode green gradient for method cards */
+body.dark-theme .hl-card-back {
+  background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%) !important;
+  color: #d1fae5 !important;
+  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.3) !important;
+  border-left: 4px solid var(--hl-secondary) !important;
+}
+
+/* Override text colors in flipped method cards, but exclude code snippets */
+.hl-card-back *:not(.hl-tech-term):not(.hl-code-snippet):not(pre) {
+  color: var(--hl-body-color) !important;
+}
+
+body.dark-theme .hl-card-back *:not(.hl-tech-term):not(.hl-code-snippet):not(pre) {
+  color: var(--hl-body-color) !important;
+}
+
+.hl-card-back h4 {
+  color: var(--hl-secondary) !important;
+}
+
+body.dark-theme .hl-card-back h4 {
+  color: #34d399 !important;
+}
+
+/* Ensure code snippets always have proper terminal colors */
+.hl-code-snippet {
+  color: #00ff41 !important;
+  background: #0a0a0a !important;
+}
+
+/* Method Header */
+.hl-method-header {
+  display: flex;
+  align-items: center;
+  gap: var(--rp-space-3);
+  margin-bottom: var(--rp-space-4);
+}
+
+.hl-method-icon {
+  font-size: var(--rp-text-2xl);
+  filter: drop-shadow(0 2px 4px color-mix(in srgb, var(--hl-primary) 30%, transparent));
+}
+
+.hl-method-header h4 {
+  color: var(--hl-title-color);
+  font-size: var(--rp-text-xl);
+  font-weight: var(--rp-font-semibold);
+  margin: 0;
+}
+
+/* Method Content */
+.hl-method-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hl-method-content p {
+  color: var(--hl-body-color);
+  line-height: var(--rp-leading-relaxed);
+  margin-bottom: var(--rp-space-4);
+  flex: 1;
+}
+
+/* Tech Terms */
+.hl-tech-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rp-space-2);
+  margin-top: auto;
+}
+
+.hl-tech-terms .hl-tech-term {
+  background: #3b82f6;
+  border: 1px solid #3b82f6;
+  border-radius: calc(var(--hl-card-radius) / 2);
+  padding: var(--rp-space-1) var(--rp-space-3);
+  font-size: var(--rp-text-sm);
+  font-weight: var(--rp-font-semibold);
+  color: white !important;
+  transition: all var(--hl-animation-fast);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  -webkit-text-fill-color: white !important;
+}
+
+/* Hover effects */
+.hl-tech-terms .hl-tech-term:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+  background: #2563eb;
+}
+
+/* Code Section (Back of Cards) */
+.hl-code-header {
+  display: flex;
+  align-items: center;
+  gap: var(--rp-space-3);
+  margin-bottom: var(--rp-space-4);
+  border-bottom: 1px solid #333;
+  padding-bottom: var(--rp-space-3);
+}
+
+.hl-code-icon {
+  font-size: var(--rp-text-xl);
+}
+
+.hl-code-header h4 {
+  color: #ffffff !important;
+  font-size: var(--rp-text-lg);
+  font-weight: var(--rp-font-semibold);
+  margin: 0;
+}
+
+.hl-code-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.hl-library-used {
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  border: 1px solid #10b981;
+  border-radius: calc(var(--hl-card-radius) / 2);
+  padding: var(--rp-space-2) var(--rp-space-3);
+  margin-bottom: var(--rp-space-4);
+  font-size: var(--rp-text-sm);
+  font-weight: var(--rp-font-medium);
+  color: white;
+  display: inline-block;
+}
+
+.hl-code-snippet {
+  background: #0a0a0a !important;
+  border: 1px solid #333 !important;
+  border-radius: calc(var(--hl-card-radius) / 2);
+  padding: var(--rp-space-4);
+  font-family: var(--rp-font-mono);
+  font-size: var(--rp-text-sm);
+  line-height: var(--rp-leading-relaxed);
+  color: #00ff41 !important;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* === METHODOLOGY TRANSITION === */
+.hl-methodology-transition {
+  margin: var(--rp-space-16) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hl-transition-card {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--hl-primary) 8%, var(--hl-card-bg)),
+    color-mix(in srgb, var(--hl-secondary) 8%, var(--hl-card-bg))
+  );
+  border: var(--rp-border-width) solid var(--hl-primary);
+  border-radius: var(--hl-card-radius);
+  box-shadow: var(--hl-card-shadow);
+  padding: var(--rp-space-8);
+  max-width: 600px;
+  text-align: center;
+  transition: transform var(--hl-animation-normal), box-shadow var(--hl-animation-normal);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hl-transition-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--hl-primary) 25%, transparent);
+}
+
+.hl-transition-icon {
+  font-size: 3rem;
+  margin-bottom: var(--rp-space-4);
+  filter: drop-shadow(0 4px 8px color-mix(in srgb, var(--hl-primary) 30%, transparent));
+}
+
+.hl-transition-content h4 {
+  color: var(--hl-title-color);
+  font-size: var(--rp-text-xl);
+  font-weight: var(--rp-font-semibold);
+  margin-bottom: var(--rp-space-4);
+}
+
+.hl-transition-content p {
+  color: var(--hl-body-color);
+  line-height: var(--rp-leading-relaxed);
+  margin: 0;
+}
+
+/* === DARK MODE OVERRIDES === */
+/* Keep original dark mode styling */
+body.dark-theme .hl-analysis-pipeline,
+body.dark-theme .hl-method-card {
+  background: var(--hl-card-bg);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .hl-pipeline-steps {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--rp-space-4);
+    padding: var(--rp-space-6) 0;
+  }
+
+  .hl-pipeline-step {
+    min-height: 200px;
+  }
+
+  .hl-method-cards {
+    grid-template-columns: 1fr;
+    gap: var(--rp-space-4);
+  }
+
+  .hl-method-card {
+    min-height: 250px;
+  }
+
+  .hl-pipeline-card-front,
+  .hl-pipeline-card-back,
+  .hl-card-front,
+  .hl-card-back {
+    padding: var(--rp-space-4);
+  }
+
+  .hl-portfolio-highlight {
+    padding: var(--rp-space-4);
+  }
+
+  .hl-analysis-pipeline {
+    padding: var(--rp-space-6);
+  }
+
+  .hl-transition-card {
+    padding: var(--rp-space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .hl-methods-header h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .hl-methods-subtitle {
+    font-size: var(--rp-text-lg);
+  }
+
+  .hl-pipeline-step {
+    min-height: 180px;
+  }
+
+  .hl-method-card {
+    min-height: 220px;
+  }
+
+  .hl-step-content {
+    padding-top: var(--rp-space-10);
+  }
+
+  .hl-step-number {
+    width: 32px;
+    height: 32px;
+    font-size: var(--rp-text-base);
+  }
+}

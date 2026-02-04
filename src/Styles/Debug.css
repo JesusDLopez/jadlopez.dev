@@ -1,0 +1,282 @@
+/* Debug.css - Visual styles for debug mode */
+/* Only active when body has .debug-mode-active class */
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION OUTLINES & BORDERS
+   ═══════════════════════════════════════════════════════════ */
+
+body.debug-mode-active .screen-section {
+  position: relative;
+  outline: 3px dashed rgba(0, 255, 255, 0.8) !important;
+  outline-offset: -3px;
+}
+
+/* Visualize padding with inner green border */
+body.debug-mode-active .screen-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 2px rgba(0, 255, 0, 0.3);
+  z-index: 9997;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION LABELS (Top-Left)
+   ═══════════════════════════════════════════════════════════ */
+
+.debug-section-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 9998;
+  pointer-events: none;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 255, 0.6);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.debug-id {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(0, 255, 255, 1);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.debug-classes {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEIGHT METRICS (Bottom-Right)
+   ═══════════════════════════════════════════════════════════ */
+
+.debug-height-metrics {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 9998;
+  pointer-events: none;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 165, 0, 0.6);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.debug-metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.debug-metric:last-child {
+  margin-bottom: 0;
+}
+
+.debug-metric-label {
+  color: rgba(255, 165, 0, 0.9);
+  font-weight: 600;
+}
+
+.debug-metric-value {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GLOBAL DEBUG STATS PANEL (Fixed Top-Right)
+   ═══════════════════════════════════════════════════════════ */
+
+.debug-global-stats {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  pointer-events: auto;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  max-width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.debug-stats-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.debug-stats-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(0, 255, 255, 1);
+  letter-spacing: 0.02em;
+}
+
+.debug-stats-hint {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.debug-stats-section {
+  margin-bottom: 0.75rem;
+}
+
+.debug-stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.debug-stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.debug-stat-value {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+  text-align: right;
+}
+
+.debug-stats-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 255, 0),
+    rgba(0, 255, 255, 0.4),
+    rgba(0, 255, 255, 0)
+  );
+  margin: 0.75rem 0;
+}
+
+.debug-sections-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(0, 255, 255, 1);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.debug-section-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 255, 255, 0.05);
+  border-left: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.debug-section-id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(0, 255, 255, 0.9);
+}
+
+.debug-section-metrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.debug-min-height {
+  font-size: 0.65rem;
+  color: rgba(255, 165, 0, 0.8);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLLBAR STYLING FOR DEBUG PANEL
+   ═══════════════════════════════════════════════════════════ */
+
+.debug-global-stats::-webkit-scrollbar {
+  width: 6px;
+}
+
+.debug-global-stats::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.debug-global-stats::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.4);
+  border-radius: 3px;
+}
+
+.debug-global-stats::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .debug-global-stats {
+    top: 0.5rem;
+    right: 0.5rem;
+    max-width: calc(100vw - 1rem);
+    font-size: 0.85rem;
+  }
+
+  .debug-section-label,
+  .debug-height-metrics {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .debug-id {
+    font-size: 0.85rem;
+  }
+
+  .debug-classes {
+    font-size: 0.65rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ENSURE NO INTERFERENCE WITH EXISTING LAYOUT
+   ═══════════════════════════════════════════════════════════ */
+
+/* Debug elements should not affect layout when mode is off */
+body:not(.debug-mode-active) .debug-section-label,
+body:not(.debug-mode-active) .debug-height-metrics,
+body:not(.debug-mode-active) .debug-global-stats {
+  display: none !important;
+}

@@ -1,0 +1,115 @@
+{
+  "questions": [
+    {
+      "id": "Q1.1",
+      "title": "Attitude Toward Genetic Testing",
+      "preMean": 3.2,
+      "preSD": 0.8,
+      "postMean": 4.1,
+      "postSD": 0.6,
+      "change": 0.9,
+      "changePercentage": 28.1
+    },
+    {
+      "id": "Q1.2",
+      "title": "Confidence in Discussing Genetics",
+      "preMean": 2.6,
+      "preSD": 0.9,
+      "postMean": 3.8,
+      "postSD": 0.7,
+      "change": 1.2,
+      "changePercentage": 46.2
+    },
+    {
+      "id": "Q2.1",
+      "title": "Understanding Melanoma Genetics",
+      "preMean": 2.8,
+      "preSD": 0.7,
+      "postMean": 4.2,
+      "postSD": 0.5,
+      "change": 1.4,
+      "changePercentage": 50.0
+    },
+    {
+      "id": "Q2.2",
+      "title": "Knowledge of Genetic Testing Options",
+      "preMean": 2.5,
+      "preSD": 0.8,
+      "postMean": 4.0,
+      "postSD": 0.6,
+      "change": 1.5,
+      "changePercentage": 60.0
+    },
+    {
+      "id": "Q2.3",
+      "title": "Interpretation of Genetic Results",
+      "preMean": 2.3,
+      "preSD": 0.9,
+      "postMean": 3.9,
+      "postSD": 0.7,
+      "change": 1.6,
+      "changePercentage": 69.6
+    },
+    {
+      "id": "Q2.4",
+      "title": "Risk Communication Skills",
+      "preMean": 2.7,
+      "preSD": 0.8,
+      "postMean": 3.7,
+      "postSD": 0.6,
+      "change": 1.0,
+      "changePercentage": 37.0
+    },
+    {
+      "id": "Q2.5",
+      "title": "Identifying Appropriate Candidates",
+      "preMean": 2.9,
+      "preSD": 0.7,
+      "postMean": 4.1,
+      "postSD": 0.5,
+      "change": 1.2,
+      "changePercentage": 41.4
+    },
+    {
+      "id": "Q2.6",
+      "title": "Ethical Considerations",
+      "preMean": 3.1,
+      "preSD": 0.6,
+      "postMean": 4.3,
+      "postSD": 0.5,
+      "change": 1.2,
+      "changePercentage": 38.7
+    },
+    {
+      "id": "Q3.1",
+      "title": "Intent to Use Testing in Practice",
+      "preMean": 3.0,
+      "preSD": 0.8,
+      "postMean": 4.2,
+      "postSD": 0.6,
+      "change": 1.2,
+      "changePercentage": 40.0
+    },
+    {
+      "id": "Q3.2",
+      "title": "Intent to Refer to Genetic Counselor",
+      "preMean": 3.3,
+      "preSD": 0.7,
+      "postMean": 4.4,
+      "postSD": 0.5,
+      "change": 1.1,
+      "changePercentage": 33.3
+    },
+    {
+      "id": "Q3.3",
+      "title": "Intent to Discuss Genetics with Patients",
+      "preMean": 2.9,
+      "preSD": 0.8,
+      "postMean": 4.1,
+      "postSD": 0.6,
+      "change": 1.2,
+      "changePercentage": 41.4
+    }
+  ],
+  "notes": "Pre/post comparisons for N=48 paired participants. Values on 5-point Likert scale. This is placeholder data - replace with actual R export."
+}

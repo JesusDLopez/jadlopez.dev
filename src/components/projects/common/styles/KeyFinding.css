@@ -1,0 +1,115 @@
+/* KeyFinding - Unified key finding highlight component */
+
+.key-finding-highlight {
+  background: rgba(255, 255, 255, 0.95);
+  border: var(--rp-border-width) solid rgba(59, 130, 246, 0.3);
+  border-left: 4px solid var(--hl-primary);
+  border-radius: var(--hl-card-radius);
+  padding: var(--rp-space-6);
+  max-width: 900px;
+  margin: var(--rp-space-8) auto;
+  text-align: left;
+  line-height: var(--rp-leading-relaxed);
+  color: var(--hl-body-color);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transition: transform var(--hl-animation-normal), box-shadow var(--hl-animation-normal);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.key-finding-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+}
+
+.key-finding-highlight strong {
+  color: var(--hl-primary);
+  font-weight: var(--rp-font-bold);
+}
+
+/* Dark mode adjustments */
+body.dark-theme .key-finding-highlight {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--hl-primary) 8%, var(--hl-card-bg)),
+    color-mix(in srgb, var(--hl-primary) 4%, var(--hl-card-bg))
+  );
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+body.dark-theme .key-finding-highlight:hover {
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Type: Validation - Teal/cyan theme */
+.key-finding-highlight.validation {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #06b6d4 8%, var(--hl-card-bg)),
+    color-mix(in srgb, #06b6d4 4%, var(--hl-card-bg))
+  );
+  border-color: rgba(6, 182, 212, 0.3);
+  border-left-color: #06b6d4;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+}
+
+.key-finding-highlight.validation:hover {
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.25);
+}
+
+.key-finding-highlight.validation strong {
+  color: #06b6d4;
+}
+
+/* Type: Null - Purple/violet theme */
+.key-finding-highlight.null {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #8b5cf6 8%, var(--hl-card-bg)),
+    color-mix(in srgb, #8b5cf6 4%, var(--hl-card-bg))
+  );
+  border-color: rgba(139, 92, 246, 0.3);
+  border-left-color: #8b5cf6;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.key-finding-highlight.null:hover {
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
+.key-finding-highlight.null strong {
+  color: #8b5cf6;
+}
+
+/* Dark mode type adjustments */
+body.dark-theme .key-finding-highlight.validation {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #06b6d4 12%, var(--hl-card-bg)),
+    color-mix(in srgb, #06b6d4 6%, var(--hl-card-bg))
+  );
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+body.dark-theme .key-finding-highlight.validation:hover {
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+body.dark-theme .key-finding-highlight.null {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #8b5cf6 12%, var(--hl-card-bg)),
+    color-mix(in srgb, #8b5cf6 6%, var(--hl-card-bg))
+  );
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+body.dark-theme .key-finding-highlight.null:hover {
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .key-finding-highlight {
+    padding: var(--rp-space-5);
+    margin: var(--rp-space-6) auto;
+  }
+}

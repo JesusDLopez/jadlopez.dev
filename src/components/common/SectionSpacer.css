@@ -1,0 +1,25 @@
+.section-spacer {
+  width: 100%;
+  height: var(--spacer-default);
+  pointer-events: none;
+}
+
+.section-spacer--default {
+  height: var(--spacer-default);
+}
+
+.section-spacer--tight {
+  height: var(--spacer-tight);
+}
+
+.section-spacer--reveal {
+  height: var(--spacer-reveal);
+}
+
+.section-spacer--extended {
+  height: var(--spacer-extended);
+}
+
+.section-spacer--flush {
+  height: var(--space-0);
+}

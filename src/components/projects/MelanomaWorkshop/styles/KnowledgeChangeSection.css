@@ -1,0 +1,196 @@
+/* ============================================
+   KnowledgeChangeSection - Knowledge Change Analysis
+   ============================================ */
+
+.mw-knowledge-change-section {
+  padding: 5rem 2rem;
+  background: #f9fafb;
+}
+
+.mw-knowledge-change-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Questions Grid */
+.mw-questions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.mw-question-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mw-question-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mw-question-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Comparison Display */
+.mw-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.mw-comparison-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.mw-comparison-item.mw-pre {
+  background: #fef2f2;
+  border: 2px solid #fecaca;
+}
+
+.mw-comparison-item.mw-post {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+}
+
+.mw-comparison-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.mw-comparison-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.mw-comparison-arrow {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Change Indicator */
+.mw-change-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.mw-change-indicator.mw-positive {
+  background: #d1fae5;
+  border: 2px solid #10b981;
+}
+
+.mw-change-indicator.mw-negative {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+}
+
+.mw-change-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.mw-change-value {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mw-change-indicator.mw-positive .mw-change-value {
+  color: #059669;
+}
+
+.mw-change-indicator.mw-negative .mw-change-value {
+  color: #dc2626;
+}
+
+/* Chart Placeholder */
+.mw-chart-placeholder-small {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+}
+
+.mw-chart-placeholder-small p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Summary */
+.mw-knowledge-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mw-knowledge-summary h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.mw-summary-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.mw-summary-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mw-questions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mw-comparison {
+    flex-direction: column;
+  }
+
+  .mw-comparison-arrow {
+    transform: rotate(90deg);
+  }
+
+  .mw-comparison-value {
+    font-size: 1.25rem;
+  }
+}

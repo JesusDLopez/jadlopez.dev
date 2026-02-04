@@ -1,0 +1,143 @@
+{
+  "name": "All Types Diabetes",
+  "hearing_loss_rate": 0.37975303802430416,
+  "total_cases": 40816,
+  "hearing_loss_cases": 155,
+  "prevalence": 12.339393792815725,
+  "category": "primary_predictor",
+  "significance": "moderate",
+  "subtypes": [
+    {
+      "name": "No Diabetes",
+      "prevalence": 87.66060620718427,
+      "total_cases": 289962,
+      "hearing_loss_cases": 905,
+      "hearing_loss_rate": 0.3121098626716604,
+      "odds_ratio": 1.0,
+      "confidence_interval": {
+        "lower": 1.0,
+        "upper": 1.0
+      },
+      "p_value": 1.0,
+      "significance": "reference"
+    },
+    {
+      "name": "Gestational Diabetes - Diet Controlled",
+      "prevalence": 6.600499428619799,
+      "total_cases": 21833,
+      "hearing_loss_cases": 76,
+      "hearing_loss_rate": 0.348096917510191,
+      "odds_ratio": 1.1157052902514133,
+      "confidence_interval": {
+        "lower": 0.8825043709157492,
+        "upper": 1.4105293250879871
+      },
+      "p_value": 0.39366975527294046,
+      "significance": "none"
+    },
+    {
+      "name": "Gestational Diabetes - Insulin",
+      "prevalence": 2.5533741663593106,
+      "total_cases": 8446,
+      "hearing_loss_cases": 37,
+      "hearing_loss_rate": 0.43807719630594366,
+      "odds_ratio": 1.4053751932453324,
+      "confidence_interval": {
+        "lower": 1.0109123081066214,
+        "upper": 1.953759409150495
+      },
+      "p_value": 0.05287849728678905,
+      "significance": "none"
+    },
+    {
+      "name": "Gestational Diabetes - Oral Hypoglycemic",
+      "prevalence": 2.48777125443651,
+      "total_cases": 8229,
+      "hearing_loss_cases": 29,
+      "hearing_loss_rate": 0.352412200753433,
+      "odds_ratio": 1.1295853658536585,
+      "confidence_interval": {
+        "lower": 0.7799372489933032,
+        "upper": 1.6359817413486548
+      },
+      "p_value": 0.5856488073329519,
+      "significance": "none"
+    },
+    {
+      "name": "Type 2 Diabetes",
+      "prevalence": 0.40087309313194947,
+      "total_cases": 1326,
+      "hearing_loss_cases": 8,
+      "hearing_loss_rate": 0.603318250377074,
+      "odds_ratio": 1.9386949924127466,
+      "confidence_interval": {
+        "lower": 0.9645505215423483,
+        "upper": 3.8966733101716975
+      },
+      "p_value": 0.09965226376792144,
+      "significance": "none"
+    },
+    {
+      "name": "Type 1 Diabetes",
+      "prevalence": 0.1638561210237682,
+      "total_cases": 542,
+      "hearing_loss_cases": 2,
+      "hearing_loss_rate": 0.36900369003690037,
+      "odds_ratio": 1.182962962962963,
+      "confidence_interval": {
+        "lower": 0.29464673122355645,
+        "upper": 4.749420996224625
+      },
+      "p_value": 1.0,
+      "significance": "none"
+    },
+    {
+      "name": "Gestational Diabetes - Diet",
+      "prevalence": 0.08495123617652928,
+      "total_cases": 281,
+      "hearing_loss_cases": 2,
+      "hearing_loss_rate": 0.7117437722419928,
+      "odds_ratio": 2.289605734767025,
+      "confidence_interval": {
+        "lower": 0.5689216348346114,
+        "upper": 9.214440266807593
+      },
+      "p_value": 0.5060486914696601,
+      "significance": "none"
+    },
+    {
+      "name": "Unspecified Diabetes",
+      "prevalence": 0.045952270102606586,
+      "total_cases": 152,
+      "hearing_loss_cases": 1,
+      "hearing_loss_rate": 0.6578947368421052,
+      "odds_ratio": 2.11523178807947,
+      "confidence_interval": {
+        "lower": 0.29571438992032656,
+        "upper": 15.13015825339898
+      },
+      "p_value": 0.9706332065710678,
+      "significance": "none"
+    },
+    {
+      "name": "Insulin Hypoglycemia",
+      "prevalence": 0.002116222965251619,
+      "total_cases": 7,
+      "hearing_loss_cases": 0,
+      "hearing_loss_rate": 0.0,
+      "odds_ratio": 0.0,
+      "confidence_interval": {
+        "lower": 0.0,
+        "upper": 0.0
+      },
+      "p_value": 1.0,
+      "significance": "none"
+    }
+  ],
+  "odds_ratio": 1.217554905191707,
+  "confidence_interval": {
+    "lower": 1.0264966997967573,
+    "upper": 1.4441740995854195
+  },
+  "p_value": 0.026615416822675254
+}

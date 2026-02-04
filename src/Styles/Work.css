@@ -1,0 +1,874 @@
+.work-wrapper {
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 0 10rem 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  /* margin-top: REMOVED - no negative margins */
+}
+
+/* 65/35 Grid Layout (adjusted for shifted cell) */
+.work-content-grid {
+  display: grid;
+  grid-template-columns: 65% 35%; /* Changed from 75/25 to give sidebar more room */
+  gap: 2rem;
+  width: min(96vw, calc(100% - 2 * var(--section-padding-x)));
+  max-width: 1600px;
+  min-height: auto; /* Remove 100vh - let content determine height */
+  height: auto; /* Allow content to determine height */
+  align-items: start; /* Align to top instead of center */
+  margin: 0 auto;
+  position: relative; /* For absolute positioning of children */
+}
+
+/* Sidebar copy column (sits on the right for desktop) */
+.work-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Increased from 1.5rem */
+  padding: 3rem;
+  height: 100vh; /* Match cell height to prevent overflow */
+  justify-content: center; /* Center text vertically */
+  align-self: center; /* Center within grid */
+  position: relative;
+  z-index: 10; /* Float above cell */
+}
+
+.work-sidebar-title {
+  font-family: "DM Sans", "Inter", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem); /* Increased from 2rem/3vw/3.5rem */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  /* Light mode: pink/orange gradient */
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8e53 25%,
+    #ff6b9d 75%,
+    #e91e63 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Dark mode: blue/green gradient */
+body:not(.light-theme) .work-sidebar-title {
+  background: linear-gradient(
+    135deg,
+    #60a5fa 0%,
+    #3b82f6 25%,
+    #06b6d4 75%,
+    #14b8a6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.work-sidebar-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(
+    1.3rem,
+    1.8vw,
+    1.7rem
+  ); /* Increased from 1.1rem/1.5vw/1.4rem */
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+.work-sidebar-description {
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  font-size: clamp(
+    1.15rem,
+    1.4vw,
+    1.35rem
+  ); /* Increased from 1rem/1.2vw/1.15rem */
+  line-height: 1.7;
+  margin: 0;
+  color: var(--text-color);
+  opacity: 0.75;
+}
+
+/* Cellular canvas column (dominates left side on desktop) */
+.work-cell {
+  grid-column: 1;
+  grid-row: 1;
+  position: absolute;
+  top: 0;
+  left: -10vw; /* Shift 10% left - emerges from left edge */
+  width: 75%; /* Actual cell width */
+  height: 100vh; /* Full viewport height - no cropping */
+  background: transparent;
+  border: none;
+  overflow: visible;
+  z-index: 1; /* Behind sidebar */
+}
+
+/* SVG Organic Blob Styling */
+.organic-blob-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.organic-blob-svg {
+  pointer-events: none; /* Allow clicks through to content */
+}
+
+.organic-content {
+  /* Content container styled by SVG clip path */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible; /* Allow organelles to be visible outside clip path */
+}
+
+/* Remove old CSS animation - SVG handles it now */
+
+.work-cell > * {
+  filter: saturate(1.1) brightness(1.05); /* Enhanced organic colors */
+}
+
+.work-cell.skills-active .organelle {
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.organelle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px; /* Reduced for less crowding */
+  height: 170px; /* Reduced for less crowding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* Add padding for spacing */
+  background: var(--organelle-bg);
+  border: 1px solid var(--organelle-border);
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  color: var(--text-color);
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+  user-select: none;
+  /* Enhanced depth shadows */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Depth gradients for each organelle type */
+.organelle[style*="--organelle-education"] {
+  background: radial-gradient(
+    ellipse at 35% 35%,
+    var(--organelle-education-highlight) 0%,
+    var(--organelle-education) 50%,
+    var(--organelle-education-shadow) 100%
+  );
+}
+
+.organelle[style*="--organelle-research"] {
+  background: radial-gradient(
+    ellipse at 35% 35%,
+    var(--organelle-research-highlight) 0%,
+    var(--organelle-research) 50%,
+    var(--organelle-research-shadow) 100%
+  );
+}
+
+.organelle[style*="--organelle-automation"] {
+  background: radial-gradient(
+    ellipse at 35% 35%,
+    var(--organelle-automation-highlight) 0%,
+    var(--organelle-automation) 50%,
+    var(--organelle-automation-shadow) 100%
+  );
+}
+
+.organelle[style*="--organelle-clinical"] {
+  background: radial-gradient(
+    ellipse at 35% 35%,
+    var(--organelle-clinical-highlight) 0%,
+    var(--organelle-clinical) 50%,
+    var(--organelle-clinical-shadow) 100%
+  );
+}
+
+/* Enhanced hover state */
+.organelle:hover:not(.active) {
+  transform: translate(-50%, -50%) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.organelle.hovered .organelle-title {
+  color: var(--organelle-hover-glow);
+  text-shadow: 0 0 12px var(--organelle-hover-glow),
+    0 0 20px var(--organelle-hover-glow), 0 2px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* Protein-like texture overlay */
+.organelle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.15) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 60% 20%,
+      rgba(255, 255, 255, 0.12) 1.5px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(255, 255, 255, 0.18) 2.5px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255, 255, 255, 0.14) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 30% 90%,
+      rgba(255, 255, 255, 0.16) 1.8px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(255, 255, 255, 0.13) 2.2px,
+      transparent 2.2px
+    ),
+    radial-gradient(
+      circle at 15% 60%,
+      rgba(255, 255, 255, 0.11) 1.6px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(255, 255, 255, 0.17) 2.3px,
+      transparent 2.3px
+    );
+  background-size: 40px 40px, 35px 35px, 50px 50px, 38px 38px, 45px 45px,
+    42px 42px, 32px 32px, 48px 48px;
+  background-position: 0 0, 10px 15px, 5px 20px, 20px 8px, 15px 25px, 8px 12px,
+    18px 22px, 12px 5px;
+  pointer-events: none;
+  opacity: 0.4; /* Subtle texture */
+}
+
+/* Light theme: darker dots for contrast */
+body.light-theme .organelle::before {
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 0, 0, 0.08) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 60% 20%,
+      rgba(0, 0, 0, 0.06) 1.5px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(0, 0, 0, 0.1) 2.5px,
+      transparent 2.5px
+    ),
+    radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.07) 2px, transparent 2px),
+    radial-gradient(
+      circle at 30% 90%,
+      rgba(0, 0, 0, 0.09) 1.8px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(0, 0, 0, 0.06) 2.2px,
+      transparent 2.2px
+    ),
+    radial-gradient(
+      circle at 15% 60%,
+      rgba(0, 0, 0, 0.05) 1.6px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(0, 0, 0, 0.08) 2.3px,
+      transparent 2.3px
+    );
+  opacity: 0.3; /* Slightly more subtle in light mode */
+}
+
+/* Distinct patterns for each organelle type */
+/* Education - Grid pattern */
+.organelle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.organelle::after {
+  background: none; /* Default: no pattern */
+}
+
+/* Education - Horizontal lines */
+.organelle[style*="--organelle-education"]::after {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.12) 0px,
+    transparent 1px,
+    transparent 8px,
+    rgba(255, 255, 255, 0.12) 9px
+  );
+}
+
+body.light-theme .organelle[style*="--organelle-education"]::after {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    transparent 1px,
+    transparent 8px,
+    rgba(0, 0, 0, 0.08) 9px
+  );
+}
+
+/* Research - Diagonal stripes */
+.organelle[style*="--organelle-research"]::after {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0px,
+    transparent 1px,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 11px
+  );
+}
+
+body.light-theme .organelle[style*="--organelle-research"]::after {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.06) 0px,
+    transparent 1px,
+    transparent 10px,
+    rgba(0, 0, 0, 0.06) 11px
+  );
+}
+
+/* Automation - Cross-hatch pattern */
+.organelle[style*="--organelle-automation"]::after {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.08) 0px,
+      transparent 1px,
+      transparent 12px,
+      rgba(255, 255, 255, 0.08) 13px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.08) 0px,
+      transparent 1px,
+      transparent 12px,
+      rgba(255, 255, 255, 0.08) 13px
+    );
+}
+
+body.light-theme .organelle[style*="--organelle-automation"]::after {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      transparent 1px,
+      transparent 12px,
+      rgba(0, 0, 0, 0.05) 13px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      transparent 1px,
+      transparent 12px,
+      rgba(0, 0, 0, 0.05) 13px
+    );
+}
+
+/* Clinical - Dot grid */
+.organelle[style*="--organelle-clinical"]::after {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 12px 12px;
+}
+
+body.light-theme .organelle[style*="--organelle-clinical"]::after {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 12px 12px;
+}
+
+.organelle.dimmed {
+  filter: blur(2px);
+  opacity: 0.3;
+}
+
+.organelle-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.organelle-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.organelle-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
+  margin-bottom: 0.5rem; /* Space between text and emoji below */
+  margin-top: 0;
+  /* Prevent text jumping during animations */
+  position: relative;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Technical projects: JetBrains Mono */
+.organelle.font-technical .organelle-title {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* Creative projects: Space Grotesk */
+.organelle.font-creative .organelle-title {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* Larger text and icon for active organelles */
+.organelle.active .organelle-title {
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.organelle.active .organelle-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.organelle-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  /* Prevent icon jumping during animations */
+  position: relative;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Emoji icon styling */
+.organelle-icon-emoji {
+  font-size: 50px;
+  line-height: 1;
+  user-select: none;
+  display: inline-block;
+  /* Prevent emoji jumping during animations */
+  position: relative;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Larger emoji for active organelles */
+.organelle.active .organelle-icon-emoji {
+  font-size: 100px;
+}
+
+.organelle-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.organelle.hovered .organelle-info {
+  opacity: 1;
+}
+
+.organelle-description {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+  color: var(--text-color);
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* Larger description text for active organelles */
+.organelle.active .organelle-description {
+  font-size: 1.1rem;
+  margin: 1rem 2rem 1.5rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.95;
+}
+
+.view-project {
+  font-size: 0.9rem;
+  color: var(--project-link-color);
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--project-link-color);
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  /* Prevent button jumping during animations */
+  position: relative;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Larger link for active organelles */
+.organelle.active .view-project {
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+}
+
+.view-project:hover {
+  background: rgba(153, 221, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Coming Soon badge for unfinished projects */
+.coming-soon-badge {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.organelle.active .coming-soon-badge {
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+}
+
+/* Coming soon organelle styling */
+.organelle.coming-soon {
+  border-width: 2px;
+  filter: grayscale(60%) brightness(0.85);
+  animation: comingSoonPulse 3s ease-in-out infinite;
+}
+
+.organelle.coming-soon:hover {
+  filter: grayscale(40%) brightness(0.9);
+}
+
+.organelle.coming-soon.active {
+  filter: grayscale(30%) brightness(0.95);
+  animation: none;
+}
+
+.organelle.coming-soon .organelle-title {
+  opacity: 0.75;
+}
+
+.organelle.coming-soon .organelle-icon-emoji {
+  opacity: 0.6;
+  filter: grayscale(50%);
+}
+
+/* Pulsing animation for coming soon items */
+@keyframes comingSoonPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.02);
+  }
+}
+
+/* Small "Coming Soon" indicator on collapsed organelles */
+.coming-soon-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.work-reset {
+  z-index: 2;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.work-reset:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .work-wrapper {
+    --section-padding-top: var(--space-3);
+    --section-padding-bottom: var(--space-3);
+    --section-padding-x: clamp(1.5rem, 8vw, 2.25rem);
+    overflow-x: hidden !important;
+  }
+
+  /* Stack vertically on mobile */
+  .work-content-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    margin: 0;
+  }
+
+  .work-sidebar,
+  .work-cell {
+    grid-column: 1 !important;
+  }
+
+  /* Title appears first (row 1) with proper spacing from edges */
+  .work-sidebar {
+    grid-row: 1 !important;
+    padding: 0 clamp(1.5rem, 5vw, 2rem);
+    gap: 1rem;
+    text-align: left;
+  }
+
+  /* Cell appears second (row 2) and is centered */
+  .work-cell {
+    grid-row: 2 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 90vw !important;
+  }
+
+  .work-sidebar-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .work-sidebar-subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  .work-sidebar-description {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    line-height: 1.6;
+  }
+
+  .work-cell {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .organelle {
+    font-size: 0.7rem;
+  }
+
+  /* Mobile expanded organelles (Option 3: stay circular, smaller text) */
+  .organelle.active {
+    /* Stays circular with border-radius: 50% */
+    padding: 1rem;
+  }
+
+  .organelle.active .organelle-title {
+    font-size: 1.1rem !important; /* Smaller than desktop (1.6rem) */
+    margin-top: 0.5rem !important;
+  }
+
+  .organelle.active .organelle-icon {
+    width: 50px !important; /* Smaller than desktop (80px) */
+    height: 50px !important;
+  }
+
+  .organelle.active .organelle-description {
+    font-size: 0.75rem !important; /* Much smaller for mobile */
+    margin: 0.5rem 1rem 1rem !important;
+    line-height: 1.4 !important;
+    text-align: center; /* Center text for circular layout */
+  }
+
+  .organelle.active .view-project {
+    font-size: 0.8rem !important; /* Smaller button */
+    padding: 0.5rem 1rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .organelle.active .coming-soon-badge {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.8rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Organelle title (non-active) */
+  .organelle-title {
+    font-size: 0.7rem !important;
+  }
+
+  /* Mobile: Reduce icon size for non-active organelles */
+  .organelle-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Mobile: Reduce emoji size */
+  .organelle-icon-emoji {
+    font-size: 30px !important;
+  }
+
+  .organelle.active .organelle-icon-emoji {
+    font-size: 50px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .work-cell {
+    left: 10vw; /* Tablet: A1 to A9 */
+    right: 10vw;
+    height: 70vh;
+  }
+}
+
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.nucleus-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color);
+  pointer-events: none;
+  text-align: center;
+}
+
+.nucleus.open {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.nucleus-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1;
+}

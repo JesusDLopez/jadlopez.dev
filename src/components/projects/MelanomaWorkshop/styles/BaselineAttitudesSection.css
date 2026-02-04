@@ -1,0 +1,141 @@
+/* ============================================
+   BaselineAttitudesSection - Baseline Attitudes & Confidence
+   ============================================ */
+
+.mw-baseline-section {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.mw-baseline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mw-section-intro {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mw-section-intro strong {
+  color: #667eea;
+}
+
+/* Question Cards */
+.mw-baseline-question {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mw-question-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.mw-question-content {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mw-chart-placeholder {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.mw-chart-placeholder p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.mw-chart-placeholder ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.mw-chart-placeholder ul li {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 4px;
+}
+
+.mw-question-note {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Key Findings */
+.mw-baseline-findings {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px solid #667eea;
+}
+
+.mw-baseline-findings h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.mw-findings-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.mw-findings-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mw-baseline-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .mw-baseline-question {
+    padding: 1.5rem 1rem;
+  }
+
+  .mw-question-title {
+    font-size: 1.25rem;
+  }
+
+  .mw-chart-placeholder {
+    min-height: 250px;
+    padding: 1.5rem;
+  }
+}

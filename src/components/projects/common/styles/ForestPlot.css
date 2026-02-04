@@ -1,0 +1,84 @@
+/* ForestPlot - Styling for forest plot visualization */
+
+.forest-plot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.forest-plot-container svg {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Axis styling */
+.forest-plot-container .x-axis line,
+.forest-plot-container .y-axis line {
+  stroke: #e5e7eb;
+  stroke-width: 1px;
+}
+
+.forest-plot-container .x-axis text,
+.forest-plot-container .y-axis text {
+  fill: #374151;
+  font-size: 11px;
+}
+
+.forest-plot-container .x-axis path,
+.forest-plot-container .y-axis path {
+  stroke: #9ca3af;
+  stroke-width: 1px;
+}
+
+/* CI lines and points */
+.ci-line {
+  transition: all 0.2s ease;
+}
+
+.or-point {
+  transition: all 0.2s ease;
+}
+
+.or-point:hover {
+  stroke-width: 3px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* OR text on the right */
+.or-text {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .forest-plot-container svg {
+  background: color-mix(in srgb, var(--rp-bg-elevated) 50%, transparent);
+}
+
+body.dark-theme .forest-plot-container .x-axis line,
+body.dark-theme .forest-plot-container .y-axis line {
+  stroke: #374151;
+}
+
+body.dark-theme .forest-plot-container .x-axis text,
+body.dark-theme .forest-plot-container .y-axis text,
+body.dark-theme .or-text {
+  fill: #d1d5db;
+}
+
+body.dark-theme .forest-plot-container .x-axis path,
+body.dark-theme .forest-plot-container .y-axis path {
+  stroke: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .forest-plot-container {
+    overflow-x: scroll;
+  }
+
+  .forest-plot-container svg {
+    min-width: 600px;
+  }
+}

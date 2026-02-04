@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "analysis_date": "2025-10-13",
+    "n_participants": 54,
+    "note": "Pre-workshop baseline only (descriptive statistics)"
+  },
+  "q3_tasks": [
+    {
+      "Task": "3.1",
+      "Label": "Collected a family history",
+      "N_Valid": 48,
+      "N_Yes": 26,
+      "N_No": 22,
+      "Pct_Yes": 54.1667,
+      "CI_lower": 40.0708,
+      "CI_upper": 68.2625
+    },
+    {
+      "Task": "3.2",
+      "Label": "Identified patients at increased risk",
+      "N_Valid": 48,
+      "N_Yes": 19,
+      "N_No": 29,
+      "Pct_Yes": 39.5833,
+      "CI_lower": 25.7486,
+      "CI_upper": 53.418
+    },
+    {
+      "Task": "3.3",
+      "Label": "Obtained informed consent for genomic testing",
+      "N_Valid": 48,
+      "N_Yes": 7,
+      "N_No": 41,
+      "Pct_Yes": 14.5833,
+      "CI_lower": 4.5986,
+      "CI_upper": 24.568
+    },
+    {
+      "Task": "3.4",
+      "Label": "Ordered genomic testing",
+      "N_Valid": 49,
+      "N_Yes": 29,
+      "N_No": 20,
+      "Pct_Yes": 59.1837,
+      "CI_lower": 45.4219,
+      "CI_upper": 72.9455
+    },
+    {
+      "Task": "3.5",
+      "Label": "Interpreted genomic test results",
+      "N_Valid": 48,
+      "N_Yes": 12,
+      "N_No": 36,
+      "Pct_Yes": 25,
+      "CI_lower": 12.75,
+      "CI_upper": 37.25
+    }
+  ],
+  "q5_frequency": {
+    "responses": [
+      {
+        "Response": "Never",
+        "Count": 27,
+        "Percentage": 55.102
+      },
+      {
+        "Response": "Rarely",
+        "Count": 19,
+        "Percentage": 38.7755
+      },
+      {
+        "Response": "Often",
+        "Count": 3,
+        "Percentage": 6.1224
+      }
+    ],
+    "followup_responses": [
+      {
+        "Participant ID": "0015",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0019",
+        "5. Reason if Rarely or Never.": "I do not feel confident"
+      },
+      {
+        "Participant ID": "0020",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0021",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0022",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice"
+      },
+      {
+        "Participant ID": "0023",
+        "5. Reason if Rarely or Never.": "Refer to Genetics service"
+      },
+      {
+        "Participant ID": "0025",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice, I do not feel confident"
+      },
+      {
+        "Participant ID": "0028",
+        "5. Reason if Rarely or Never.": "I work in a low income area; most patients refuse extra expense"
+      },
+      {
+        "Participant ID": "0029",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0031",
+        "5. Reason if Rarely or Never.": "I do not feel confident"
+      },
+      {
+        "Participant ID": "0034",
+        "5. Reason if Rarely or Never.": "I do not feel confident"
+      },
+      {
+        "Participant ID": "0036",
+        "5. Reason if Rarely or Never.": "Rarely see genetic conditions"
+      },
+      {
+        "Participant ID": "0037",
+        "5. Reason if Rarely or Never.": "I do not feel confident"
+      },
+      {
+        "Participant ID": "0039",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0048",
+        "5. Reason if Rarely or Never.": "Currently not in the position"
+      },
+      {
+        "Participant ID": "0051",
+        "5. Reason if Rarely or Never.": "I do not feel confident, It is not my role"
+      },
+      {
+        "Participant ID": "0053",
+        "5. Reason if Rarely or Never.": "Low need"
+      },
+      {
+        "Participant ID": "0056",
+        "5. Reason if Rarely or Never.": "I'm student"
+      },
+      {
+        "Participant ID": "0057",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0058",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice"
+      },
+      {
+        "Participant ID": "0060",
+        "5. Reason if Rarely or Never.": "It is not my role, I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0061",
+        "5. Reason if Rarely or Never.": "I do not have time"
+      },
+      {
+        "Participant ID": "0067",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0068",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice"
+      },
+      {
+        "Participant ID": "0069",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice"
+      },
+      {
+        "Participant ID": "0070",
+        "5. Reason if Rarely or Never.": "Need to order myself - i.e. ordered via paed clinic"
+      },
+      {
+        "Participant ID": "0075",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0076",
+        "5. Reason if Rarely or Never.": "Send to Melanoma email"
+      },
+      {
+        "Participant ID": "0088",
+        "5. Reason if Rarely or Never.": "Not indicated often"
+      },
+      {
+        "Participant ID": "0093",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0094",
+        "5. Reason if Rarely or Never.": "Patient populatie"
+      },
+      {
+        "Participant ID": "0095",
+        "5. Reason if Rarely or Never.": "?"
+      },
+      {
+        "Participant ID": "0097",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0099",
+        "5. Reason if Rarely or Never.": "Fewer presentations with FHX + personal Hx costs related limitations to pts"
+      },
+      {
+        "Participant ID": "0103",
+        "5. Reason if Rarely or Never.": "I do not have access to a genetic service"
+      },
+      {
+        "Participant ID": "0104",
+        "5. Reason if Rarely or Never.": "It is not my role"
+      },
+      {
+        "Participant ID": "0106",
+        "5. Reason if Rarely or Never.": "Not relevant to my practice. I do not feel confident."
+      },
+      {
+        "Participant ID": "0109",
+        "5. Reason if Rarely or Never.": "I do not feel confident. I do not have access to a genetic service."
+      },
+      {
+        "Participant ID": "0111",
+        "5. Reason if Rarely or Never.": "I do not feel confident"
+      }
+    ]
+  },
+  "q6_patient_conversations": {
+    "yes_count": 25,
+    "total": 50,
+    "percentage": 50,
+    "ci_lower": 36.1407,
+    "ci_upper": 63.8593
+  }
+}

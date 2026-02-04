@@ -1,0 +1,124 @@
+/* BarChart Component Styles */
+
+.bar-chart-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.chart-loading {
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+/* Axis styling */
+.axis text {
+  font-size: 14px;
+  fill: var(--hl-body-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: var(--hl-body-color);
+  opacity: 0.4;
+  stroke-width: 2px;
+}
+
+.axis-x text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.axis-y text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bar styling */
+.bar {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.bar:hover {
+  opacity: 0.8;
+}
+
+/* Tooltip styling - shared with DonutChart */
+.chart-tooltip {
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  font-family: var(--font-family);
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .chart-title {
+  color: white;
+}
+
+body.dark-theme .axis text {
+  fill: white;
+}
+
+body.dark-theme .axis path,
+body.dark-theme .axis line {
+  stroke: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .bar-chart-container {
+    max-width: 350px;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+
+  .axis text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar-chart-container {
+    max-width: 300px;
+  }
+
+  .chart-title {
+    font-size: 0.9rem;
+  }
+
+  .axis text {
+    font-size: 9px;
+  }
+
+  .axis-x text {
+    font-size: 8px;
+  }
+}

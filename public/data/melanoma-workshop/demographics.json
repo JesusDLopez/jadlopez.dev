@@ -1,0 +1,31 @@
+{
+  "totalPreWorkshop": 51,
+  "totalPostWorkshop": 53,
+  "pairedParticipants": 48,
+  "totalUniqueParticipants": 56,
+  "responseRate": 85.7,
+  "workshopInfo": {
+    "workshop1": {
+      "date": "2023",
+      "location": "Unknown",
+      "participantIDRange": "0015-0099"
+    },
+    "workshop2": {
+      "date": "July 2024",
+      "location": "Perth, Australia",
+      "participantIDRange": "0102-0113"
+    }
+  },
+  "dataUsageStrategy": {
+    "descriptiveStats": {
+      "sample": "ALL participants",
+      "preN": 51,
+      "postN": 53
+    },
+    "pairedComparisons": {
+      "sample": "PAIRED participants only",
+      "n": 48
+    }
+  },
+  "notes": "Combined data from two workshop administrations. This is placeholder data - replace with actual R export."
+}
