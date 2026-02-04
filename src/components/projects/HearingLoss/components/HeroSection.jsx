@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHearingLossData } from '../data/DataContext';
 import { StatCard, ContentCard, DisclaimerCard } from '../../common';
-import '../styles/hero.css';
+import '../Styles/hero.css';
 
 const HeroSection = () => {
   const { summaryStats, loading, error, isReady } = useHearingLossData();

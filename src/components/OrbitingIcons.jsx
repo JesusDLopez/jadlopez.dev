@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import emailIcon from "../assets/icons/email.svg";
 import githubIcon from "../assets/icons/github.svg";
 import twitterIcon from "../assets/icons/twitter.svg";
-import "../styles/Contact.css";
+import "../Styles/Contact.css";
 
 export default function OrbitingIcons() {
   const iconsRef = useRef([]);

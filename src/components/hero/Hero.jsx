@@ -1,5 +1,5 @@
 // src/components/Hero/Hero.jsx
-import "../../styles/Hero.css";
+import "../../Styles/Hero.css";
 import { useState, useEffect } from "react";
 import DNAHelixScene from "./DNAHelixScene";
 import HeroContent from "./HeroContent";

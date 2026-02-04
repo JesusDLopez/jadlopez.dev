@@ -1,7 +1,7 @@
 // StatCard - Reusable animated statistics card component
 import React from 'react';
 import { formatNumber } from '../utils/formatters';
-import '../styles/StatCard.css';
+import '../Styles/StatCard.css';
 
 const StatCard = ({
   value,

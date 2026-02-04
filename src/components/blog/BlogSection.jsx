@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import BlogItem from "./BlogItem";
 import PlaceholderCard from "./PlaceholderCard";
 import posts from "../../posts/index.js";
-import "../../styles/Blog.css";
+import "../../Styles/Blog.css";
 
 export default function BlogSection() {
   const blogPosts = posts;

@@ -1,7 +1,7 @@
 // Methods Section - Analytical approach and statistical methods
 import React, { useState } from 'react';
 import { PipelineStepCard, MethodCard, TransitionCard } from '../../common';
-import '../styles/methods.css';
+import '../Styles/methods.css';
 
 const MethodsSection = () => {
   const [flippedCards, setFlippedCards] = useState({});

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
-import "../../styles/About.css";
+import "../../Styles/About.css";
 import {
   motion,
   useScroll,

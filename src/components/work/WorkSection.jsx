@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import OrganelleNew from "./OrganelleNew";
 import OrganicBlob from "./OrganicBlob";
 import { OrganellePhysicsManager } from "./OrganellePhysics";
-import "../../styles/Work.css";
+import "../../Styles/Work.css";
 
 const ORGANELLE_DESKTOP_SIZE = 170;
 const ORGANELLE_MOBILE_SIZE = 70;

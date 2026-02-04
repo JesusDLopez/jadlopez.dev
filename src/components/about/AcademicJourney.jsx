@@ -9,7 +9,7 @@ import histoneH1 from "../../assets/HistoneH1_V2.glb";
 import GFP_v2 from "../../assets/GFP_v2.glb";
 import foxp2 from "../../assets/foxp2_v3.glb";
 import ComingSoon from "../common/ComingSoon";
-import "../../styles/AcademicJourney.css";
+import "../../Styles/AcademicJourney.css";
 
 const experiences = [
   {

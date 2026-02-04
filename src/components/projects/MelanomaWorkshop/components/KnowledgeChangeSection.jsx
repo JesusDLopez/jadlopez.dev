@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMelanomaWorkshopData } from '../data/DataContext';
-import '../styles/KnowledgeChangeSection.css';
+import '../Styles/KnowledgeChangeSection.css';
 
 /**
  * KnowledgeChangeSection - Knowledge Change Analysis (All Questions)

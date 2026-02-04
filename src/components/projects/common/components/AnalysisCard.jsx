@@ -1,6 +1,6 @@
 // AnalysisCard - Reusable card for analysis context and interpretation
 import React from 'react';
-import '../styles/AnalysisCard.css';
+import '../Styles/AnalysisCard.css';
 
 const AnalysisCard = ({
   icon,

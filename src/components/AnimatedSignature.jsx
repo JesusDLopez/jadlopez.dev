@@ -1,7 +1,7 @@
 // src/components/AnimatedSignature.jsx
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import "../styles/Contact.css";
+import "../Styles/Contact.css";
 
 export default function AnimatedSignature({ text = "Jesús López" }) {
   const textRef = useRef(null);

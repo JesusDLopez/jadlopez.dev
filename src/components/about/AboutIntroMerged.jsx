@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import AboutIntro from "./AboutIntro";
 import SkillsBannerGlass from "../SkillsBannerGlass";
-import "../../styles/AboutIntroMerged.css";
+import "../../Styles/AboutIntroMerged.css";
 
 function AboutIntroMerged({ animateOnLoad = false }) {
   const [isMobile, setIsMobile] = useState(false);
