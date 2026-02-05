@@ -11,30 +11,43 @@ export default function BackgroundScene() {
   const location = useLocation();
   const { isDark } = useTheme();
   const fogRef = useRef();
+  const containerRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
-  const [viewportHeight, setViewportHeight] = useState(
-    typeof window !== "undefined" ? window.innerHeight : 0
-  );
 
   // Determine if we're on a report page or portfolio page
   const isReportPage = location.pathname.includes('/projects/');
 
-  // Detect mobile and track viewport height for Safari compatibility
+  // Detect mobile and handle Safari viewport changes
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+
+    // Update CSS custom property with actual viewport height
+    // This handles Safari's dynamic address bar better than static CSS units
+    const updateViewportHeight = () => {
+      // Use visualViewport for Safari address bar changes, fallback to innerHeight
+      const vh = window.visualViewport?.height || window.innerHeight;
+      document.documentElement.style.setProperty('--app-height', `${vh}px`);
+    };
+
     const handleResize = () => {
       checkMobile();
-      setViewportHeight(window.innerHeight);
+      updateViewportHeight();
     };
+
     handleResize();
     window.addEventListener('resize', handleResize);
-    // Also listen to visualViewport for Safari address bar changes
-    window.visualViewport?.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    // visualViewport is the key for Safari address bar changes
+    window.visualViewport?.addEventListener('resize', updateViewportHeight);
+    window.visualViewport?.addEventListener('scroll', updateViewportHeight);
+
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.visualViewport?.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      window.visualViewport?.removeEventListener('resize', updateViewportHeight);
+      window.visualViewport?.removeEventListener('scroll', updateViewportHeight);
     };
   }, []);
 
@@ -94,23 +107,21 @@ export default function BackgroundScene() {
 
   return (
     <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: `${viewportHeight}px`, // Use JS-tracked height for Safari compatibility
-        zIndex: 0,
-        pointerEvents: "none",
-        overflow: "hidden",
-      }}
+      ref={containerRef}
+      className="shader-background-container"
     >
       <Canvas
         camera={{
-          position: [0, 0, isMobile ? 10 : 15], // Zoom in camera on mobile (10 vs 15)
-          fov: isMobile ? 60 : 50 // Wider FOV on mobile for better coverage
+          position: [0, 0, isMobile ? 10 : 15],
+          fov: isMobile ? 60 : 50
         }}
-        gl={{ alpha: true }}
+        gl={{
+          alpha: true,
+          antialias: true,
+          preserveDrawingBuffer: true,
+          powerPreference: "high-performance",
+        }}
+        dpr={[1, 2]} // Device pixel ratio for sharp rendering
         frameloop="always"
         style={{
           width: "100%",
