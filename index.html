@@ -55,21 +55,23 @@
         margin: 0;
         padding: 0 !important; /* No body padding - content handles safe areas */
       }
-      /* Shader background container - must cover ENTIRE viewport including safe areas */
+      /* Shader background container - must cover ENTIRE viewport INCLUDING safe areas */
       .shader-background-container {
         position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100% !important;
-        height: var(--app-height, 100dvh) !important;
-        min-height: 100% !important;
+        /* Use negative positioning to extend INTO safe areas */
+        top: calc(-1 * env(safe-area-inset-top, 0px)) !important;
+        left: calc(-1 * env(safe-area-inset-left, 0px)) !important;
+        right: calc(-1 * env(safe-area-inset-right, 0px)) !important;
+        bottom: calc(-1 * env(safe-area-inset-bottom, 0px)) !important;
+        /* Expand dimensions to include safe areas */
+        width: calc(100% + env(safe-area-inset-left, 0px) + env(safe-area-inset-right, 0px)) !important;
+        height: calc(var(--app-height, 100dvh) + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px)) !important;
+        min-height: calc(100% + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px)) !important;
         z-index: 0 !important;
         pointer-events: none !important;
-        /* Extend into ALL safe areas - shader should cover everything */
         margin: 0 !important;
         padding: 0 !important;
+        overflow: hidden !important;
       }
       /* Mobile-specific fixes */
       @media (max-width: 768px) {
