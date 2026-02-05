@@ -1,7 +1,7 @@
 // BarChart - Reusable D3.js bar chart component following dual-mode pattern
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import '../Styles/BarChart.css';
+import '../styles/BarChart.css';
 
 const BarChart = ({
   data,

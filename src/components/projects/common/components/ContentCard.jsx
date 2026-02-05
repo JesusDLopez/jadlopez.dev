@@ -1,6 +1,6 @@
 // ContentCard - Reusable content card component
 import React from 'react';
-import '../Styles/ContentCard.css';
+import '../styles/ContentCard.css';
 
 const ContentCard = ({
   title,

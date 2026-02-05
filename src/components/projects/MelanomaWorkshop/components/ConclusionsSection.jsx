@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMelanomaWorkshopData } from '../data/DataContext';
-import '../Styles/ConclusionsSection.css';
+import '../styles/ConclusionsSection.css';
 
 /**
  * ConclusionsSection - Conclusions & Recommendations

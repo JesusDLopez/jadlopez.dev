@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMelanomaWorkshopData } from '../data/DataContext';
-import '../Styles/BaselineAttitudesSection.css';
+import '../styles/BaselineAttitudesSection.css';
 
 /**
  * BaselineAttitudesSection - Baseline Attitudes & Confidence (Q1.1, Q1.2)

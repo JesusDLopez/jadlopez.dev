@@ -1,6 +1,6 @@
 // MethodCard - Reusable flip card for statistical methods with code examples
 import React, { useRef, useEffect } from 'react';
-import '../Styles/MethodCard.css';
+import '../styles/MethodCard.css';
 
 const MethodCard = ({
   title,

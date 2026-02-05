@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHearingLossData } from '../data/DataContext';
 import { ErrorBarChart, TransitionCard, ContentCard, KeyFinding, StatCard, AnalysisCard } from '../../common';
-import '../Styles/comparison.css';
+import '../styles/comparison.css';
 
 const ComparisonSection = () => {
   const { comparison, isReady } = useHearingLossData();

@@ -1,7 +1,7 @@
 // ErrorBarChart - Bar chart with confidence intervals for comparison data
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import '../Styles/BarChart.css';
+import '../styles/BarChart.css';
 
 const ErrorBarChart = ({
   data,

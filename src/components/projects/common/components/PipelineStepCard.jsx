@@ -15,7 +15,7 @@
 // possible content (the flipped card's back face), creating massive unwanted space.
 //
 import React, { useRef, useEffect } from 'react';
-import '../Styles/PipelineStepCard.css';
+import '../styles/PipelineStepCard.css';
 
 const PipelineStepCard = ({
   stepNumber,
