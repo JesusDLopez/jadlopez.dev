@@ -102,7 +102,14 @@ const nucleotideDetails = {
 };
 
 const dnaPanelContent = {
-  title: "DNA Double Helix",
+  title: (
+    <>
+      DNA Double Helix{" "}
+      <a href="https://www.rcsb.org/structure/1BNA" target="_blank" rel="noopener noreferrer">
+        (1BNA)
+      </a>
+    </>
+  ),
   category: "STRUCTURE · GENETICS",
   meta: "12 base pairs · B-form DNA · PDB 1BNA",
   body: [
@@ -120,8 +127,7 @@ const dnaPanelContent = {
       biology, showing canonical A–T and G–C pairings, a right-handed twist, and pronounced major and minor grooves.
     </>,
   ],
-  mobileSummary:
-    "12 base pairs of B-form DNA (CGCGAATTCGCG) from PDB 1BNA with canonical pairing, right-handed twist, and major/minor grooves.",
+  mobileSummary: "12 base pairs of B-form DNA with canonical pairing and right-handed twist.",
   citation: (
     <>
       Source:{" "}
@@ -173,16 +179,11 @@ export default function InfoPanels({
               }}
             >
               <h3 className="info-panel__title">{dnaPanelContent.title}</h3>
-              <p className="info-panel__category">{dnaPanelContent.category}</p>
-              <p className="info-panel__meta">{dnaPanelContent.meta}</p>
               <div className="info-panel__divider" />
               <div className="info-panel__body">
                 <p className="mobile-description">{dnaPanelContent.mobileSummary}</p>
               </div>
-              <p className="citation">{dnaPanelContent.citation}</p>
-              <p className="controls-hint">
-                ☝️ Drag to rotate · ✌️ Two fingers to pan · 🤏 Pinch to zoom
-              </p>
+              <p className="controls-hint">Drag · Pan · Pinch to zoom</p>
             </motion.div>
           )}
         </AnimatePresence>

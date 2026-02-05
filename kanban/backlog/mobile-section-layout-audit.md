@@ -4,8 +4,8 @@ Goal: Fix all mobile layout issues across sections. The shader background bands 
 
 ## Sections to audit (in page order):
 
-- [ ] **Hero** - DNA model, title, subtitle, CTA button
-- [ ] **About** ("¡Hola!") - Intro text, links
+- [x] **Hero** - DNA model, title, subtitle, CTA button (in `kanban/doing/hero-section-mobile-fixes.md`)
+- [x] **About** ("¡Hola!") - Intro text, links (in `kanban/doing/hola-section-mobile-fixes.md`)
 - [ ] **Work** - Project cards
 - [ ] **Blog** - Blog post cards
 - [ ] **Contact** - Contact form/info

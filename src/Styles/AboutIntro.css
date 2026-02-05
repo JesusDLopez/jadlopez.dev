@@ -256,8 +256,9 @@ body.light-theme .rotating-word {
   position: static;
   width: 100%;
   height: auto;
-  padding: 0;
+  padding: 0 1.5rem; /* Add horizontal padding so text doesn't touch edges */
   margin: 0;
+  box-sizing: border-box;
 }
 
 .about-intro-block-mobile {
@@ -343,7 +344,22 @@ body.light-theme .about-intro-title-mobile {
 .emphasis-word-mobile {
   font-weight: 500;
   font-family: "DM Sans", "Inter", sans-serif !important;
-  /* Add gradient for rotating words on mobile */
+  /* Dark theme: blue/green gradient matching desktop */
+  background: linear-gradient(
+    135deg,
+    #60a5fa 0%,
+    #3b82f6 25%,
+    #06b6d4 75%,
+    #14b8a6 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Light theme mobile emphasis - orange-pink gradient */
+body.light-theme .emphasis-word-mobile {
   background: linear-gradient(
     135deg,
     #ff6b35 0%,
@@ -366,9 +382,15 @@ body.light-theme .about-intro-line-mobile {
 
 /* Allow rotating words to wrap naturally on mobile */
 @media (max-width: 768px) {
+  .rotating-word-wrapper {
+    display: inline !important; /* Allow wrapper to flow with text */
+    min-width: 0 !important; /* Remove min-width constraint */
+  }
+
   .rotating-word {
     white-space: normal !important; /* Allow natural wrapping on mobile */
     display: inline !important; /* Change to inline for natural text flow */
+    word-break: break-word !important; /* Allow breaking long phrases */
   }
 }
 
