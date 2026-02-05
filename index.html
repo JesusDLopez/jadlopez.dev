@@ -40,11 +40,12 @@
         min-height: 100%;
         min-height: var(--app-height, 100dvh);
         overflow-x: hidden;
-        /* Use theme-appropriate fallback color */
-        background-color: #f5f7fa; /* Light mode default */
+        /* Light mode: match shader lightBase vec3(0.95, 0.97, 0.98) = #f2f7fa */
+        background-color: #f2f7fa;
       }
-      html.dark {
-        background-color: #000000; /* Dark mode */
+      html.dark-theme {
+        /* Dark mode: match shader uBaseColor vec3(0.03, 0.03, 0.03) = #080808 */
+        background-color: #080808;
       }
       body {
         position: relative;
