@@ -183,7 +183,7 @@ export default function InfoPanels({
               <div className="info-panel__body">
                 <p className="mobile-description">{dnaPanelContent.mobileSummary}</p>
               </div>
-              <p className="controls-hint">Drag · Pan · Pinch to zoom</p>
+              <p className="controls-hint">☝️ Drag · ✌️ Pan · 🤏 Pinch · Touch DNA to explore</p>
             </motion.div>
           )}
         </AnimatePresence>

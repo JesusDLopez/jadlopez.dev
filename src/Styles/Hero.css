@@ -446,6 +446,7 @@ body.light-theme .orbit-controls-instructions p {
     bottom: calc(2.75rem + env(safe-area-inset-bottom, 0px)); /* Account for iPhone navigation */
     padding: 0.65rem 1.2rem;
     font-size: 1rem;
+    animation: none !important; /* Disable glow animation on mobile */
   }
 
   .orbit-controls-instructions {
@@ -479,6 +480,17 @@ body.light-theme .orbit-controls-instructions p {
   .info-panel.mobile-top .info-panel__title {
     font-size: 1.08rem;
     gap: 0.45rem;
+  }
+
+  /* Style the PDB link to be visually distinct */
+  .info-panel.mobile-top .info-panel__title a {
+    color: #60d5ff; /* Cyan/blue to indicate clickable */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  body.light-theme .info-panel.mobile-top .info-panel__title a {
+    color: #0066cc; /* Darker blue for light theme */
   }
 
   .info-panel.mobile-top .info-panel__category {
@@ -526,7 +538,7 @@ body.light-theme .orbit-controls-instructions p {
   .info-panel.mobile-nucleotide {
     display: block;
     position: fixed;
-    bottom: 5.5rem; /* Position just above "Click to scroll" button */
+    bottom: 4rem; /* Very close to "Click to scroll" button */
     left: 1.5rem;
     right: 1.5rem;
     margin: 0 auto;
