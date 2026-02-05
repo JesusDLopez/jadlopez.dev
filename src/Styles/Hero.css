@@ -442,11 +442,17 @@ body.light-theme .orbit-controls-instructions p {
     letter-spacing: 0.08em;
   }
 
-  .spin-toggle {
+  .spin-toggle,
+  .spin-toggle.heavy-pulse,
+  body.light-theme .spin-toggle,
+  body.light-theme .spin-toggle.heavy-pulse {
     bottom: calc(2.75rem + env(safe-area-inset-bottom, 0px)); /* Account for iPhone navigation */
     padding: 0.65rem 1.2rem;
     font-size: 1rem;
-    animation: none !important; /* Disable glow animation on mobile */
+    animation: none !important; /* Disable all glow animations on mobile */
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important; /* Simple shadow, no glow */
   }
 
   .orbit-controls-instructions {
