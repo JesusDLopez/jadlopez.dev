@@ -404,11 +404,12 @@ body.light-theme .orbit-controls-instructions p {
   }
 
   .hero-content {
-    top: 12%; /* Move much higher to avoid DNA */
-    padding: 1.5rem 1.5rem; /* Add more horizontal padding */
-    gap: 0.8rem;
-    max-width: 85vw; /* Wider box with visible lateral spacing */
-    width: 85vw; /* Force wider width with breathing room from edges */
+    top: 40%; /* Center vertically (a bit above true center for DNA) */
+    transform: translateX(-50%) translateY(-50%); /* Center both axes */
+    padding: 1.5rem 2rem;
+    gap: 0.6rem;
+    max-width: 90vw;
+    width: auto; /* Let content determine width */
     perspective: 1000px;
     transform-style: preserve-3d;
   }
@@ -448,7 +449,9 @@ body.light-theme .orbit-controls-instructions p {
   body.light-theme .spin-toggle,
   body.light-theme .spin-toggle.heavy-pulse,
   body.light-theme .spin-toggle.active {
-    bottom: calc(2.75rem + env(safe-area-inset-bottom, 0px)); /* Account for iPhone navigation */
+    /* Position below the centered hero-content */
+    bottom: auto;
+    top: calc(40% + 5rem); /* Below the hero-content center point */
     padding: 0.65rem 1.2rem;
     font-size: 1rem;
     /* Completely disable all glow effects on mobile */

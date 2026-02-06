@@ -271,12 +271,12 @@ body.light-theme .rotating-word {
 .about-intro-title-mobile {
   position: static;
   transform: none;
-  font-size: clamp(50px, 12vw, 80px); /* Smaller on mobile */
+  font-size: clamp(56px, 14vw, 90px); /* Larger title */
   line-height: 1.1;
   letter-spacing: 0.06em;
   font-family: "DM Sans", "Inter", sans-serif;
   font-weight: 600;
-  margin: 0 0 24px 0; /* Tighter spacing below title */
+  margin: 0 0 32px 0; /* Space below title */
   /* DNA cyan gradient with subtle stroke - matches desktop */
   background: linear-gradient(
     135deg,
@@ -322,10 +322,10 @@ body.light-theme .about-intro-title-mobile {
 }
 
 .about-intro-line-mobile {
-  font-size: clamp(18px, 5vw, 24px); /* Smaller text on mobile */
-  line-height: 1.5;
+  font-size: clamp(20px, 5.5vw, 28px); /* Larger text to fill screen */
+  line-height: 1.55;
   letter-spacing: 0.01em;
-  margin: 0 0 16px 0; /* Tighter spacing between lines */
+  margin: 0 0 20px 0; /* Balanced spacing between lines */
   /* SOLID WHITE COLOR */
   background: none !important;
   background-clip: unset !important;
