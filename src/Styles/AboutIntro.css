@@ -247,7 +247,7 @@ body.light-theme .rotating-word {
   min-height: auto;
   width: 100%;
   max-width: 100vw; /* Prevent overflow */
-  padding: 80px 20px 80px 20px; /* More bottom padding for dynamic content + banner */
+  padding: 80px 20px 140px 20px; /* Extra bottom padding before banner */
   margin: 0;
   overflow: visible; /* Allow content to show */
 }
@@ -271,12 +271,12 @@ body.light-theme .rotating-word {
 .about-intro-title-mobile {
   position: static;
   transform: none;
-  font-size: clamp(56px, 14vw, 90px); /* Larger title */
+  font-size: clamp(64px, 16vw, 100px); /* Even larger title */
   line-height: 1.1;
   letter-spacing: 0.06em;
   font-family: "DM Sans", "Inter", sans-serif;
   font-weight: 600;
-  margin: 0 0 32px 0; /* Space below title */
+  margin: 0 0 36px 0; /* Space below title */
   /* DNA cyan gradient with subtle stroke - matches desktop */
   background: linear-gradient(
     135deg,
@@ -322,10 +322,10 @@ body.light-theme .about-intro-title-mobile {
 }
 
 .about-intro-line-mobile {
-  font-size: clamp(20px, 5.5vw, 28px); /* Larger text to fill screen */
+  font-size: clamp(22px, 6vw, 32px); /* Even larger text to fill screen */
   line-height: 1.55;
   letter-spacing: 0.01em;
-  margin: 0 0 20px 0; /* Balanced spacing between lines */
+  margin: 0 0 24px 0; /* Balanced spacing between lines */
   /* SOLID WHITE COLOR */
   background: none !important;
   background-clip: unset !important;
