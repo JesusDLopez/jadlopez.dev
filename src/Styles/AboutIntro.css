@@ -243,10 +243,10 @@ body.light-theme .rotating-word {
   align-items: unset !important; /* Remove flex centering */
   justify-content: unset !important; /* Remove flex centering */
   position: relative;
-  min-height: 100vh; /* Fixed height so banner doesn't jump when words change */
+  min-height: 85vh; /* Fixed height so banner doesn't jump, but not too tall */
   width: 100%;
   max-width: 100vw; /* Prevent overflow */
-  padding: 80px 20px 60px 20px;
+  padding: 80px 20px 40px 20px;
   margin: 0;
   overflow: visible; /* Allow content to show */
 }
