@@ -461,6 +461,12 @@ body.light-theme .skill-pill-glass .skill-name-glass[data-color="#FF9800"] {
     /* Remove vertical padding so mobile tubes stack flush */
     padding: 0;
     width: 100%;
+    min-height: auto; /* Remove desktop min-height */
+    margin-top: -8px; /* Overlap strips slightly to bring them closer */
+  }
+
+  .skills-banner-wrapper-glass:first-child {
+    margin-top: 0; /* No negative margin on first strip */
   }
 
   .skills-banner-tube-glass {
